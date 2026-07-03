@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Map Without Stigma share card</title>
+  <desc id="desc">Campaign share graphic with skyline, map routes and petition message.</desc>
+  <rect width="1200" height="630" fill="#111827"/>
+  <path d="M0 438 H90 V322 H154 V438 H220 V260 H300 V438 H376 V318 H438 V438 H544 V250 H640 V438 H720 V308 H800 V438 H890 V344 H950 V438 H1040 V282 H1128 V438 H1200 V630 H0Z" fill="#0b1018"/>
+  <path d="M100 500 C240 424 356 440 482 504 C594 560 734 552 850 492 C984 424 1086 438 1156 508" fill="none" stroke="#28c7b8" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#f4c95d">
+    <rect x="128" y="372" width="20" height="30" rx="2"/>
+    <rect x="250" y="322" width="22" height="32" rx="2"/>
+    <rect x="582" y="328" width="22" height="32" rx="2"/>
+    <rect x="1074" y="350" width="22" height="32" rx="2"/>
+  </g>
+  <circle cx="998" cy="162" r="50" fill="none" stroke="#f05454" stroke-width="8"/>
+  <text x="998" y="176" text-anchor="middle" fill="#f7f2e7" font-family="Arial, sans-serif" font-size="34" font-weight="700">72h</text>
+  <text x="70" y="124" fill="#28c7b8" font-family="Arial, sans-serif" font-size="28" font-weight="700">MAP WITHOUT STIGMA</text>
+  <text x="70" y="214" fill="#f7f2e7" font-family="Arial, sans-serif" font-size="62" font-weight="800">Clear paths, not shame.</text>
+  <text x="70" y="282" fill="#dbe4ef" font-family="Arial, sans-serif" font-size="30">Play the online night shift and support CheckPoint access.</text>
+</svg>

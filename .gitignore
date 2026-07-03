@@ -1,0 +1,17 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temporary output
+*.log
+.tmp/
+tmp/
+
+# Dependencies and generated output, if the project grows later
+node_modules/
+dist/
+build/
+.env
+.env.*
