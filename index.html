@@ -1,107 +1,178 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Map Without Stigma - Online Game for Sexual Health Without Shame</title>
-    <meta name="description" content="Play a free online night-shift game about post-sex uncertainty, testing, PrEP, PEP and why Croatia needs a CheckPoint network without stigma.">
+    <title>Map Without Stigma — an interactive night story about sexual health without shame</title>
+    <meta name="description" content="Play Three Nights, a free episodic browser story about testing, PrEP and PEP, and see why Croatia needs a connected CheckPoint network without stigma. In English and Croatian.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/">
-    <meta property="og:title" content="Map Without Stigma">
-    <meta property="og:description" content="A free online game about clear sexual-health routes and CheckPoint access without shame.">
-    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.svg">
+    <meta property="og:title" content="Map Without Stigma · Karta bez stigme">
+    <meta property="og:description" content="Three Nights — an interactive Art Deco story about clear sexual-health routes and CheckPoint access without shame.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "Map Without Stigma — an interactive night story about sexual health without shame",
+              desc: "Play Three Nights, a free episodic browser story about testing, PrEP and PEP, and see why Croatia needs a connected CheckPoint network without stigma. In English and Croatian." },
+        hr: { title: "Karta bez stigme – interaktivna noćna priča o spolnom zdravlju bez srama",
+              desc: "Igraj Tri noći, besplatnu epizodnu priču u pregledniku o testiranju, PrEP-u i PEP-u, i saznaj zašto Hrvatskoj treba povezana mreža CheckPointa bez stigme. Na hrvatskom i engleskom." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Map Without Stigma",
+        "alternateName": "Karta bez stigme",
         "url": "https://acapandur.github.io/checkpoint/",
-        "description": "A searchable campaign website and browser game about sexual-health access, PrEP, PEP, testing and CheckPoint care without stigma."
+        "inLanguage": ["en", "hr"],
+        "description": "A bilingual campaign website and episodic browser story about sexual-health access, PrEP, PEP, testing and CheckPoint care without stigma."
       }
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to content</span><span class="lang-hr" lang="hr">Preskoči na sadržaj</span></a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Map Without Stigma home">
-        <span class="brand-mark" aria-hidden="true">MW</span>
-        <span>Map Without Stigma</span>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="play.html">Play</a>
+        <a href="play.html"><span class="lang-en" lang="en">Play</span><span class="lang-hr" lang="hr">Igraj</span></a>
         <a href="what-is-checkpoint.html">CheckPoint</a>
-        <a href="prep-pep.html">PrEP and PEP</a>
-        <a href="map-network.html">Network</a>
-        <a href="petition.html">Petition</a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
+        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+          <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="false">HR</button>
+        </span>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero hero-home" aria-labelledby="home-title">
-        <img class="hero-art" src="assets/img/noir-skyline.svg" alt="" aria-hidden="true">
+        <img class="hero-art" src="assets/img/deco-skyline.svg" alt="" aria-hidden="true">
         <div class="hero-copy">
-          <p class="eyebrow">Searchable online game and campaign hub</p>
-          <h1 id="home-title">After sex, people need clear paths - not shame.</h1>
-          <p class="hero-lede">Play a short online night shift and see why Croatia needs a connected CheckPoint network for testing, PrEP, PEP, counseling and sexual-health care without stigma.</p>
+          <p class="kicker"><span class="lang-en" lang="en">A campaign hub and an interactive night story</span><span class="lang-hr" lang="hr">Kampanjski hub i interaktivna noćna priča</span></p>
+          <h1 id="home-title">
+            <span class="lang-en" lang="en">After sex, people need clear paths — not shame.</span>
+            <span class="lang-hr" lang="hr">Nakon seksa ljudima trebaju jasni putevi – ne sram.</span>
+          </h1>
+          <p class="hero-lede">
+            <span class="lang-en" lang="en">Play <strong>Three Nights</strong>, a short episodic story set in a nocturnal Croatia, and see why the country needs a connected <strong>CheckPoint network</strong> for testing, PrEP, PEP and counseling without stigma.</span>
+            <span class="lang-hr" lang="hr">Zaigraj <strong>Tri noći</strong>, kratku epizodnu priču smještenu u noćnu Hrvatsku, i saznaj zašto zemlji treba povezana <strong>mreža CheckPointa</strong> za testiranje, PrEP, PEP i savjetovanje bez stigme.</span>
+          </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="play.html">Play online</a>
-            <a class="button button-secondary" href="petition.html">Read the demand</a>
+            <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Play the story</span><span class="lang-hr" lang="hr">Igraj priču</span></a>
+            <a class="button button-secondary" href="petition.html"><span class="lang-en" lang="en">Read the demands</span><span class="lang-hr" lang="hr">Pročitaj zahtjeve</span></a>
           </div>
         </div>
       </section>
 
-      <section class="content-band" aria-labelledby="promise-title">
-        <div class="section-heading">
-          <p class="eyebrow">Core promise</p>
-          <h2 id="promise-title">The scandal is not sex. It is silence, stigma and unclear access.</h2>
+      <section class="band" aria-labelledby="promise-title">
+        <div class="band-head reveal">
+          <div class="deco-rule tight"><span class="gem"></span></div>
+          <h2 id="promise-title">
+            <span class="lang-en" lang="en">The scandal is not sex. It is silence, stigma and unclear access.</span>
+            <span class="lang-hr" lang="hr">Skandal nije seks. Skandal su šutnja, stigma i nejasan pristup.</span>
+          </h2>
+          <p>
+            <span class="lang-en" lang="en">The campaign runs in three deliberate acts, in this order — because a signature is worth most when it follows understanding.</span>
+            <span class="lang-hr" lang="hr">Kampanja se odvija u tri promišljena čina, ovim redom – jer potpis najviše vrijedi kad dolazi nakon razumijevanja.</span>
+          </p>
         </div>
-        <div class="text-grid">
-          <article class="feature-card">
-            <h3>Website first</h3>
-            <p>The campaign is built as normal, readable HTML pages so people can find it through search, partners and press links.</p>
+        <div class="programme reveal" role="list">
+          <article class="programme-act" role="listitem">
+            <span class="act-no" aria-hidden="true">Act I</span>
+            <div>
+              <h3><span class="lang-en" lang="en">The website</span><span class="lang-hr" lang="hr">Web-stranica</span></h3>
+              <p>
+                <span class="lang-en" lang="en">Readable, searchable pages in Croatian and English — so the facts about testing, PrEP and PEP can be found by anyone, at any hour, through search, partners and press.</span>
+                <span class="lang-hr" lang="hr">Čitljive stranice na hrvatskom i engleskom, vidljive tražilicama – da činjenice o testiranju, PrEP-u i PEP-u svatko može pronaći, u bilo koje doba, preko pretrage, partnera i medija.</span>
+              </p>
+            </div>
+            <span class="act-tail" aria-hidden="true">◆</span>
           </article>
-          <article class="feature-card">
-            <h3>Game second</h3>
-            <p>The playable dispatch board turns public-health routes into decisions: calm language, privacy, urgent routing and regional access.</p>
+          <article class="programme-act" role="listitem">
+            <span class="act-no" aria-hidden="true">Act II</span>
+            <div>
+              <h3><span class="lang-en" lang="en">The story</span><span class="lang-hr" lang="hr">Priča</span></h3>
+              <p>
+                <span class="lang-en" lang="en">Three Nights follows Ema, Ivan, Petra and Sara through choices real people face — a broken condom at 2:47, a question about PrEP, a test that lives three hours away.</span>
+                <span class="lang-hr" lang="hr">Tri noći prate Emu, Ivana, Petru i Saru kroz odluke s kojima se stvarni ljudi susreću – puknuti kondom u 2:47, pitanje o PrEP-u, test udaljen tri sata vožnje.</span>
+              </p>
+            </div>
+            <span class="act-tail" aria-hidden="true">◆</span>
           </article>
-          <article class="feature-card">
-            <h3>Petition after understanding</h3>
-            <p>The petition bridge appears after the Night Ledger, when the player has seen what a connected network changes.</p>
+          <article class="programme-act" role="listitem">
+            <span class="act-no" aria-hidden="true">Act III</span>
+            <div>
+              <h3><span class="lang-en" lang="en">The petition</span><span class="lang-hr" lang="hr">Peticija</span></h3>
+              <p>
+                <span class="lang-en" lang="en">Each finished night unlocks one concrete demand. After the third, the Night Ledger hands you the pen — a petition for a connected CheckPoint network.</span>
+                <span class="lang-hr" lang="hr">Svaka završena noć otključava jedan konkretan zahtjev. Nakon treće, Noćna bilanca predaje ti pero – peticiju za povezanu mrežu CheckPointa.</span>
+              </p>
+            </div>
+            <span class="act-tail" aria-hidden="true">◆</span>
           </article>
         </div>
       </section>
 
-      <section class="content-band split-band" aria-labelledby="routes-title">
-        <div class="section-heading">
-          <p class="eyebrow">Public-health routes</p>
-          <h2 id="routes-title">A short game about a real system gap.</h2>
-          <p>Signals are fictional. Players never enter personal sexual-health details. The score measures the system: timeliness, access, trust, clarity and privacy.</p>
+      <section class="band split-band" aria-labelledby="routes-title">
+        <div class="band-head reveal">
+          <div class="deco-rule tight"><span class="gem"></span></div>
+          <h2 id="routes-title">
+            <span class="lang-en" lang="en">A short story about a real system gap.</span>
+            <span class="lang-hr" lang="hr">Kratka priča o stvarnoj rupi u sustavu.</span>
+          </h2>
+          <p>
+            <span class="lang-en" lang="en">Every character and event in the story is fictional, and the game never asks for personal details. What is real is the map underneath: where the routes are clear, and where they simply stop.</span>
+            <span class="lang-hr" lang="hr">Svaki lik i događaj u priči izmišljen je, a igra nikada ne traži osobne podatke. Stvarna je jedino karta ispod svega: gdje su rute jasne, a gdje jednostavno prestaju.</span>
+          </p>
         </div>
-        <div class="route-list">
-          <a href="after-sex.html">Post-sex uncertainty</a>
-          <a href="prep-pep.html">PrEP and PEP navigation</a>
-          <a href="testing-sti.html">Testing and confidentiality</a>
-          <a href="map-network.html">Regional CheckPoint network</a>
-        </div>
+        <nav class="route-list reveal reveal-late" aria-label="Topics">
+          <a href="after-sex.html"><span class="lang-en" lang="en">Post-sex uncertainty</span><span class="lang-hr" lang="hr">Nesigurnost nakon seksa</span></a>
+          <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP, plainly</span><span class="lang-hr" lang="hr">PrEP i PEP, jednostavno</span></a>
+          <a href="testing-sti.html"><span class="lang-en" lang="en">Testing &amp; confidentiality</span><span class="lang-hr" lang="hr">Testiranje i povjerljivost</span></a>
+          <a href="map-network.html"><span class="lang-en" lang="en">The regional CheckPoint network</span><span class="lang-hr" lang="hr">Regionalna mreža CheckPointa</span></a>
+        </nav>
       </section>
 
-      <section class="content-band ledger-preview" aria-labelledby="night-ledger-title">
-        <div class="section-heading">
-          <p class="eyebrow">Night Ledger</p>
-          <h2 id="night-ledger-title">A petition should follow understanding, not pressure.</h2>
-          <p>The game ends by translating routes into campaign demands: visible entry points, mobile teams, clear digital navigation, confidential counseling and sustainable public funding.</p>
+      <section class="band" aria-labelledby="ledger-title">
+        <div class="poster deco-frame reveal"><span class="frame-b"></span>
+          <p class="kicker"><span class="lang-en" lang="en">Night Ledger</span><span class="lang-hr" lang="hr">Noćna bilanca</span></p>
+          <h3 id="ledger-title">
+            <span class="lang-en" lang="en">A petition should follow understanding, not pressure.</span>
+            <span class="lang-hr" lang="hr">Peticija treba slijediti razumijevanje, a ne pritisak.</span>
+          </h3>
+          <p>
+            <span class="lang-en" lang="en">The story ends by translating three nights into campaign demands: a round-the-clock urgent PEP route, stigma-free PrEP counseling, and a CheckPoint within reach of every region — with confidential care and sustainable public funding.</span>
+            <span class="lang-hr" lang="hr">Priča završava tako da tri noći prevodi u zahtjeve kampanje: urgentnu PEP rutu dostupnu 0–24, PrEP savjetovanje bez stigme i CheckPoint dostupan u svakoj regiji – uz povjerljivu skrb i održivo javno financiranje.</span>
+          </p>
+          <div class="action-row">
+            <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Begin Night I</span><span class="lang-hr" lang="hr">Započni Noć I.</span></a>
+            <a class="text-link" href="what-is-checkpoint.html"><span class="lang-en" lang="en">What is a CheckPoint?</span><span class="lang-hr" lang="hr">Što je CheckPoint?</span></a>
+          </div>
         </div>
-        <a class="button button-primary" href="play.html">Start Night Shift</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Map Without Stigma Initiative. Educational campaign prototype. Not medical advice.</p>
-      <nav aria-label="Footer navigation">
-        <a href="privacy.html">Privacy</a>
-        <a href="about.html">About</a>
-        <a href="press.html">Press</a>
-      </nav>
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Map Without Stigma initiative — an educational campaign prototype. Not medical advice.</span><span class="lang-hr" lang="hr">Inicijativa Karta bez stigme – edukativni prototip kampanje. Nije medicinski savjet.</span></p>
+        <nav aria-label="Footer">
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>

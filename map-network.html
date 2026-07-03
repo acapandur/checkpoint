@@ -1,76 +1,124 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CheckPoint Network Croatia - Map Without Stigma</title>
-    <meta name="description" content="A proposed Croatian CheckPoint network with regional centers, mobile teams and digital routes for sexual-health access without stigma.">
+    <title>The regional CheckPoint network — Map Without Stigma</title>
+    <meta name="description" content="One city should not hold all the doors: the campaign vision for a connected Croatian CheckPoint network — fixed points, mobile teams and clear digital navigation across all regions.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/map-network.html">
-    <meta property="og:title" content="CheckPoint Network Croatia">
-    <meta property="og:description" content="Croatia as playable geography: centers, mobile routes, islands, seasonal pressure and digital clarity.">
-    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.svg">
+    <meta property="og:title" content="The CheckPoint network · Mreža CheckPointa">
+    <meta property="og:description" content="Fixed points, mobile teams, clear digital navigation — a constellation instead of a single star.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "The regional CheckPoint network — Map Without Stigma",
+              desc: "One city should not hold all the doors: the campaign vision for a connected Croatian CheckPoint network — fixed points, mobile teams and clear digital navigation across all regions." },
+        hr: { title: "Regionalna mreža CheckPointa – Karta bez stigme",
+              desc: "Jedan grad ne bi smio imati sva vrata: vizija kampanje za povezanu hrvatsku mrežu CheckPointa – stalne točke, mobilni timovi i jasna digitalna navigacija u svim regijama." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to content</span><span class="lang-hr" lang="hr">Preskoči na sadržaj</span></a>
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">MW</span><span>Map Without Stigma</span></a>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
+      </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="play.html">Play</a>
+        <a href="play.html"><span class="lang-en" lang="en">Play</span><span class="lang-hr" lang="hr">Igraj</span></a>
         <a href="what-is-checkpoint.html">CheckPoint</a>
-        <a href="after-sex.html">After sex</a>
-        <a href="testing-sti.html">Testing</a>
-        <a href="petition.html">Petition</a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
+        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+          <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="false">HR</button>
+        </span>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero page-hero">
-        <img class="hero-art" src="assets/img/noir-skyline.svg" alt="" aria-hidden="true">
+      <section class="hero page-hero" aria-labelledby="nw-title">
+        <img class="hero-art" src="assets/img/deco-network.svg" alt="" aria-hidden="true">
         <div class="hero-copy">
-          <p class="eyebrow">Map network</p>
-          <h1>Croatia is not decoration. Geography is the gameplay.</h1>
-          <p class="hero-lede">Access changes with distance, islands, seasons, students, transport, opening hours and stigma. The network demand treats that as a design problem.</p>
+          <p class="kicker"><span class="lang-en" lang="en">The network</span><span class="lang-hr" lang="hr">Mreža</span></p>
+          <h1 id="nw-title">
+            <span class="lang-en" lang="en">A constellation, not a single star.</span>
+            <span class="lang-hr" lang="hr">Zviježđe, a ne jedna zvijezda.</span>
+          </h1>
+          <p class="hero-lede">
+            <span class="lang-en" lang="en">Petra and Sara crossed half the country for a twenty-minute appointment. The network exists so that sentence stops being true.</span>
+            <span class="lang-hr" lang="hr">Petra i Sara prešle su pola zemlje za termin od dvadeset minuta. Mreža postoji da ta rečenica prestane biti istinita.</span>
+          </p>
         </div>
       </section>
 
-      <div class="page-layout page-copy">
-        <section>
-          <h2>Regional level design</h2>
-          <div class="info-table" role="table" aria-label="Regional network plan">
-            <div class="info-row" role="row">
-              <strong role="columnheader">Region</strong>
-              <strong role="columnheader">Goal</strong>
-              <strong role="columnheader">Mechanic</strong>
-            </div>
-            <div class="info-row" role="row"><p>Zagreb</p><p>Open the first safe point and teach anonymous entry.</p><p>Trust, stigma fog and basic controls.</p></div>
-            <div class="info-row" role="row"><p>Split</p><p>Respond to students, seasonal workers, tourists and time-sensitive signals.</p><p>Wave timing, evening hours and urgent routing.</p></div>
-            <div class="info-row" role="row"><p>Rijeka</p><p>Bridge the coast, hinterland, islands and Gorski kotar.</p><p>Mobile route planning and travel delays.</p></div>
-            <div class="info-row" role="row"><p>Osijek</p><p>Show that Slavonia cannot wait for coastal or capital-city access.</p><p>Digital map, mobile day and regional coverage.</p></div>
-            <div class="info-row" role="row"><p>Zadar</p><p>Connect students, coast and island routes.</p><p>Mobile van scheduling and reminders.</p></div>
-            <div class="info-row" role="row"><p>Pula</p><p>Make seasonal and multilingual visibility part of access.</p><p>Campaign visibility and digital map clarity.</p></div>
-            <div class="info-row" role="row"><p>Dubrovnik</p><p>Handle distance, tourism pressure and limited capacity.</p><p>Short-window resource decisions.</p></div>
-            <div class="info-row" role="row"><p>Varazdin</p><p>Show that being near Zagreb does not automatically mean access.</p><p>Local entry point and referral clarity.</p></div>
+      <div class="page-layout prose">
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">What "connected" means in practice</span><span class="lang-hr" lang="hr">Što "povezano" znači u praksi</span></h2>
+          <p>
+            <span class="lang-en" lang="en">The campaign vision has three layers that only work together. Fixed CheckPoints anchor the regions. Mobile teams reach the towns between them on a published schedule. And a single, plain-language digital map answers the 2:47 a.m. question — where to go, what to say, what to ask — in Croatian and English, for every region, without collecting a single personal detail.</span>
+            <span class="lang-hr" lang="hr">Vizija kampanje ima tri sloja koji djeluju samo zajedno. Stalni CheckPointi sidre regije. Mobilni timovi po objavljenom rasporedu dolaze do gradova između njih. A jedinstvena, jednostavna digitalna karta odgovara na pitanje iz 2:47 ujutro – kamo ići, što reći, što pitati – na hrvatskom i engleskom, za svaku regiju, bez prikupljanja ijednog osobnog podatka.</span>
+          </p>
+        </section>
+
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">The map the story plays on</span><span class="lang-hr" lang="hr">Karta na kojoj se priča igra</span></h2>
+          <p>
+            <span class="lang-en" lang="en">The constellation above sketches eight anchor regions — Zagreb, Varaždin, Rijeka, Pula, Zadar, Split, Dubrovnik and Osijek — joined by lit routes. It is a campaign illustration, not a promise of concrete locations: the point is the shape. Coverage should look like a net, because that is what catches people.</span>
+            <span class="lang-hr" lang="hr">Zviježđe gore skicira osam sidrenih regija – Zagreb, Varaždin, Rijeku, Pulu, Zadar, Split, Dubrovnik i Osijek – povezanih osvijetljenim rutama. To je ilustracija kampanje, a ne obećanje konkretnih lokacija: poanta je oblik. Pokrivenost treba izgledati kao mreža, jer mreža je ono što hvata ljude.</span>
+          </p>
+        </section>
+
+        <section class="info-table reveal" role="table" aria-label="Network layers">
+          <div class="info-row" role="row">
+            <p role="columnheader"><span class="lang-en" lang="en">Layer</span><span class="lang-hr" lang="hr">Sloj</span></p>
+            <p role="columnheader"><span class="lang-en" lang="en">What it does</span><span class="lang-hr" lang="hr">Što radi</span></p>
+            <p role="columnheader"><span class="lang-en" lang="en">Which night it answers</span><span class="lang-hr" lang="hr">Kojoj noći odgovara</span></p>
+          </div>
+          <div class="info-row" role="row">
+            <p role="cell"><strong><span class="lang-en" lang="en">Fixed CheckPoints</span><span class="lang-hr" lang="hr">Stalni CheckPointi</span></strong></p>
+            <p role="cell"><span class="lang-en" lang="en">Free testing, counseling, prevention support with evening hours and anonymous options, in every region.</span><span class="lang-hr" lang="hr">Besplatno testiranje, savjetovanje i podrška prevenciji s večernjim radnim vremenom i mogućnošću anonimnosti, u svakoj regiji.</span></p>
+            <p role="cell"><span class="lang-en" lang="en">Petra &amp; Sara's three-hour road.</span><span class="lang-hr" lang="hr">Trosatna cesta Petre i Sare.</span></p>
+          </div>
+          <div class="info-row" role="row">
+            <p role="cell"><strong><span class="lang-en" lang="en">Mobile teams</span><span class="lang-hr" lang="hr">Mobilni timovi</span></strong></p>
+            <p role="cell"><span class="lang-en" lang="en">Scheduled visits to smaller towns and islands, so distance stops deciding who gets tested.</span><span class="lang-hr" lang="hr">Planirani dolasci u manje gradove i na otoke, da udaljenost prestane odlučivati tko se testira.</span></p>
+            <p role="cell"><span class="lang-en" lang="en">Every town the tram never reaches.</span><span class="lang-hr" lang="hr">Svaki grad do kojeg tramvaj ne stiže.</span></p>
+          </div>
+          <div class="info-row" role="row">
+            <p role="cell"><strong><span class="lang-en" lang="en">Digital navigation</span><span class="lang-hr" lang="hr">Digitalna navigacija</span></strong></p>
+            <p role="cell"><span class="lang-en" lang="en">One official, plain-language map of routes and hours — including the urgent PEP route — findable at 2:47 a.m.</span><span class="lang-hr" lang="hr">Jedna službena, jednostavna karta ruta i radnih vremena – uključujući urgentnu PEP rutu – pronalaziva u 2:47 ujutro.</span></p>
+            <p role="cell"><span class="lang-en" lang="en">Ema's eleven arguing tabs.</span><span class="lang-hr" lang="hr">Eminih jedanaest posvađanih kartica.</span></p>
           </div>
         </section>
 
-        <section class="notice">
-          <h2>Network demand</h2>
-          <p>The petition asks for visible centers, further regional sites, mobile teams and one clear digital platform for locations, opening hours, booking information, reminders and PrEP/PEP navigation.</p>
-        </section>
-
-        <section>
+        <section class="reveal">
           <div class="action-row">
-            <a class="button button-primary" href="play.html">Open interactive map</a>
-            <a class="button button-muted" href="petition.html">Read petition demands</a>
+            <a class="button button-primary" href="petition.html"><span class="lang-en" lang="en">Read the petition</span><span class="lang-hr" lang="hr">Pročitaj peticiju</span></a>
+            <a class="button button-secondary" href="play.html"><span class="lang-en" lang="en">Play the story first</span><span class="lang-hr" lang="hr">Prvo odigraj priču</span></a>
           </div>
         </section>
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>Educational campaign prototype. Not medical advice.</p>
-      <nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="about.html">About</a><a href="press.html">Press</a></nav>
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Map Without Stigma initiative — an educational campaign prototype. Not medical advice.</span><span class="lang-hr" lang="hr">Inicijativa Karta bez stigme – edukativni prototip kampanje. Nije medicinski savjet.</span></p>
+        <nav aria-label="Footer">
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>

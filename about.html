@@ -1,61 +1,119 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About the Initiative - Map Without Stigma</title>
-    <meta name="description" content="About the Map Without Stigma Initiative and its public-facing anonymity protocol.">
+    <title>About the initiative — Map Without Stigma</title>
+    <meta name="description" content="Why this campaign pairs a bilingual website with an episodic story, what the prototype deliberately leaves out, and what must happen before a public launch.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/about.html">
-    <meta property="og:title" content="About Map Without Stigma">
-    <meta property="og:description" content="A public-health civic initiative foregrounding the campaign argument, not one creator identity.">
-    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.svg">
+    <meta property="og:title" content="About · O inicijativi">
+    <meta property="og:description" content="A campaign built website-first, story-second, petition-third — on purpose.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "About the initiative — Map Without Stigma",
+              desc: "Why this campaign pairs a bilingual website with an episodic story, what the prototype deliberately leaves out, and what must happen before a public launch." },
+        hr: { title: "O inicijativi – Karta bez stigme",
+              desc: "Zašto ova kampanja spaja dvojezičnu stranicu s epizodnom pričom, što prototip namjerno izostavlja i što se mora dogoditi prije javnog pokretanja." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to content</span><span class="lang-hr" lang="hr">Preskoči na sadržaj</span></a>
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">MW</span><span>Map Without Stigma</span></a>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
+      </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="play.html">Play</a>
+        <a href="play.html"><span class="lang-en" lang="en">Play</span><span class="lang-hr" lang="hr">Igraj</span></a>
         <a href="what-is-checkpoint.html">CheckPoint</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="press.html">Press</a>
-        <a href="petition.html">Petition</a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
+        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+          <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="false">HR</button>
+        </span>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero page-hero">
-        <img class="hero-art" src="assets/img/noir-skyline.svg" alt="" aria-hidden="true">
+      <section class="hero page-hero" aria-labelledby="ab-title">
+        <img class="hero-art" src="assets/img/deco-skyline.svg" alt="" aria-hidden="true">
         <div class="hero-copy">
-          <p class="eyebrow">About</p>
-          <h1>A campaign should be judged by its public-health argument.</h1>
-          <p class="hero-lede">The blueprint calls for public-facing anonymity so the campaign foregrounds source review, community support and the network demand.</p>
+          <p class="kicker"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></p>
+          <h1 id="ab-title">
+            <span class="lang-en" lang="en">Built in the order that respect requires.</span>
+            <span class="lang-hr" lang="hr">Izgrađeno redoslijedom koji poštovanje zahtijeva.</span>
+          </h1>
+          <p class="hero-lede">
+            <span class="lang-en" lang="en">Website first, so facts are findable. Story second, so the system gap becomes felt. Petition third, so the signature follows understanding.</span>
+            <span class="lang-hr" lang="hr">Prvo stranica, da činjenice budu pronalazive. Zatim priča, da se rupa u sustavu osjeti. Tek onda peticija, da potpis slijedi razumijevanje.</span>
+          </p>
         </div>
       </section>
 
-      <div class="page-layout page-copy">
-        <section>
-          <h2>Public anonymity statement</h2>
-          <p>This campaign is published by a public-health civic initiative. The creator is not foregrounded because the campaign should be judged by its public-health argument, source review and community support, not by one person's identity.</p>
+      <div class="page-layout prose">
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">Why a story instead of a leaflet</span><span class="lang-hr" lang="hr">Zašto priča umjesto letka</span></h2>
+          <p>
+            <span class="lang-en" lang="en">Facts about PEP's 72-hour window fit in one sentence, and leaflets have carried that sentence for years. What a leaflet cannot do is put you at 2:47 a.m. with eleven arguing browser tabs, or in a small-town waiting room where the nurse knows your neighbour. Three Nights exists to make the navigation problem — not the medicine — the thing people remember, because navigation is what the petition can actually change.</span>
+            <span class="lang-hr" lang="hr">Činjenice o PEP-ovu roku od 72 sata stanu u jednu rečenicu i letci je nose godinama. Ono što letak ne može jest smjestiti te u 2:47 ujutro s jedanaest posvađanih kartica preglednika ili u čekaonicu malog grada gdje sestra poznaje tvoju susjedu. Tri noći postoje da problem navigacije – a ne lijek – postane ono što ljudi pamte, jer je navigacija ono što peticija stvarno može promijeniti.</span>
+          </p>
         </section>
 
-        <section class="text-grid">
-          <article class="feature-card"><h3>Clean metadata</h3><p>Public files should avoid personal names, local paths, hidden comments and private author metadata.</p></article>
-          <article class="feature-card"><h3>Campaign accounts</h3><p>Public hosting, social and contact channels should use initiative identity and private commit e-mail settings.</p></article>
-          <article class="feature-card"><h3>No sensitive forms</h3><p>The MVP avoids collecting personal stories or medical details through forms.</p></article>
+        <section class="duet reveal">
+          <article class="panel">
+            <h3><span class="lang-en" lang="en">What the prototype includes</span><span class="lang-hr" lang="hr">Što prototip uključuje</span></h3>
+            <p>
+              <span class="lang-en" lang="en">A fully bilingual (HR/EN) static site with no build step; an episodic, choice-driven story with three nights and original characters; cautious, reference-backed health copy; and a design system in night Art Deco built with plain HTML, CSS and JavaScript.</span>
+              <span class="lang-hr" lang="hr">Potpuno dvojezičnu (HR/EN) statičnu stranicu bez build-koraka; epizodnu priču s odlukama, tri noći i izvornim likovima; oprezan zdravstveni tekst potkrijepljen referencama; i dizajnerski sustav u noćnom ar dekou izgrađen običnim HTML-om, CSS-om i JavaScriptom.</span>
+            </p>
+          </article>
+          <article class="panel">
+            <h3><span class="lang-en" lang="en">What it deliberately leaves out</span><span class="lang-hr" lang="hr">Što namjerno izostavlja</span></h3>
+            <p>
+              <span class="lang-en" lang="en">Data collection of any kind, medical specifics such as drug names or dosing, claims about concrete Croatian services and hours, and a live signature form — each belongs to the launch phase, with expert review and named partners.</span>
+              <span class="lang-hr" lang="hr">Bilo kakvo prikupljanje podataka, medicinske pojedinosti poput naziva lijekova i doziranja, tvrdnje o konkretnim hrvatskim službama i radnim vremenima te aktivni obrazac za potpise – sve to pripada fazi pokretanja, uz stručnu provjeru i imenovane partnere.</span>
+            </p>
+          </article>
         </section>
 
-        <section class="notice">
-          <h2>Before launch</h2>
-          <p>Review Git commit identity, PDF metadata, social account recovery settings, image metadata, contact e-mail headers and petition-platform administrator visibility.</p>
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">Before public launch</span><span class="lang-hr" lang="hr">Prije javnog pokretanja</span></h2>
+          <ol>
+            <li><span class="lang-en" lang="en">Medical review of every health statement, in both languages, by qualified professionals.</span><span class="lang-hr" lang="hr">Medicinska provjera svake zdravstvene tvrdnje, na oba jezika, od strane kvalificiranih stručnjaka.</span></li>
+            <li><span class="lang-en" lang="en">Partnership with the organizations running real CheckPoint services, so descriptions match reality.</span><span class="lang-hr" lang="hr">Partnerstvo s organizacijama koje vode stvarne CheckPoint usluge, kako bi opisi odgovarali stvarnosti.</span></li>
+            <li><span class="lang-en" lang="en">A vetted external petition platform, linked from the petition page.</span><span class="lang-hr" lang="hr">Provjerena vanjska platforma za peticije, povezana sa stranice peticije.</span></li>
+          </ol>
+        </section>
+
+        <section class="reveal">
+          <div class="action-row">
+            <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Experience the story</span><span class="lang-hr" lang="hr">Doživi priču</span></a>
+            <a class="button button-secondary" href="press.html"><span class="lang-en" lang="en">Press materials</span><span class="lang-hr" lang="hr">Materijali za medije</span></a>
+          </div>
         </section>
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>Map Without Stigma Initiative.</p>
-      <nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="press.html">Press</a><a href="index.html">Home</a></nav>
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Map Without Stigma initiative — an educational campaign prototype. Not medical advice.</span><span class="lang-hr" lang="hr">Inicijativa Karta bez stigme – edukativni prototip kampanje. Nije medicinski savjet.</span></p>
+        <nav aria-label="Footer">
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>

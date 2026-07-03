@@ -1,141 +1,112 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Play Map Without Stigma - Online Night Shift Game</title>
-    <meta name="description" content="Play the Map Without Stigma browser game: route fictional signals through testing, PrEP, PEP, counseling, mobile teams and privacy-aware CheckPoint access.">
+    <title>Play Three Nights — the Map Without Stigma interactive story</title>
+    <meta name="description" content="Play Three Nights free in your browser: an episodic, choice-driven Art Deco story about a broken condom and PEP, a question about PrEP, and a test three hours away.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/play.html">
-    <meta property="og:title" content="Play Map Without Stigma">
-    <meta property="og:description" content="A short online dispatch game about clear sexual-health routes without shame.">
-    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.svg">
+    <meta property="og:title" content="Three Nights · Tri noći — play the story">
+    <meta property="og:description" content="An episodic, choice-driven night story about sexual-health routes without shame.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "Play Three Nights — the Map Without Stigma interactive story",
+              desc: "Play Three Nights free in your browser: an episodic, choice-driven Art Deco story about a broken condom and PEP, a question about PrEP, and a test three hours away." },
+        hr: { title: "Igraj Tri noći – interaktivnu priču Karte bez stigme",
+              desc: "Zaigraj Tri noći besplatno u pregledniku: epizodnu priču s odlukama o puknutom kondomu i PEP-u, pitanju o PrEP-u i testu udaljenom tri sata vožnje." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/story.js" defer></script>
     <script src="assets/js/game.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Three Nights",
+        "alternateName": "Tri noći",
+        "url": "https://acapandur.github.io/checkpoint/play.html",
+        "gamePlatform": "Web browser",
+        "inLanguage": ["en", "hr"],
+        "genre": "Interactive fiction",
+        "isAccessibleForFree": true,
+        "description": "An episodic, choice-driven story about sexual-health routes: PEP within 72 hours, asking about PrEP, and testing without stigma."
+      }
+    </script>
   </head>
   <body class="game-page">
-    <a class="skip-link" href="#game">Skip to game</a>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to the story</span><span class="lang-hr" lang="hr">Preskoči na priču</span></a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Map Without Stigma home">
-        <span class="brand-mark" aria-hidden="true">MW</span>
-        <span>Map Without Stigma</span>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html"><span class="lang-en" lang="en">Home</span><span class="lang-hr" lang="hr">Početna</span></a>
         <a href="what-is-checkpoint.html">CheckPoint</a>
-        <a href="prep-pep.html">PrEP and PEP</a>
-        <a href="map-network.html">Network</a>
-        <a href="petition.html">Petition</a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
+        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+          <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="false">HR</button>
+        </span>
       </nav>
     </header>
 
-    <main id="game" class="game-main">
-      <div class="game-heading">
-        <div>
-          <p class="eyebrow">Online browser game</p>
-          <h1>Night Shift: Map Without Stigma</h1>
-          <p>You coordinate routes for fictional anonymous signals. The goal is a clearer system, not a judgment on people.</p>
-        </div>
-        <a class="button button-secondary" href="privacy.html">Privacy policy</a>
+    <main id="main" class="game-main">
+      <div class="game-masthead">
+        <div class="deco-rule center tight"><span class="gem"></span></div>
+        <h1><span class="lang-en" lang="en">Three Nights</span><span class="lang-hr" lang="hr">Tri noći</span></h1>
+        <p class="sub">
+          <span class="lang-en" lang="en">An episodic story with choices, set in a nocturnal Art Deco Croatia. One city, three nights, and the routes that should exist for everyone.</span>
+          <span class="lang-hr" lang="hr">Epizodna priča s odlukama, smještena u noćnu ar deko Hrvatsku. Jedan grad, tri noći i rute koje bi trebale postojati za sve.</span>
+        </p>
       </div>
 
-      <section id="safety-panel" class="safety-panel is-visible" aria-labelledby="safety-title">
-        <p class="eyebrow">Safety and privacy</p>
-        <h2 id="safety-title">No personal details belong in this game.</h2>
-        <p>This is an educational prototype, not medical advice or a diagnostic tool. If someone may be in danger or needs urgent medical help, they should contact emergency services, a qualified health professional or a trusted local support service.</p>
-        <p>The game uses fictional signal cards and does not ask for sexual-health details, names, contact information or location.</p>
-        <label class="choice-row">
-          <input id="skip-sensitive" type="checkbox">
-          <span>Skip the safety protocol signal</span>
-        </label>
-        <button id="start-game" class="button button-primary" type="button">Start Night Shift</button>
-      </section>
-
-      <section id="game-shell" class="game-shell is-locked" aria-label="Map Without Stigma game board">
-        <div class="game-panel map-panel">
-          <div class="score-strip" aria-label="Safe Path Index dimensions">
-            <div class="score-item"><span id="score-timeliness">50</span><small>Timeliness</small></div>
-            <div class="score-item"><span id="score-access">50</span><small>Access</small></div>
-            <div class="score-item"><span id="score-trust">50</span><small>Trust</small></div>
-            <div class="score-item"><span id="score-clarity">50</span><small>Clarity</small></div>
-            <div class="score-item"><span id="score-privacy">50</span><small>Privacy</small></div>
-          </div>
-
-          <div class="map-wrap" aria-label="Playable Croatia network map">
-            <svg class="croatia-map" viewBox="0 0 760 560" role="img" aria-labelledby="map-title map-desc">
-              <title id="map-title">Croatia CheckPoint route map</title>
-              <desc id="map-desc">A stylized map with Zagreb, Varazdin, Rijeka, Pula, Zadar, Split, Dubrovnik and Osijek as playable regions.</desc>
-              <path class="land-shape" d="M196 74 L270 48 L350 86 L408 132 L482 116 L574 174 L642 240 L620 296 L548 278 L506 326 L562 384 L520 446 L424 420 L354 480 L278 448 L228 370 L162 358 L126 288 L162 220 L132 150 Z"/>
-              <path class="land-shape" d="M302 472 L330 506 L312 536 L270 520 L252 490 Z" opacity="0.7"/>
-              <path class="route-line" data-route="Zagreb-Varazdin" d="M318 170 L354 112"/>
-              <path class="route-line" data-route="Zagreb-Rijeka" d="M318 170 L228 230"/>
-              <path class="route-line" data-route="Rijeka-Pula" d="M228 230 L170 306"/>
-              <path class="route-line" data-route="Rijeka-Zadar" d="M228 230 L292 324"/>
-              <path class="route-line" data-route="Zadar-Split" d="M292 324 L372 394"/>
-              <path class="route-line" data-route="Split-Dubrovnik" d="M372 394 L500 468"/>
-              <path class="route-line" data-route="Zagreb-Osijek" d="M318 170 L554 218"/>
-              <path class="route-line" data-route="Osijek-Dubrovnik" d="M554 218 L500 468"/>
-              <circle class="region-node" data-region="Zagreb" cx="318" cy="170" r="17"/>
-              <text class="region-label" x="338" y="174">Zagreb</text>
-              <circle class="region-node" data-region="Varazdin" cx="354" cy="112" r="15"/>
-              <text class="region-label" x="374" y="116">Varazdin</text>
-              <circle class="region-node" data-region="Rijeka" cx="228" cy="230" r="17"/>
-              <text class="region-label" x="146" y="235">Rijeka</text>
-              <circle class="region-node" data-region="Pula" cx="170" cy="306" r="15"/>
-              <text class="region-label" x="118" y="311">Pula</text>
-              <circle class="region-node" data-region="Zadar" cx="292" cy="324" r="15"/>
-              <text class="region-label" x="310" y="329">Zadar</text>
-              <circle class="region-node" data-region="Split" cx="372" cy="394" r="17"/>
-              <text class="region-label" x="392" y="399">Split</text>
-              <circle class="region-node" data-region="Dubrovnik" cx="500" cy="468" r="15"/>
-              <text class="region-label" x="520" y="473">Dubrovnik</text>
-              <circle class="region-node" data-region="Osijek" cx="554" cy="218" r="17"/>
-              <text class="region-label" x="574" y="223">Osijek</text>
-            </svg>
-            <div id="fog-layer" class="fog-layer" aria-hidden="true"></div>
-          </div>
-          <div id="city-windows" class="city-windows" aria-hidden="true"></div>
-        </div>
-
-        <aside class="game-panel dispatch-panel" aria-label="Dispatch board">
-          <div class="safe-index">
-            <div id="safe-index" class="index-dial">50</div>
-            <p class="index-label">Safe Path Index measures the route system: timeliness, access, trust, clarity and privacy.</p>
-          </div>
-
-          <article class="signal-card" aria-labelledby="signal-region">
-            <p id="signal-region" class="signal-meta">Signal 1</p>
-            <blockquote id="signal-text"></blockquote>
-            <div id="signal-tags" class="tag-row" aria-label="Signal tags"></div>
-          </article>
-
-          <div>
-            <p id="selection-count" class="selection-count">Choose up to 3 interventions</p>
-            <div id="intervention-grid" class="intervention-grid" aria-label="Intervention deck"></div>
-          </div>
-
-          <div class="dispatch-actions">
-            <button id="route-signal" class="button button-primary" type="button">Route signal</button>
-            <button id="reset-game" class="button button-secondary" type="button">Reset shift</button>
-          </div>
-
-          <div id="fact-box" class="fact-box" aria-live="polite">
-            <p class="fact-pulse">Fact pulse</p>
-            <p>Signals arrive as fictional situations. Calm routes clear stigma fog.</p>
-          </div>
-        </aside>
-      </section>
-
-      <section id="ledger-panel" class="ledger-panel" aria-labelledby="ledger-title">
-        <p class="ledger-kicker">Night Ledger</p>
-        <h2 id="ledger-title">The shift is complete.</h2>
-        <p id="ledger-summary"></p>
-        <div id="ledger-list" class="ledger-list"></div>
-        <div class="action-row">
-          <a class="button button-primary" href="petition.html">Open petition bridge</a>
-          <button id="copy-result" class="button button-secondary" type="button">Copy result</button>
-          <button id="play-again" class="button button-secondary" type="button">Play again</button>
+      <section class="marquee deco-frame" aria-label="Three Nights — story stage"><span class="frame-b"></span>
+        <div id="game-root" class="stage" aria-live="off">
+          <noscript>
+            <div class="ledger">
+              <h2><span class="lang-en" lang="en">The stage needs JavaScript</span><span class="lang-hr" lang="hr">Pozornici treba JavaScript</span></h2>
+              <p>
+                <span class="lang-en" lang="en">Three Nights is an interactive story and needs JavaScript to run. All of its facts also live on the regular pages: see PrEP &amp; PEP, Testing, and the CheckPoint network.</span>
+                <span class="lang-hr" lang="hr">Tri noći interaktivna je priča i za rad treba JavaScript. Sve njezine činjenice postoje i na običnim stranicama: pogledaj PrEP i PEP, Testiranje i mrežu CheckPointa.</span>
+              </p>
+            </div>
+          </noscript>
         </div>
       </section>
+
+      <div class="game-foot">
+        <p>
+          <span class="lang-en" lang="en">A fictional story for education — not medical advice. Progress is saved only in this browser.</span>
+          <span class="lang-hr" lang="hr">Izmišljena priča u edukativne svrhe – nije medicinski savjet. Napredak se sprema samo u ovom pregledniku.</span>
+        </p>
+        <p>
+          <a class="text-link" href="prep-pep.html"><span class="lang-en" lang="en">The facts behind the story</span><span class="lang-hr" lang="hr">Činjenice iza priče</span></a>
+          ·
+          <a class="text-link" href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+        </p>
+      </div>
     </main>
+
+    <footer class="site-footer">
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Map Without Stigma initiative — an educational campaign prototype. Not medical advice.</span><span class="lang-hr" lang="hr">Inicijativa Karta bez stigme – edukativni prototip kampanje. Nije medicinski savjet.</span></p>
+        <nav aria-label="Footer">
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

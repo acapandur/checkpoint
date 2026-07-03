@@ -1,42 +1,68 @@
-# Map Without Stigma
+# Map Without Stigma · Karta bez stigme
 
-Map Without Stigma is a static, search-discoverable campaign website with an embedded browser game. The site explains why Croatia needs a connected CheckPoint network for testing, PrEP, PEP, counseling and sexual-health care without stigma.
+A bilingual (English / Croatian) campaign prototype arguing that Croatia needs a
+connected network of **CheckPoint** centers for HIV/STI testing, PrEP, PEP and
+counseling without stigma — plus **Three Nights / Tri noći**, an episodic,
+choice-driven browser story in a night Art Deco style.
 
-This repository is built as a zero-cost MVP: no build step, no backend, no login, no health-data collection.
+Live: https://acapandur.github.io/checkpoint/
 
-## Structure
+## What's inside
 
-- `index.html` - campaign homepage and game entry
-- `play.html` - interactive night-shift dispatch game
-- `what-is-checkpoint.html` - CheckPoint explainer
-- `after-sex.html` - calm post-sex uncertainty explainer
-- `prep-pep.html` - PrEP and PEP explainer with safety wording
-- `testing-sti.html` - STI testing and confidentiality page
-- `map-network.html` - proposed Croatian network page
-- `petition.html` - petition demands and external petition placeholder
-- `privacy.html` - privacy and no sensitive data collection policy
-- `about.html` - public anonymity statement
-- `press.html` - press kit starter
-- `assets/css/site.css` - shared responsive styling
-- `assets/js/game.js` - playable MVP game logic
-- `assets/img/` - original SVG campaign visuals
-- `robots.txt` and `sitemap.xml` - SEO discovery files
+- **11 static pages**, every string in both languages inline
+  (`.lang-en` / `.lang-hr` spans; `<html data-lang>` decides which shows).
+  The header switch, `localStorage` and browser-language detection are handled
+  by `assets/js/app.js`. Titles and meta descriptions swap via a per-page
+  `window.PAGE_META` object.
+- **Three Nights** (`play.html`): a small visual-novel engine
+  (`assets/js/game.js`) plus the full bilingual script, scene paintings and
+  character cameos as inline SVG (`assets/js/story.js`). Three episodes:
+  - **I — 72 Hours / 72 sata** · Ema, a broken condom at 2:47 and the PEP route
+  - **II — The Question / Pitanje** · Ivan asks about PrEP without shame
+  - **III — The Test / Test** · Petra & Sara, testing and the access gap
+  Choices move three meters (Calm / Clarity / Trust), each night ends in a
+  "Night Ledger" that unlocks one petition demand, and the finale points to the
+  petition. Progress lives only in the player's browser (`mws-save`).
+- **Night Art Deco design system** (`assets/css/site.css`): midnight blues,
+  brass/gold, jade and garnet; "Poiret One" + "Jost" from Google Fonts
+  (both cover Croatian diacritics); chamfered geometry, a sunburst hero,
+  a marquee frame with bulbs around the game, scroll reveals, full
+  `prefers-reduced-motion` support and visible keyboard focus everywhere.
+- **Original SVG art** in `assets/img/`: three hero paintings (skyline,
+  lighthouse, Croatia-as-constellation), brand mark, favicon, footer sunburst
+  and a share card (SVG + pre-rendered `share-card.png` for social scrapers).
 
-## Run locally
+## Principles kept from v1
 
-Open `index.html` directly in a browser.
+- **Zero build step** — plain HTML/CSS/JS, deploys to GitHub Pages as-is.
+- **Zero data collection** — no accounts, analytics or forms; the only stored
+  values are the language choice and story progress, in the visitor's own
+  browser.
+- **Cautious medical wording** — PEP: start as soon as possible, no later than
+  72 h, typically a 28-day course, via emergency/infectious-disease care;
+  PrEP: prevention for HIV-negative people via prescription and regular
+  check-ups. No drug names, no dosing. Official references (CDC, WHO) are
+  linked on the PrEP & PEP page.
 
-For a local server:
+## Before public launch
 
-```powershell
-python -m http.server 5173
+1. Medical expert review of all health copy, in both languages.
+2. Partnership with the organizations running real CheckPoint services, so
+   descriptions match actual hours, locations and offerings.
+3. Replace the placeholder petition button with a vetted external platform.
+4. Optional: self-host the two fonts to remove the last third-party request
+   (download the WOFF2 files, add `@font-face` rules, drop the Google Fonts
+   `<link>` from each page).
+
+## Development
+
+No tooling required. To preview locally:
+
+```
+python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:5173`.
+then open http://localhost:8000/.
 
-## Production notes
-
-- Replace placeholder petition links before launch.
-- Replace example canonical URLs if the site is not hosted at `https://acapandur.github.io/checkpoint/`.
-- Medical wording must be reviewed by qualified experts before public launch.
-- The site intentionally avoids forms, accounts and analytics that could collect sensitive sexual-health data.
+All characters and events in Three Nights are fictional. Educational campaign
+prototype — not medical advice.

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 780" role="img" aria-labelledby="dskyT dskyD" preserveAspectRatio="xMidYMax slice">
+  <title id="dskyT">Night Art Deco skyline</title>
+  <desc id="dskyD">Stepped Art Deco towers over a midnight city, a gold moon, jade route lights along the boulevard and warm lit windows.</desc>
+  <defs>
+    <linearGradient id="skySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1226"/><stop offset="0.62" stop-color="#0a0f1c"/><stop offset="1" stop-color="#060a12"/>
+    </linearGradient>
+    <linearGradient id="skyTower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16233c"/><stop offset="1" stop-color="#0c1424"/>
+    </linearGradient>
+    <linearGradient id="skyTower2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101a2e"/><stop offset="1" stop-color="#0a111f"/>
+    </linearGradient>
+    <radialGradient id="skyMoon" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.55" stop-color="#f2ddaa"/><stop offset="0.8" stop-color="#e9c368" stop-opacity="0.35"/><stop offset="1" stop-color="#e9c368" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="780" fill="url(#skySky)"/>
+  <g stroke="#e9c368" stroke-opacity="0.12" stroke-width="2">
+    <path d="M1120 210 L520 780"/><path d="M1120 210 L760 780"/><path d="M1120 210 L1010 780"/><path d="M1120 210 L1260 780"/><path d="M1120 210 L1440 620"/><path d="M1120 210 L1440 400"/><path d="M1120 210 L840 0"/><path d="M1120 210 L1300 0"/>
+  </g>
+  <circle cx="1120" cy="210" r="150" fill="url(#skyMoon)"/>
+  <circle cx="1120" cy="210" r="62" fill="#f2ddaa"/>
+  <circle cx="1120" cy="210" r="70" fill="none" stroke="#e9c368" stroke-opacity="0.5" stroke-width="2"/>
+  <g fill="#e9c368" opacity="0.6">
+    <path d="M180 120 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+    <path d="M420 70 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+    <path d="M660 150 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+    <path d="M1330 120 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+    <circle cx="300" cy="220" r="2.4"/><circle cx="540" cy="110" r="2"/><circle cx="90" cy="300" r="2"/><circle cx="1260" cy="60" r="2.4"/><circle cx="960" cy="80" r="2"/>
+  </g>
+  <g fill="url(#skyTower2)">
+    <path d="M-20 780 V430 h70 v-40 h50 v40 h70 v350 Z"/>
+    <path d="M240 780 V500 h56 v-34 h44 v34 h56 v280 Z"/>
+    <path d="M980 780 V470 h64 v-36 h48 v36 h64 v310 Z"/>
+    <path d="M1290 780 V520 h54 v-30 h42 v30 h54 v260 Z"/>
+  </g>
+  <g fill="url(#skyTower)">
+    <path d="M120 780 V330 h44 v-56 h32 v-70 h24 v-52 h16 v52 h24 v70 h32 v56 h44 v450 Z"/>
+    <path d="M420 780 V370 h40 v-50 h28 v-62 h20 v-44 h14 v44 h20 v62 h28 v50 h40 v410 Z"/>
+    <path d="M700 780 V300 h48 v-62 h34 v-76 h26 v-58 h18 v58 h26 v76 h34 v62 h48 v480 Z"/>
+    <path d="M1120 780 V400 h42 v-52 h30 v-64 h22 v-46 h14 v46 h22 v64 h30 v52 h42 v380 Z"/>
+  </g>
+  <g stroke="#e9c368" stroke-opacity="0.55" stroke-width="2" fill="none">
+    <path d="M254 152 v-30 m-8 30 v-18 m30 18 v-18 m-14 -30 v-14"/>
+    <path d="M834 104 v-34 m-10 34 v-20 m34 20 v-20 m-16 -34 v-16"/>
+    <path d="M1230 238 v-26 m-8 26 v-16 m28 16 v-16"/>
+  </g>
+  <g fill="#f2ddaa">
+    <rect x="176" y="360" width="10" height="16"/><rect x="206" y="360" width="10" height="16"/><rect x="176" y="396" width="10" height="16"/><rect x="236" y="430" width="10" height="16"/><rect x="206" y="466" width="10" height="16"/><rect x="176" y="520" width="10" height="16"/><rect x="236" y="560" width="10" height="16"/>
+    <rect x="470" y="400" width="9" height="15"/><rect x="496" y="400" width="9" height="15"/><rect x="470" y="450" width="9" height="15"/><rect x="522" y="480" width="9" height="15"/><rect x="496" y="540" width="9" height="15"/>
+    <rect x="758" y="330" width="11" height="17"/><rect x="792" y="330" width="11" height="17"/><rect x="826" y="330" width="11" height="17"/><rect x="758" y="380" width="11" height="17"/><rect x="826" y="380" width="11" height="17"/><rect x="792" y="430" width="11" height="17"/><rect x="758" y="490" width="11" height="17"/><rect x="826" y="540" width="11" height="17"/><rect x="792" y="600" width="11" height="17"/>
+    <rect x="1176" y="430" width="10" height="16"/><rect x="1206" y="430" width="10" height="16"/><rect x="1176" y="480" width="10" height="16"/><rect x="1232" y="520" width="10" height="16"/><rect x="1206" y="580" width="10" height="16"/>
+    <rect x="30" y="470" width="9" height="14"/><rect x="70" y="470" width="9" height="14"/><rect x="110" y="510" width="9" height="14"/><rect x="30" y="560" width="9" height="14"/>
+    <rect x="1030" y="510" width="9" height="14"/><rect x="1070" y="510" width="9" height="14"/><rect x="1030" y="560" width="9" height="14"/><rect x="1330" y="560" width="9" height="14"/><rect x="1370" y="600" width="9" height="14"/>
+  </g>
+  <rect y="700" width="1440" height="80" fill="#060a12"/>
+  <path d="M60 726 C300 690 560 690 720 722 C900 758 1180 752 1400 712" fill="none" stroke="#3fc9b2" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <g fill="#3fc9b2">
+    <circle cx="60" cy="726" r="9"/><circle cx="392" cy="698" r="9"/><circle cx="720" cy="722" r="9"/><circle cx="1058" cy="746" r="9"/><circle cx="1400" cy="712" r="9"/>
+  </g>
+  <g fill="none" stroke="#f6e7bd" stroke-width="2" opacity="0.9">
+    <circle cx="60" cy="726" r="14"/><circle cx="392" cy="698" r="14"/><circle cx="720" cy="722" r="14"/><circle cx="1058" cy="746" r="14"/><circle cx="1400" cy="712" r="14"/>
+  </g>
+</svg>

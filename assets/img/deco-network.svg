@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 640" role="img" aria-labelledby="dnwT dnwD" preserveAspectRatio="xMidYMax slice">
+  <title id="dnwT">Croatia as a constellation</title>
+  <desc id="dnwD">A stylized outline of Croatia drawn as a gold constellation, with jade CheckPoint nodes joined by lit routes.</desc>
+  <defs>
+    <linearGradient id="nwSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1226"/><stop offset="1" stop-color="#070c16"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="640" fill="url(#nwSky)"/>
+  <g fill="#e9c368" opacity="0.4">
+    <circle cx="120" cy="90" r="2"/><circle cx="330" cy="60" r="2.4"/><circle cx="620" cy="40" r="2"/><circle cx="900" cy="90" r="2"/><circle cx="1150" cy="50" r="2.4"/><circle cx="1350" cy="120" r="2"/><circle cx="80" cy="420" r="2"/><circle cx="1390" cy="420" r="2"/><circle cx="1240" cy="560" r="2"/><circle cx="180" cy="560" r="2"/>
+  </g>
+  <g transform="translate(300 60) scale(1.15)">
+    <path d="M196 74 L270 48 L350 86 L408 132 L482 116 L574 174 L642 240 L620 296 L548 278 L506 326 L562 384 L520 446 L424 420 L354 480 L278 448 L228 370 L162 358 L126 288 L162 220 L132 150 Z"
+      fill="rgba(63,201,178,0.05)" stroke="#c9a24b" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round"/>
+    <g stroke="#3fc9b2" stroke-width="3" stroke-linecap="round" opacity="0.85">
+      <path d="M318 170 L354 112"/><path d="M318 170 L228 230"/><path d="M228 230 L170 306"/><path d="M228 230 L292 324"/><path d="M292 324 L372 394"/><path d="M372 394 L500 448"/><path d="M318 170 L554 218"/><path d="M554 218 L500 448"/>
+    </g>
+    <g fill="#0d1526" stroke="#f6e7bd" stroke-width="2.5">
+      <circle cx="318" cy="170" r="13"/><circle cx="354" cy="112" r="10"/><circle cx="228" cy="230" r="11"/><circle cx="170" cy="306" r="10"/><circle cx="292" cy="324" r="10"/><circle cx="372" cy="394" r="11"/><circle cx="500" cy="448" r="10"/><circle cx="554" cy="218" r="11"/>
+    </g>
+    <g fill="#e9c368">
+      <circle cx="318" cy="170" r="5"/><circle cx="354" cy="112" r="4"/><circle cx="228" cy="230" r="4"/><circle cx="170" cy="306" r="4"/><circle cx="292" cy="324" r="4"/><circle cx="372" cy="394" r="4"/><circle cx="500" cy="448" r="4"/><circle cx="554" cy="218" r="4"/>
+    </g>
+  </g>
+  <g stroke="#c9a24b" stroke-opacity="0.4" stroke-width="1.5">
+    <path d="M40 600 h300 M60 590 l10 10 -10 10 M1400 600 h-300 M1380 590 l-10 10 10 10" fill="none"/>
+  </g>
+</svg>

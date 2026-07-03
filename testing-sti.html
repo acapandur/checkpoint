@@ -1,77 +1,133 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>STI Testing Without Stigma - Map Without Stigma</title>
-    <meta name="description" content="Why confidential STI testing, counseling and clear referral routes matter in a CheckPoint network for Croatia.">
+    <title>Testing and confidentiality — Map Without Stigma</title>
+    <meta name="description" content="Getting tested is routine care, not a verdict: why window periods make counseling useful, what confidentiality means, and why anonymous community options matter — especially outside big cities.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/testing-sti.html">
-    <meta property="og:title" content="STI Testing Without Stigma">
-    <meta property="og:description" content="Testing is normal sexual-health planning. Clear routes and confidentiality help people seek care.">
-    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.svg">
+    <meta property="og:title" content="Testing &amp; confidentiality · Testiranje i povjerljivost">
+    <meta property="og:description" content="A test is a moment; a conversation is a route. Testing without stigma, plainly.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "Testing and confidentiality — Map Without Stigma",
+              desc: "Getting tested is routine care, not a verdict: why window periods make counseling useful, what confidentiality means, and why anonymous community options matter — especially outside big cities." },
+        hr: { title: "Testiranje i povjerljivost – Karta bez stigme",
+              desc: "Testiranje je rutinska skrb, a ne presuda: zašto razdoblja prozora čine savjetovanje korisnim, što znači povjerljivost i zašto su anonimne opcije u zajednici važne – osobito izvan velikih gradova." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to content</span><span class="lang-hr" lang="hr">Preskoči na sadržaj</span></a>
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">MW</span><span>Map Without Stigma</span></a>
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
+      </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="play.html">Play</a>
+        <a href="play.html"><span class="lang-en" lang="en">Play</span><span class="lang-hr" lang="hr">Igraj</span></a>
         <a href="what-is-checkpoint.html">CheckPoint</a>
-        <a href="after-sex.html">After sex</a>
-        <a href="prep-pep.html">PrEP and PEP</a>
-        <a href="petition.html">Petition</a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
+        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
+        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+          <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="false">HR</button>
+        </span>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero page-hero">
-        <img class="hero-art" src="assets/img/noir-skyline.svg" alt="" aria-hidden="true">
+      <section class="hero page-hero" aria-labelledby="ts-title">
+        <img class="hero-art" src="assets/img/deco-beacon.svg" alt="" aria-hidden="true">
         <div class="hero-copy">
-          <p class="eyebrow">Testing</p>
-          <h1>Testing is normal planning, not a confession.</h1>
-          <p class="hero-lede">A connected network makes testing easier to find, easier to understand and easier to approach privately.</p>
+          <p class="kicker"><span class="lang-en" lang="en">Testing &amp; confidentiality</span><span class="lang-hr" lang="hr">Testiranje i povjerljivost</span></p>
+          <h1 id="ts-title">
+            <span class="lang-en" lang="en">Knowing is the strong move.</span>
+            <span class="lang-hr" lang="hr">Znati je jači potez.</span>
+          </h1>
+          <p class="hero-lede">
+            <span class="lang-en" lang="en">A test is twenty minutes of calendar work. The fear around it is stigma's work — and stigma, as Petra learns in episode three, mostly operates by adding kilometers.</span>
+            <span class="lang-hr" lang="hr">Test je dvadeset minuta posla za kalendar. Strah oko njega posao je stigme – a stigma, kako Petra uči u trećoj epizodi, uglavnom radi tako da dodaje kilometre.</span>
+          </p>
         </div>
       </section>
 
-      <div class="page-layout page-copy">
-        <section>
-          <h2>What blocks testing</h2>
-          <p>People can delay testing because they do not know where to go, what to ask for, whether it is confidential, what happens next or whether they will be judged. The game turns those barriers into visible route problems.</p>
+      <div class="page-layout prose">
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">Testing as routine care</span><span class="lang-hr" lang="hr">Testiranje kao rutinska skrb</span></h2>
+          <p>
+            <span class="lang-en" lang="en">A new relationship, a night with question marks, or simply time passing — these are ordinary reasons to test, the way a dental check-up is an ordinary reason to sit in a chair. Couples testing together, like Petra and Sara, turn it into what it actually is: a fresh page with both names on it, not an accusation.</span>
+            <span class="lang-hr" lang="hr">Nova veza, noć s upitnicima ili jednostavno protok vremena – to su obični razlozi za testiranje, kao što je kontrola kod zubara običan razlog da se sjedne u stolac. Parovi koji se testiraju zajedno, poput Petre i Sare, pretvaraju ga u ono što on doista jest: čistu stranicu s oba imena, a ne optužbu.</span>
+          </p>
         </section>
 
-        <section class="text-grid">
-          <article class="feature-card">
-            <h3>Panel clarity</h3>
-            <p>Testing routes should explain that sexual health may involve more than one infection or one test.</p>
+        <section class="trio reveal">
+          <article class="panel">
+            <h3><span class="lang-en" lang="en">Window periods</span><span class="lang-hr" lang="hr">Razdoblja prozora</span></h3>
+            <p>
+              <span class="lang-en" lang="en">Some infections take time to show on tests — days to weeks, depending on the test. Timing is a professional's job: a counselor schedules and, if needed, repeats the test. That is calendar work, not a verdict.</span>
+              <span class="lang-hr" lang="hr">Neke se infekcije na testovima pokažu tek nakon nekog vremena – od nekoliko dana do nekoliko tjedana, ovisno o testu. Tempiranje je posao stručnjaka: savjetnik zakaže i po potrebi ponovi test. To je posao za kalendar, a ne presuda.</span>
+            </p>
           </article>
-          <article class="feature-card">
-            <h3>Reminders</h3>
-            <p>Clear follow-up and repeat testing guidance should be part of care, not left to memory and anxiety.</p>
+          <article class="panel">
+            <h3><span class="lang-en" lang="en">Confidentiality</span><span class="lang-hr" lang="hr">Povjerljivost</span></h3>
+            <p>
+              <span class="lang-en" lang="en">Health information is confidential — staff are bound by it. What is said in the room serves the person's care. In small communities that promise matters double, which is why it should be stated out loud, at the door.</span>
+              <span class="lang-hr" lang="hr">Zdravstveni podaci povjerljivi su – osoblje ih je dužno čuvati. Ono što se kaže u sobi služi skrbi za osobu. U malim zajednicama to obećanje vrijedi dvostruko, pa ga treba izgovoriti naglas, na vratima.</span>
+            </p>
           </article>
-          <article class="feature-card">
-            <h3>Referral</h3>
-            <p>Testing only works as a system when people can move toward treatment, prevention and counseling.</p>
+          <article class="panel">
+            <h3><span class="lang-en" lang="en">Anonymous options</span><span class="lang-hr" lang="hr">Anonimne opcije</span></h3>
+            <p>
+              <span class="lang-en" lang="en">Community centers such as CheckPoints often offer free testing with anonymous options and counseling before and after every result. For many people, that combination is the difference between testing and postponing forever.</span>
+              <span class="lang-hr" lang="hr">Centri u zajednici poput CheckPointa često nude besplatno testiranje s mogućnošću anonimnosti te savjetovanje prije i poslije svakog rezultata. Za mnoge je upravo ta kombinacija razlika između testiranja i vječnog odgađanja.</span>
+            </p>
           </article>
         </section>
 
-        <section class="notice">
-          <h2>No personal stories in the MVP</h2>
-          <p>This website avoids forms and personal health input. Feedback should be handled through a campaign contact channel with a clear warning not to send private medical details.</p>
+        <section class="reveal">
+          <h2><span class="lang-en" lang="en">Whatever a result says, there is a next step</span><span class="lang-hr" lang="hr">Što god rezultat pokazao, postoji sljedeći korak</span></h2>
+          <p>
+            <span class="lang-en" lang="en">Modern care has answers on every branch of the tree: many infections are curable, others are manageable with treatment, and every result comes with a route forward that a professional walks through with you. The counselor's sentence from episode three holds outside fiction too — knowing is the strong move.</span>
+            <span class="lang-hr" lang="hr">Suvremena skrb ima odgovor na svakoj grani stabla: mnoge su infekcije izlječive, druge se liječenjem drže pod kontrolom, a svaki rezultat dolazi s rutom naprijed koju stručnjak prolazi s tobom. Rečenica savjetnika iz treće epizode vrijedi i izvan fikcije – znati je jači potez.</span>
+          </p>
         </section>
 
-        <section>
+        <section class="notice reveal">
+          <h3><span class="lang-en" lang="en">Before launch</span><span class="lang-hr" lang="hr">Prije pokretanja</span></h3>
+          <p>
+            <span class="lang-en" lang="en">Exact testing offers, window-period specifics and anonymity rules vary by service and test type. Launch copy should name concrete Croatian services and be reviewed by professionals — this page deliberately stays general.</span>
+            <span class="lang-hr" lang="hr">Konkretna ponuda testiranja, pojedinosti o razdobljima prozora i pravila anonimnosti razlikuju se prema službi i vrsti testa. Tekst za pokretanje treba imenovati konkretne hrvatske službe i proći stručnu provjeru – ova stranica namjerno ostaje općenita.</span>
+          </p>
+        </section>
+
+        <section class="reveal">
           <div class="action-row">
-            <a class="button button-primary" href="play.html">Play online</a>
-            <a class="button button-muted" href="map-network.html">Open network page</a>
+            <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Play Petra &amp; Sara's night</span><span class="lang-hr" lang="hr">Odigraj noć Petre i Sare</span></a>
+            <a class="button button-secondary" href="what-is-checkpoint.html"><span class="lang-en" lang="en">How CheckPoints work</span><span class="lang-hr" lang="hr">Kako CheckPointi rade</span></a>
           </div>
         </section>
       </div>
     </main>
 
     <footer class="site-footer">
-      <p>Educational campaign prototype. Not medical advice.</p>
-      <nav aria-label="Footer navigation"><a href="privacy.html">Privacy</a><a href="about.html">About</a><a href="press.html">Press</a></nav>
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Map Without Stigma initiative — an educational campaign prototype. Not medical advice.</span><span class="lang-hr" lang="hr">Inicijativa Karta bez stigme – edukativni prototip kampanje. Nije medicinski savjet.</span></p>
+        <nav aria-label="Footer">
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>

@@ -1,18 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Map Without Stigma share card</title>
-  <desc id="desc">Campaign share graphic with skyline, map routes and petition message.</desc>
-  <rect width="1200" height="630" fill="#111827"/>
-  <path d="M0 438 H90 V322 H154 V438 H220 V260 H300 V438 H376 V318 H438 V438 H544 V250 H640 V438 H720 V308 H800 V438 H890 V344 H950 V438 H1040 V282 H1128 V438 H1200 V630 H0Z" fill="#0b1018"/>
-  <path d="M100 500 C240 424 356 440 482 504 C594 560 734 552 850 492 C984 424 1086 438 1156 508" fill="none" stroke="#28c7b8" stroke-width="8" stroke-linecap="round"/>
-  <g fill="#f4c95d">
-    <rect x="128" y="372" width="20" height="30" rx="2"/>
-    <rect x="250" y="322" width="22" height="32" rx="2"/>
-    <rect x="582" y="328" width="22" height="32" rx="2"/>
-    <rect x="1074" y="350" width="22" height="32" rx="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="scT">
+  <title id="scT">Map Without Stigma — Karta bez stigme</title>
+  <defs>
+    <linearGradient id="scSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1328"/><stop offset="1" stop-color="#060a12"/>
+    </linearGradient>
+    <linearGradient id="scGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9c368"/><stop offset="1" stop-color="#c9a24b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#scSky)"/>
+  <g stroke="#e9c368" stroke-opacity="0.12" stroke-width="2">
+    <path d="M600 700 L600 40"/><path d="M600 700 L260 60"/><path d="M600 700 L940 60"/><path d="M600 700 L80 240"/><path d="M600 700 L1120 240"/><path d="M600 700 L-40 480"/><path d="M600 700 L1240 480"/>
   </g>
-  <circle cx="998" cy="162" r="50" fill="none" stroke="#f05454" stroke-width="8"/>
-  <text x="998" y="176" text-anchor="middle" fill="#f7f2e7" font-family="Arial, sans-serif" font-size="34" font-weight="700">72h</text>
-  <text x="70" y="124" fill="#28c7b8" font-family="Arial, sans-serif" font-size="28" font-weight="700">MAP WITHOUT STIGMA</text>
-  <text x="70" y="214" fill="#f7f2e7" font-family="Arial, sans-serif" font-size="62" font-weight="800">Clear paths, not shame.</text>
-  <text x="70" y="282" fill="#dbe4ef" font-family="Arial, sans-serif" font-size="30">Play the online night shift and support CheckPoint access.</text>
+  <g fill="none" stroke="url(#scGold)" stroke-width="3">
+    <path d="M40 40 v70 M40 40 h70 M1160 40 v70 M1160 40 h-70 M40 590 v-70 M40 590 h70 M1160 590 v-70 M1160 590 h-70"/>
+  </g>
+  <g fill="#e9c368" opacity="0.6">
+    <path d="M180 150 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+    <path d="M1010 130 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+  </g>
+  <text x="600" y="240" text-anchor="middle" fill="#f6e7bd" font-family="Georgia, serif" font-size="86" letter-spacing="14">MAP WITHOUT</text>
+  <text x="600" y="336" text-anchor="middle" fill="#f6e7bd" font-family="Georgia, serif" font-size="86" letter-spacing="14">STIGMA</text>
+  <path d="M420 380 h360" stroke="#c9a24b" stroke-width="2"/>
+  <path d="M596 374 l6 6 -6 6 -6 -6 z" fill="#c9a24b"/>
+  <text x="600" y="432" text-anchor="middle" fill="#c6cddc" font-family="Georgia, serif" font-size="30" letter-spacing="6">KARTA BEZ STIGME</text>
+  <path d="M330 512 C450 478 560 478 600 500 C660 530 800 528 870 496" fill="none" stroke="#3fc9b2" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#3fc9b2"><circle cx="330" cy="512" r="9"/><circle cx="600" cy="500" r="9"/><circle cx="870" cy="496" r="9"/></g>
+  <g fill="none" stroke="#f6e7bd" stroke-width="2"><circle cx="330" cy="512" r="14"/><circle cx="600" cy="500" r="14"/><circle cx="870" cy="496" r="14"/></g>
+  <text x="600" y="576" text-anchor="middle" fill="#98a3b8" font-family="Georgia, serif" font-size="22" letter-spacing="4">AN INTERACTIVE NIGHT STORY · INTERAKTIVNA NOĆNA PRIČA</text>
 </svg>
