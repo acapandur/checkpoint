@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Koncept mreže točaka provjere u Hrvatskoj</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Koncept mreže točaka provjere u Hrvatskoj</title>
     <meta name="description" content="Konceptualna karta razlikuje postojeće usluge, službene izvore i prijedlog buduće mreže točaka provjere u Hrvatskoj.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/map-network.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/map-network.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/map-network.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/map-network.html">
+    <link rel="canonical" href="https://example.org/map-network.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/map-network.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/map-network.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/map-network.html">
     <meta property="og:title" content="Mreža točaka provjere">
     <meta property="og:description" content="Što postoji danas, što je kampanjska vizija i zašto karta ne smije biti rupa.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Concept map for checkpoint access — Map Without Stigma",
-              desc: "A campaign concept map, not a service directory: existing official Croatian testing sources, proposed regional access and the demand for clearer digital navigation." },
-        hr: { title: "Konceptualna karta točaka provjere – Karta bez stigme",
-              desc: "Konceptualna karta kampanje, ne imenik usluga: postojeći službeni hrvatski izvori testiranja, prijedlog regionalne dostupnosti i zahtjev za jasnijom digitalnom navigacijom." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -99,8 +85,8 @@
             <span class="lang-hr" lang="hr">Ar deko zviježđe je zagovaračka ilustracija. Za stvarne hrvatske lokacije savjetovanja i testiranja koristi službene imenike i stranice usluga, a prije odlaska provjeri aktualno radno vrijeme.</span>
           </p>
           <ul class="source-list">
-            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
-            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV: CheckPoint Zagreb</a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer" referrerpolicy="no-referrer">HUHIV: CheckPoint Zagreb</a></li>
           </ul>
           <p class="external-note"><span class="lang-en" lang="en">External link: you are leaving this prototype and opening an official or third-party website.</span><span class="lang-hr" lang="hr">Vanjska poveznica: napuštaš ovaj prototip i otvaraš službenu ili vanjsku stranicu.</span></p>
         </section>

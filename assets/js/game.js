@@ -2,29 +2,25 @@
    THREE NIGHTS / TRI NOĆI — engine
    A small visual-novel runtime for the Map Without Stigma campaign.
    Screens: gate → episode select → story → night ledger → finale.
-   Progress is stored only in this browser (localStorage "mws-save").
-   The instant-text preference is also stored locally (localStorage "mws-instant").
+   Progress and instant-text preference are stored only through project storage.
    ========================================================================== */
 
 (function () {
   "use strict";
 
   var S = window.MWS_STORY;
+  var storage = window.MWS_STORAGE;
   var root = document.getElementById("game-root");
   if (!S || !root) return;
   root.setAttribute("tabindex", "-1");
 
-  var SAVE_KEY = "mws-save";
-  var INSTANT_KEY = "mws-instant";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function loadInstant() {
-    try { return localStorage.getItem(INSTANT_KEY) === "1"; }
-    catch (e) { return false; }
+    return storage ? storage.getBoolean("instant", false) : false;
   }
   function saveInstant(on) {
-    try { localStorage.setItem(INSTANT_KEY, on ? "1" : "0"); }
-    catch (e) { /* ignore */ }
+    if (storage) storage.setBoolean("instant", on);
   }
 
   function t(obj) {
@@ -37,17 +33,12 @@
 
   /* ---------------- Save ---------------- */
   function loadSave() {
-    try {
-      var raw = localStorage.getItem(SAVE_KEY);
-      if (raw) {
-        var data = JSON.parse(raw);
-        if (data && data.done) return data;
-      }
-    } catch (e) { /* private mode etc. */ }
+    var data = storage ? storage.getJson("storyProgress", null) : null;
+    if (data && data.done) return data;
     return { v: 1, done: {} };
   }
   function persist() {
-    try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch (e) { /* ignore */ }
+    if (storage) storage.setJson("storyProgress", save);
   }
   var save = loadSave();
 
@@ -108,14 +99,14 @@
       onTypeDone();
       return;
     }
-    var caret = '<span class="caret" aria-hidden="true"></span>';
     state.typing = { full: full, i: 0, done: false, timer: null };
+    el.classList.add("typing");
     state.typing.timer = setInterval(function () {
       state.typing.i += 2;
       if (state.typing.i >= full.length) {
         finishTyping(el);
       } else {
-        el.innerHTML = esc(full.slice(0, state.typing.i)) + caret;
+        el.textContent = full.slice(0, state.typing.i);
       }
     }, 18);
   }
@@ -123,6 +114,7 @@
     stopTyping();
     if (!state.typing) return;
     el.textContent = state.typing.full;
+    el.classList.remove("typing");
     state.typing.done = true;
     onTypeDone();
   }
@@ -180,7 +172,7 @@
       var valueText = label + ": " + state.meters[k] + " " + t(S.UI.outOf100) + ". " + level + ". " + t(S.UI.meterAriaSuffix);
       return '<div class="meter ' + METER_CLASS[k] + " lvl-" + lvlKey + '" role="progressbar" aria-label="' + esc(label) + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + state.meters[k] + '" aria-valuetext="' + esc(valueText) + '">'
         + '<small><span>' + esc(label) + '</span><span class="lvl">' + esc(level) + "</span></small>"
-        + '<div class="track" aria-hidden="true"><div class="fill" style="width:' + state.meters[k] + '%"></div></div>'
+        + '<progress class="meter-progress" value="' + state.meters[k] + '" max="100" aria-hidden="true"></progress>'
         + "</div>";
     }).join("");
     return '<details class="reflect"' + (state.reflectOpen ? " open" : "") + ">"
@@ -276,7 +268,7 @@
       + '<p class="sub">' + esc(t(S.UI.selectHint)) + "</p>"
       + '<div class="playbills">' + bills + "</div>"
       + (allDone()
-          ? '<div class="action-row" style="margin-top:22px"><button class="button button-primary" data-act="finale">'
+          ? '<div class="action-row select-final-row"><button class="button button-primary" data-act="finale">'
             + esc(t(S.UI.finaleTitle)) + "</button></div>"
           : "")
       + "</div>";
@@ -362,7 +354,7 @@
       + '<p class="kicker">' + esc(t(S.UI.nightLedger)) + "</p>"
       + "<h2>" + esc(t(S.UI.episode)) + " " + e.no + " — " + esc(t(e.title)) + "</h2>"
       + '<p class="sub">' + flavor + "</p>"
-      + '<p class="kicker" style="margin-top:6px">' + esc(t(S.UI.whatTheNightShowed)) + "</p>"
+      + '<p class="kicker ledger-section-kicker">' + esc(t(S.UI.whatTheNightShowed)) + "</p>"
       + '<div class="ledger-list">' + insights + "</div>"
       + takeaway
       + '<div class="demand-unlock"><span class="gem" aria-hidden="true"></span>'

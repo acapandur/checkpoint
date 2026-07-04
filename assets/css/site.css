@@ -1142,7 +1142,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   color: var(--champagne);
 }
 .line.thought { font-style: italic; color: var(--parlor); }
-.line .caret { display: inline-block; width: 9px; height: 1.05em; margin-left: 2px; vertical-align: -0.18em; background: var(--gold); animation: caret 0.9s steps(2) infinite; }
+.line.typing::after { content: ""; display: inline-block; width: 9px; height: 1.05em; margin-left: 2px; vertical-align: -0.18em; background: var(--gold); animation: caret 0.9s steps(2) infinite; }
 @keyframes caret { 50% { opacity: 0; } }
 
 .dialogue-hint {
@@ -1332,23 +1332,37 @@ html.js .reveal-late { transition-delay: 120ms; }
   font-size: 0.7rem;
 }
 .meter.lvl-low small .lvl { color: var(--muted); }
-.meter .track {
+.meter-progress {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  width: 100%;
   margin-top: 5px;
   height: 5px;
+  border: 0;
   background: rgba(198, 205, 220, 0.12);
   border-radius: 3px;
   overflow: hidden;
 }
-.meter .fill {
-  height: 100%;
-  width: 50%;
+.meter-progress::-webkit-progress-bar {
+  background: rgba(198, 205, 220, 0.12);
+  border-radius: 3px;
+}
+.meter-progress::-webkit-progress-value {
   border-radius: 3px;
   /* soft, low-saturation fills — support indicators, not reward bars */
   background: rgba(63, 201, 178, 0.5);
-  transition: width 500ms var(--ease);
 }
-.meter.gold .fill { background: rgba(201, 162, 75, 0.5); }
-.meter.silver .fill { background: rgba(198, 205, 220, 0.42); }
+.meter-progress::-moz-progress-bar {
+  border-radius: 3px;
+  background: rgba(63, 201, 178, 0.5);
+}
+.meter.gold .meter-progress::-webkit-progress-value { background: rgba(201, 162, 75, 0.5); }
+.meter.gold .meter-progress::-moz-progress-bar { background: rgba(201, 162, 75, 0.5); }
+.meter.silver .meter-progress::-webkit-progress-value { background: rgba(198, 205, 220, 0.42); }
+.meter.silver .meter-progress::-moz-progress-bar { background: rgba(198, 205, 220, 0.42); }
+.select-final-row { margin-top: 22px; }
+.ledger-section-kicker { margin-top: 6px; }
 
 /* Situation select — signposts, not locked levels */
 .playbills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
@@ -1637,5 +1651,5 @@ html.js .reveal-late { transition-delay: 120ms; }
   }
   .marquee::after { opacity: 0; animation: none; }
   html.js .reveal { opacity: 1; transform: none; }
-  .line .caret { animation: none; }
+  .line.typing::after { animation: none; }
 }

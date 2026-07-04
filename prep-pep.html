@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>PrEP i PEP Hrvatska – jasne rute, stručna procjena i službeni izvori</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>PrEP i PEP Hrvatska – jasne rute, stručna procjena i službeni izvori</title>
     <meta name="description" content="PrEP postoji kao prevencija za osobe s mogućim trajnim rizikom; PEP je vremenski osjetljiva procjena nakon moguće izloženosti HIV-u. Oprezno, bez osobnog medicinskog savjeta.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/prep-pep.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/prep-pep.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/prep-pep.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/prep-pep.html">
+    <link rel="canonical" href="https://example.org/prep-pep.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/prep-pep.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/prep-pep.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/prep-pep.html">
     <meta property="og:title" content="PrEP i PEP Hrvatska · Karta bez stigme">
     <meta property="og:description" content="Prevencija i hitnost ne smiju biti teško dostupne: službeni izvori i smirena mikro-navigacija.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "PrEP and PEP, plainly — Map Without Stigma",
-              desc: "A plain-language, cautious explainer: PrEP is prevention before possible HIV exposure, PEP is the urgent route after one — start as soon as possible, no later than 72 hours. With official CDC and WHO references." },
-        hr: { title: "PrEP i PEP, jednostavno – Karta bez stigme",
-              desc: "Jednostavan i oprezan vodič: PrEP je prevencija prije moguće izloženosti HIV-u, PEP je hitna ruta nakon nje – početi što prije, najkasnije unutar 72 sata. Sa službenim referencama CDC-a i WHO-a." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -107,9 +93,9 @@
             <article class="receipt-card"><h3><span class="lang-hr" lang="hr">Što ne odgađati</span><span class="lang-en" lang="en">What not to delay</span></h3><p><span class="lang-hr" lang="hr">Ako je moguće izlaganje HIV-u, odmah potražite liječničku pomoć kako bi liječnik procijenio rizik i odlučio je li PEP indiciran.</span><span class="lang-en" lang="en">If there may have been HIV exposure, seek medical help immediately so a doctor can assess risk and decide whether PEP is indicated.</span></p></article>
           </div>
           <ul class="source-list">
-            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer">Klinika "Dr. Fran Mihaljević": HIV/PEP informacije</a></li>
-            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ: savjetovanje i testiranje u Hrvatskoj</a></li>
-            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV: CheckPoint Zagreb</a></li>
+            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer" referrerpolicy="no-referrer">Klinika "Dr. Fran Mihaljević": HIV/PEP informacije</a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ: savjetovanje i testiranje u Hrvatskoj</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer" referrerpolicy="no-referrer">HUHIV: CheckPoint Zagreb</a></li>
           </ul>
           <p class="external-note"><span class="lang-en" lang="en">External link: you are leaving this prototype and opening an official or third-party website.</span><span class="lang-hr" lang="hr">Vanjska poveznica: napuštaš ovaj prototip i otvaraš službenu ili vanjsku stranicu.</span></p>
           <p class="review-meta"><span><span class="lang-en" lang="en">Sources checked: 2026-07-04</span><span class="lang-hr" lang="hr">Izvori provjereni: 2026-07-04</span></span><span><span class="lang-en" lang="en">Medical review: needs review</span><span class="lang-hr" lang="hr">Medicinska provjera: potrebna</span></span></p>
@@ -143,9 +129,9 @@
         <section class="reference-list reveal">
           <h2><span class="lang-en" lang="en">Official references to verify before launch</span><span class="lang-hr" lang="hr">Službene reference za provjeru prije pokretanja</span></h2>
           <ul>
-            <li><a href="https://www.cdc.gov/hivnexus/hcp/pep/index.html" rel="noopener noreferrer">CDC — <span class="lang-en" lang="en">clinical guidance for PEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PEP</span></a></li>
-            <li><a href="https://www.who.int/publications/i/item/9789240095137" rel="noopener noreferrer">WHO — <span class="lang-en" lang="en">guidelines for HIV post-exposure prophylaxis</span><span class="lang-hr" lang="hr">smjernice za postekspozicijsku profilaksu HIV-a</span></a></li>
-            <li><a href="https://www.cdc.gov/hivnexus/hcp/prep/index.html" rel="noopener noreferrer">CDC — <span class="lang-en" lang="en">clinical guidance for PrEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PrEP</span></a></li>
+            <li><a href="https://www.cdc.gov/hivnexus/hcp/pep/index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">CDC — <span class="lang-en" lang="en">clinical guidance for PEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PEP</span></a></li>
+            <li><a href="https://www.who.int/publications/i/item/9789240095137" rel="noopener noreferrer" referrerpolicy="no-referrer">WHO — <span class="lang-en" lang="en">guidelines for HIV post-exposure prophylaxis</span><span class="lang-hr" lang="hr">smjernice za postekspozicijsku profilaksu HIV-a</span></a></li>
+            <li><a href="https://www.cdc.gov/hivnexus/hcp/prep/index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">CDC — <span class="lang-en" lang="en">clinical guidance for PrEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PrEP</span></a></li>
           </ul>
           <p class="external-note"><span class="lang-en" lang="en">External link: you are leaving this prototype and opening an official or third-party website.</span><span class="lang-hr" lang="hr">Vanjska poveznica: napuštaš ovaj prototip i otvaraš službenu ili vanjsku stranicu.</span></p>
         </section>

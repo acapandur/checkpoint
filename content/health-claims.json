@@ -13,9 +13,13 @@
       "sourceName": "gov.hr - Hitne službe",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Official source lists 112 as the unified emergency number and 194 for emergency medical service."
+      "notes": "Official source lists 112 as the unified emergency number and 194 for emergency medical service.",
+      "verificationStatus": "needs-verification",
+      "source": "https://gov.hr/hr/hitne-sluzbe/338",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "pep-urgent-professional-assessment",
@@ -27,9 +31,13 @@
       "sourceName": "Klinika za infektivne bolesti \"Dr. Fran Mihaljević\" - PEP information",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Croatian source states to seek medical help immediately after possible exposure and that a doctor assesses risk and PEP introduction."
+      "notes": "Croatian source states to seek medical help immediately after possible exposure and that a doctor assesses risk and PEP introduction.",
+      "verificationStatus": "needs-verification",
+      "source": "https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "pep-72-hour-window",
@@ -41,9 +49,13 @@
       "sourceName": "WHO - Guidelines for HIV post-exposure prophylaxis",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "WHO overview describes timely access as crucial and states ideally within 24 hours and no later than 72 hours."
+      "notes": "WHO overview describes timely access as crucial and states ideally within 24 hours and no later than 72 hours.",
+      "verificationStatus": "needs-verification",
+      "source": "https://www.who.int/publications/i/item/9789240095137",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "pep-not-self-service",
@@ -55,9 +67,13 @@
       "sourceName": "Klinika za infektivne bolesti \"Dr. Fran Mihaljević\" - PEP information",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "The site uses this as a safety framing to avoid implying casual purchase or independent use. Confirm exact Croatian phrasing with medical reviewer."
+      "notes": "The site uses this as a safety framing to avoid implying casual purchase or independent use. Confirm exact Croatian phrasing with medical reviewer.",
+      "verificationStatus": "needs-verification",
+      "source": "https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "pep-reduces-not-guaranteed",
@@ -69,9 +85,13 @@
       "sourceName": "CDC - Clinical Guidance for PEP",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Prototype wording avoids guarantees. Medical reviewer should confirm final public wording."
+      "notes": "Prototype wording avoids guarantees. Medical reviewer should confirm final public wording.",
+      "verificationStatus": "needs-verification",
+      "source": "https://www.cdc.gov/hivnexus/hcp/pep/index.html",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "prep-baseline-assessment",
@@ -83,9 +103,13 @@
       "sourceName": "CDC - Clinical Guidance for PrEP",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "CDC states PrEP is HIV prevention for people without HIV and baseline assessment/HIV testing is required before prescribing."
+      "notes": "CDC states PrEP is HIV prevention for people without HIV and baseline assessment/HIV testing is required before prescribing.",
+      "verificationStatus": "needs-verification",
+      "source": "https://www.cdc.gov/hivnexus/hcp/prep/index.html",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "testing-directory-anonymous-free",
@@ -97,9 +121,13 @@
       "sourceName": "HZJZ - Gdje se u Hrvatskoj može savjetovati i testirati",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Individual services still need direct verification before public launch."
+      "notes": "Individual services still need direct verification before public launch.",
+      "verificationStatus": "needs-verification",
+      "source": "https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "testing-window-period-general",
@@ -111,9 +139,13 @@
       "sourceName": "HZJZ - Counseling and testing directory",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "General safe framing only; no test-specific timing is given in the prototype."
+      "notes": "General safe framing only; no test-specific timing is given in the prototype.",
+      "verificationStatus": "needs-verification",
+      "source": "https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "service-bfm-testing-and-pep",
@@ -125,9 +157,13 @@
       "sourceName": "Klinika za infektivne bolesti \"Dr. Fran Mihaljević\"",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Operational details can change; service entry is shown as needs-verification before visit."
+      "notes": "Operational details can change; service entry is shown as needs-verification before visit.",
+      "verificationStatus": "needs-verification",
+      "source": "https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "service-huhiv-checkpoint",
@@ -139,9 +175,13 @@
       "sourceName": "HUHIV - CheckPoint Zagreb",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "needs-review",
-      "notes": "Naming and affiliation review required before public campaign launch."
+      "notes": "Naming and affiliation review required before public campaign launch.",
+      "verificationStatus": "needs-verification",
+      "source": "https://huhiv.hr/checkpoint-2/",
+      "verifiedAt": null,
+      "expiresAt": null
     },
     {
       "id": "static-privacy-no-forms",
@@ -153,9 +193,13 @@
       "sourceName": "Repository privacy architecture",
       "dateLastVerified": "2026-07-04",
       "nextReviewDate": "2026-10-04",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "medicalReviewStatus": "unreviewed",
-      "notes": "Legal/privacy review still required before adding any form, analytics, petition platform or third-party embed."
+      "notes": "Legal/privacy review still required before adding any form, analytics, petition platform or third-party embed.",
+      "verificationStatus": "needs-verification",
+      "source": "privacy.html",
+      "verifiedAt": null,
+      "expiresAt": null
     }
   ]
 }

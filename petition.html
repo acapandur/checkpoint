@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Zahtjevi za pristup – jasne točke provjere u Hrvatskoj</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Zahtjevi za pristup – jasne točke provjere u Hrvatskoj</title>
     <meta name="description" content="Peticija još nije aktivna. Pročitaj tri zahtjeva: hitna točka provjere, točka prevencije i dostupne točke testiranja/privatnosti izvan jednog grada.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/petition.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/petition.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/petition.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/petition.html">
+    <link rel="canonical" href="https://example.org/petition.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/petition.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/petition.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/petition.html">
     <meta property="og:title" content="Zahtjevi za pristup · Peticija uskoro">
     <meta property="og:description" content="Nema lažnog potpisa: zahtjevi su javni, peticijski link nije aktivan dok ne postoji pregledana platforma.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Access demands — Map Without Stigma",
-              desc: "The petition is not active yet. Read the three access demands: urgent checkpoints, prevention checkpoints and testing/privacy checkpoints across Croatia." },
-        hr: { title: "Zahtjevi za pristup – Karta bez stigme",
-              desc: "Peticija još nije aktivna. Pročitaj tri zahtjeva za pristup: hitne točke provjere, točke prevencije i točke testiranja/privatnosti u Hrvatskoj." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>

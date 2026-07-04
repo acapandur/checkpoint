@@ -1,18 +1,12 @@
-/* Croatian service directory renderer.
-   Data lives in content/croatia-services.json so routes can be updated without
-   editing page markup. Critical emergency copy remains in static HTML. */
-
+/* Croatian service directory renderer. Critical emergency copy remains static HTML. */
 (function () {
   "use strict";
 
   var root = document.getElementById("service-directory-root");
   if (!root) return;
 
-  var state = {
-    data: null,
-    city: "all",
-    type: "all"
-  };
+  var safety = window.MWS_SAFETY;
+  var state = { data: null, city: "all", type: "all" };
 
   function lang() {
     return window.MWS && window.MWS.lang ? window.MWS.lang() : (document.documentElement.getAttribute("data-lang") || "hr");
@@ -22,12 +16,15 @@
     return pair[lang()] || pair.hr || pair.en || "";
   }
 
-  function esc(value) {
-    return String(value == null ? "" : value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+  function text(value) {
+    return safety ? safety.safeText(value) : String(value == null ? "" : value);
+  }
+
+  function el(tag, className, value) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (value != null) node.textContent = text(value);
+    return node;
   }
 
   var labels = {
@@ -83,70 +80,114 @@
     return t(labels.unknown);
   }
 
-  function serviceTypes(service) {
-    return service.serviceTypes.map(function (type) {
-      return '<span class="tag">' + esc(t(typeLabels[type] || { hr: type, en: type })) + "</span>";
-    }).join("");
-  }
-
-  function serviceCard(service) {
-    var website = service.website && service.website !== "unknown"
-      ? '<a href="' + esc(service.website) + '" rel="noopener noreferrer">' + esc(t(labels.source)) + "</a>"
-      : esc(t(labels.unknown));
-    var email = service.email && service.email !== "unknown"
-      ? '<a href="mailto:' + esc(service.email) + '">' + esc(service.email) + "</a>"
-      : esc(t(labels.unknown));
-    return '<article class="service-card">'
-      + '<div class="service-card-head">'
-      + '<h3>' + esc(service.serviceName) + "</h3>"
-      + '<span class="status-pill status-' + esc(service.status) + '">' + esc(statusLabel(service.status)) + "</span>"
-      + "</div>"
-      + '<p class="service-city">' + esc(service.city) + "</p>"
-      + '<div class="tag-row">' + serviceTypes(service) + "</div>"
-      + '<dl class="service-facts">'
-      + "<div><dt>" + esc(t(labels.address)) + "</dt><dd>" + esc(service.address) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.phone)) + "</dt><dd>" + esc(service.phone) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.email)) + "</dt><dd>" + email + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.hours)) + "</dt><dd>" + esc(service.workingHours) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.appointment)) + "</dt><dd>" + esc(valueLabel(service.appointmentRequired)) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.anonymous)) + "</dt><dd>" + esc(valueLabel(service.anonymous)) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.free)) + "</dt><dd>" + esc(valueLabel(service.free)) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.verifiedOn)) + "</dt><dd>" + esc(service.dateLastVerified) + "</dd></div>"
-      + "<div><dt>" + esc(t(labels.source)) + "</dt><dd>" + website + "</dd></div>"
-      + "</dl>"
-      + '<p class="service-note"><strong>' + esc(t(labels.note)) + ":</strong> " + esc(service.notes) + "</p>"
-      + "</article>";
+  function safeClass(value) {
+    return String(value || "unknown").toLowerCase().replace(/[^a-z0-9-]+/g, "-");
   }
 
   function unique(values) {
     return Array.from(new Set(values)).filter(Boolean).sort(function (a, b) { return a.localeCompare(b); });
   }
 
+  function fact(label, valueNodeOrText) {
+    var wrap = document.createElement("div");
+    var dt = el("dt", null, label);
+    var dd = document.createElement("dd");
+    if (valueNodeOrText && valueNodeOrText.nodeType) dd.append(valueNodeOrText);
+    else dd.textContent = text(valueNodeOrText);
+    wrap.append(dt, dd);
+    return wrap;
+  }
+
+  function serviceTypes(service) {
+    var row = el("div", "tag-row");
+    (service.serviceTypes || []).forEach(function (type) {
+      row.append(el("span", "tag", t(typeLabels[type] || { hr: type, en: type })));
+    });
+    return row;
+  }
+
+  function serviceCard(service) {
+    var article = el("article", "service-card");
+    var head = el("div", "service-card-head");
+    var title = el("h3", null, service.serviceName);
+    var status = el("span", "status-pill status-" + safeClass(service.status), statusLabel(service.status));
+    head.append(title, status);
+
+    var facts = el("dl", "service-facts");
+    var website = safety && service.website && service.website !== "unknown"
+      ? safety.createSafeExternalLink(service.website, t(labels.source))
+      : null;
+    var mail = null;
+    if (safety && service.email && service.email !== "unknown") {
+      var safeMail = safety.safeUrl("mailto:" + service.email, { allowMailto: true });
+      if (safeMail) {
+        mail = document.createElement("a");
+        mail.href = safeMail;
+        mail.textContent = text(service.email);
+        mail.rel = "noopener noreferrer";
+        mail.referrerPolicy = "no-referrer";
+      }
+    }
+
+    facts.append(
+      fact(t(labels.address), service.address),
+      fact(t(labels.phone), service.phone),
+      fact(t(labels.email), mail || t(labels.unknown)),
+      fact(t(labels.hours), service.workingHours),
+      fact(t(labels.appointment), valueLabel(service.appointmentRequired)),
+      fact(t(labels.anonymous), valueLabel(service.anonymous)),
+      fact(t(labels.free), valueLabel(service.free)),
+      fact(t(labels.verifiedOn), service.dateLastVerified),
+      fact(t(labels.source), website || t(labels.unknown))
+    );
+
+    var note = el("p", "service-note");
+    var strong = el("strong", null, t(labels.note) + ":");
+    note.append(strong, " " + text(service.notes));
+
+    article.append(head, el("p", "service-city", service.city), serviceTypes(service), facts, note);
+    return article;
+  }
+
   function filterServices() {
     return state.data.services.filter(function (service) {
       var cityOk = state.city === "all" || service.city === state.city;
-      var typeOk = state.type === "all" || service.serviceTypes.indexOf(state.type) !== -1;
+      var typeOk = state.type === "all" || (service.serviceTypes || []).indexOf(state.type) !== -1;
       return cityOk && typeOk;
     });
   }
 
+  function selectControl(id, labelText, allText, values, selected, labelForValue) {
+    var label = document.createElement("label");
+    var span = el("span", null, labelText);
+    var select = document.createElement("select");
+    select.id = id;
+    var all = document.createElement("option");
+    all.value = "all";
+    all.textContent = allText;
+    select.append(all);
+    values.forEach(function (value) {
+      var option = document.createElement("option");
+      option.value = value;
+      option.textContent = labelForValue(value);
+      option.selected = selected === value;
+      select.append(option);
+    });
+    label.append(span, select);
+    return label;
+  }
+
   function controls() {
     var cities = unique(state.data.services.map(function (service) { return service.city; }));
-    var types = unique([].concat.apply([], state.data.services.map(function (service) { return service.serviceTypes; })));
-    return '<div class="directory-controls">'
-      + '<label><span>' + esc(t(labels.city)) + '</span><select id="service-city-filter">'
-      + '<option value="all">' + esc(t(labels.allCities)) + "</option>"
-      + cities.map(function (city) {
-        return '<option value="' + esc(city) + '"' + (state.city === city ? " selected" : "") + ">" + esc(city) + "</option>";
-      }).join("")
-      + "</select></label>"
-      + '<label><span>' + esc(t(labels.type)) + '</span><select id="service-type-filter">'
-      + '<option value="all">' + esc(t(labels.allTypes)) + "</option>"
-      + types.map(function (type) {
-        return '<option value="' + esc(type) + '"' + (state.type === type ? " selected" : "") + ">" + esc(t(typeLabels[type] || { hr: type, en: type })) + "</option>";
-      }).join("")
-      + "</select></label>"
-      + "</div>";
+    var types = unique([].concat.apply([], state.data.services.map(function (service) { return service.serviceTypes || []; })));
+    var wrap = el("div", "directory-controls");
+    wrap.append(
+      selectControl("service-city-filter", t(labels.city), t(labels.allCities), cities, state.city, function (city) { return city; }),
+      selectControl("service-type-filter", t(labels.type), t(labels.allTypes), types, state.type, function (type) {
+        return t(typeLabels[type] || { hr: type, en: type });
+      })
+    );
+    return wrap;
   }
 
   function bindControls() {
@@ -156,17 +197,22 @@
     if (type) type.addEventListener("change", function () { state.type = type.value; render(); });
   }
 
+  function statusNote(message) {
+    return el("p", "status-note", message);
+  }
+
   function render() {
     if (!state.data) {
-      root.innerHTML = '<p class="status-note">' + esc(t(labels.loading)) + "</p>";
+      root.replaceChildren(statusNote(t(labels.loading)));
       return;
     }
     var services = filterServices();
-    root.innerHTML = controls()
-      + '<p class="directory-count" aria-live="polite">' + esc(t(labels.results)) + ": " + services.length + "</p>"
-      + '<div class="service-grid">'
-      + (services.length ? services.map(serviceCard).join("") : '<p class="status-note">' + esc(t(labels.noResults)) + "</p>")
-      + "</div>";
+    var count = el("p", "directory-count", t(labels.results) + ": " + services.length);
+    count.setAttribute("aria-live", "polite");
+    var grid = el("div", "service-grid");
+    if (services.length) services.forEach(function (service) { grid.append(serviceCard(service)); });
+    else grid.append(statusNote(t(labels.noResults)));
+    root.replaceChildren(controls(), count, grid);
     bindControls();
   }
 
@@ -181,8 +227,8 @@
       render();
     })
     .catch(function () {
-      root.innerHTML = '<p class="status-note">' + esc(t(labels.failed)) + "</p>";
+      root.replaceChildren(statusNote(t(labels.failed)));
     });
 
   document.addEventListener("mws:lang", render);
-})();
+}());

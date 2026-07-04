@@ -3,40 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Službe i rute skrbi - Karta bez stigme</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Službe i rute skrbi - Karta bez stigme</title>
     <meta name="description" content="Strukturirani prototip imenika hrvatskih hitnih, PEP, testnih i savjetodavnih ruta, s jasnim statusom provjere i službenim izvorima.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/services.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/services.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/services.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/services.html">
+    <link rel="canonical" href="https://example.org/services.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/services.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/services.html">
     <meta property="og:title" content="Službe i rute skrbi - Karta bez stigme">
     <meta property="og:description" content="Nije službeni imenik: strukturirane rute sa statusom provjere, datumima i izvorima.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta property="og:locale" content="hr_HR">
     <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Services and care routes - Map Without Stigma",
-              desc: "A structured prototype directory for Croatian emergency, PEP, testing and counseling routes, with verification status and official sources." },
-        hr: { title: "Službe i rute skrbi - Karta bez stigme",
-              desc: "Strukturirani prototip imenika hrvatskih hitnih, PEP, testnih i savjetodavnih ruta, sa statusom provjere i službenim izvorima." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
     <script src="assets/js/services.js" defer></script>
   </head>
@@ -125,10 +111,10 @@
         <section class="reference-list reveal">
           <h2><span class="lang-en" lang="en">Official sources behind this draft</span><span class="lang-hr" lang="hr">Službeni izvori iza ovog nacrta</span></h2>
           <ul>
-            <li><a href="https://gov.hr/hr/hitne-sluzbe/338" rel="noopener noreferrer">gov.hr: hitne službe 112 i 194</a></li>
-            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
-            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer">Klinika "Dr. Fran Mihaljević": HIV/PEP informacije</a></li>
-            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV: CheckPoint Zagreb</a></li>
+            <li><a href="https://gov.hr/hr/hitne-sluzbe/338" rel="noopener noreferrer" referrerpolicy="no-referrer">gov.hr: hitne službe 112 i 194</a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
+            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer" referrerpolicy="no-referrer">Klinika "Dr. Fran Mihaljević": HIV/PEP informacije</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer" referrerpolicy="no-referrer">HUHIV: CheckPoint Zagreb</a></li>
           </ul>
         </section>
       </div>

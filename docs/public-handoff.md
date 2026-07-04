@@ -9,7 +9,7 @@ This does not guarantee complete anonymity. Platform records, hosting records, p
 - Maintainer label: `Karta bez stigme tim`
 - English label: `Project team`
 - Croatian label: `Neovisni projektni tim`
-- Public contact placeholders: `contact@PROJECT-DOMAIN`, `privacy@PROJECT-DOMAIN`, `security@PROJECT-DOMAIN`
+- Public contact placeholders: `contact@example.org`, `privacy@example.org`, `security@example.org`
 
 Individual contributors are not publicly listed for privacy and safety reasons.
 
@@ -25,7 +25,7 @@ rsync -av --exclude='.git' --exclude='node_modules' --exclude='dist' --exclude='
 cd karta-bez-stigme-public-clean
 git init
 git config user.name "Karta bez stigme tim"
-git config user.email "dev@PROJECT-DOMAIN"
+git config user.email "dev@example.org"
 git add .
 git commit -m "Initial public prototype"
 ```
@@ -39,14 +39,14 @@ robocopy $src "$dst\karta-bez-stigme-public-clean" /E /XD .git node_modules dist
 Set-Location "$dst\karta-bez-stigme-public-clean"
 git init
 git config user.name "Karta bez stigme tim"
-git config user.email "dev@PROJECT-DOMAIN"
+git config user.email "dev@example.org"
 git add .
 git commit -m "Initial public prototype"
 ```
 
 ## Before publishing
 
-1. Replace `PROJECT-DOMAIN` with a domain that does not identify an individual contributor.
+1. Replace `example.org` with a domain that does not identify an individual contributor.
 2. Re-render any exported PDFs/images and strip creator metadata.
 3. Run repository scans for local paths, personal emails, social handles, source maps and old hosting URLs.
 4. Confirm no `.git` directory from private development history is included in the public handoff.

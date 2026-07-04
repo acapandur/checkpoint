@@ -35,8 +35,36 @@ function date(value, label) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value || "")) failures.push(`${label}: invalid date ${value}`);
 }
 
+function nullableDate(value, label) {
+  if (value == null) return;
+  date(value, label);
+}
+
 function enumValue(value, allowed, label) {
   if (!allowed.includes(value)) failures.push(`${label}: invalid value ${value}`);
+}
+
+function sourceValue(value, label) {
+  if (!value || typeof value !== "string") {
+    failures.push(`${label}: missing source`);
+    return;
+  }
+  if (/^https?:\/\//i.test(value) && !/^https:\/\//i.test(value)) failures.push(`${label}: source must use https`);
+}
+
+function verificationFields(item, label) {
+  required(item, ["verificationStatus", "source"], label);
+  for (const field of ["verifiedAt", "expiresAt"]) {
+    if (!(field in item)) failures.push(`${label}: missing ${field}`);
+  }
+  enumValue(item.verificationStatus, ["verified", "needs-verification", "unverified"], `${label}.verificationStatus`);
+  sourceValue(item.source, `${label}.source`);
+  nullableDate(item.verifiedAt, `${label}.verifiedAt`);
+  nullableDate(item.expiresAt, `${label}.expiresAt`);
+  if (item.verificationStatus === "verified") {
+    date(item.verifiedAt, `${label}.verifiedAt`);
+    date(item.expiresAt, `${label}.expiresAt`);
+  }
 }
 
 const claims = readJson("content/health-claims.json");
@@ -57,15 +85,16 @@ if (claims) {
       "nextReviewDate",
       "owner",
       "medicalReviewStatus",
-      "notes"
+      "notes",
+      "verificationStatus",
+      "source"
     ], label);
     enumValue(claim.category, ["PEP", "PrEP", "HIV testing", "emergency", "privacy", "service route", "stigma", "other"], `${label}.category`);
     enumValue(claim.medicalReviewStatus, ["unreviewed", "needs-review", "reviewed"], `${label}.medicalReviewStatus`);
     date(claim.dateLastVerified, `${label}.dateLastVerified`);
     date(claim.nextReviewDate, `${label}.nextReviewDate`);
-    if (claim.medicalReviewStatus === "reviewed" && /unassigned/i.test(claim.owner)) {
-      failures.push(`${label}: reviewed claim cannot have unassigned owner`);
-    }
+    verificationFields(claim, label);
+    if (claim.medicalReviewStatus === "reviewed" && claim.owner === "not-appointed") failures.push(`${label}: reviewed claim needs an appointed owner`);
   }
 }
 
@@ -94,7 +123,9 @@ if (services) {
       "sourceName",
       "dateLastVerified",
       "status",
-      "notes"
+      "notes",
+      "verificationStatus",
+      "source"
     ], label);
     if (!Array.isArray(service.serviceTypes) || !service.serviceTypes.length) failures.push(`${label}: serviceTypes must be a non-empty array`);
     for (const type of service.serviceTypes || []) enumValue(type, allowedTypes, `${label}.serviceTypes`);
@@ -103,7 +134,10 @@ if (services) {
     enumValue(service.free, ["yes", "no", "unknown"], `${label}.free`);
     enumValue(service.status, ["verified", "needs-verification", "temporarily-unavailable", "unknown"], `${label}.status`);
     date(service.dateLastVerified, `${label}.dateLastVerified`);
-    if (!/^https?:\/\//.test(service.sourceUrl || "")) failures.push(`${label}: sourceUrl must be absolute`);
+    verificationFields(service, label);
+    if (service.status !== "verified" && service.verificationStatus === "verified") failures.push(`${label}: verificationStatus cannot be verified while service status is ${service.status}`);
+    if (!/^https:\/\//.test(service.sourceUrl || "")) failures.push(`${label}: sourceUrl must be absolute https`);
+    if (service.website !== "unknown" && !/^https:\/\//.test(service.website || "")) failures.push(`${label}: website must be https or unknown`);
   }
 }
 
@@ -117,7 +151,53 @@ if (readiness) {
     const label = `launch-readiness ${item.id}`;
     required(item, ["id", "labelHr", "labelEn", "status", "owner", "notesHr", "notesEn"], label);
     enumValue(item.status, ["not started", "in progress", "blocked", "complete"], `${label}.status`);
+    if (item.status === "complete" && item.owner === "not-appointed") failures.push(`${label}: complete item needs an appointed owner`);
   }
+}
+
+const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith(".html")).sort();
+const trackingPattern = new RegExp([
+  ["google", "analytics"].join("-"),
+  ["google", "tag", "manager"].join(""),
+  ["g", "tag"].join("") + "\\(",
+  ["plaus", "ible"].join(""),
+  ["seg", "ment"].join(""),
+  ["mix", "panel"].join(""),
+  ["hot", "jar"].join(""),
+  ["facebook", "net"].join("\\.") + "/.*" + ["fb", "events"].join("")
+].join("|"), "i");
+function stripExecutableBlocks(html) {
+  return html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "");
+}
+
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(path.join(root, file), "utf8");
+  const visible = stripExecutableBlocks(html);
+  const h1s = html.match(/<h1\b/gi) || [];
+  if (h1s.length !== 1) failures.push(`${file}: expected exactly one h1, found ${h1s.length}`);
+  if (!/class=["'][^"']*skip-link/i.test(html)) failures.push(`${file}: missing skip link`);
+  if (!/<main\b[^>]*id=["']main["']/i.test(html)) failures.push(`${file}: missing main#main`);
+  if (!/<header\b/i.test(html) || !/<nav\b/i.test(html) || !/<footer\b/i.test(html)) failures.push(`${file}: missing expected landmarks`);
+  if (/role=["']table["']/i.test(html)) failures.push(`${file}: use native table markup instead of role table`);
+  if (trackingPattern.test(html)) failures.push(`${file}: possible analytics or tracking script`);
+  if (!/Independent educational prototype\. Not medical advice\./.test(visible)) failures.push(`${file}: missing independence disclaimer`);
+}
+
+const bannedPhrases = [
+  /HIV game/i,
+  /HIV campaign/i,
+  /PEP prevents/i,
+  /will prevent HIV/i,
+  /can hand it over/i,
+  /self-start/i,
+  /self service/i,
+  /CheckPoint-style/i
+];
+const campaignText = htmlFiles.map((file) => fs.readFileSync(path.join(root, file), "utf8")).join("\n")
+  + "\n" + fs.readFileSync(path.join(root, "assets/js/story.js"), "utf8")
+  + "\n" + fs.readFileSync(path.join(root, "assets/js/game.js"), "utf8");
+for (const pattern of bannedPhrases) {
+  if (pattern.test(campaignText)) failures.push(`banned overclaim phrase found: ${pattern}`);
 }
 
 for (const rel of [

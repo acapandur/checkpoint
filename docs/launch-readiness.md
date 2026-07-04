@@ -4,7 +4,7 @@ Current status: prototype only. Do not present this as an official public-health
 
 Prototype maintenance: Karta bez stigme tim / Project team. Individual contributors are not publicly listed for privacy and safety reasons.
 
-Contact placeholders: contact@PROJECT-DOMAIN, privacy@PROJECT-DOMAIN, security@PROJECT-DOMAIN. Replace them with project-controlled inboxes before public launch.
+Contact placeholders: contact@example.org, privacy@example.org, security@example.org. Replace them with project-controlled inboxes before public launch.
 
 ## Blockers
 

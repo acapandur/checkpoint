@@ -3,56 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Tri noći – pronađi svoj sljedeći korak</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Tri noći – pronađi svoj sljedeći korak</title>
     <meta name="description" content="Tri noći je dvojezična, tipkovnicom dostupna interaktivna priča o testiranju, prevenciji, privatnosti, hitnim pitanjima i traženju skrbi bez srama.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/play.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/play.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/play.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/play.html">
+    <link rel="canonical" href="https://example.org/play.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/play.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/play.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/play.html">
     <meta property="og:title" content="Tri noći · Pronađi svoj sljedeći korak">
     <meta property="og:description" content="Interaktivna priča o testiranju, prevenciji, privatnosti, hitnim pitanjima i skrbi bez srama.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Three Nights — Find Your Checkpoint",
-              desc: "Play Three Nights free in your browser: an interactive story about testing, prevention, privacy, urgent questions and finding care without shame." },
-        hr: { title: "Tri noći – pronađi svoj sljedeći korak",
-              desc: "Zaigraj Tri noći besplatno u pregledniku: interaktivnu priču o testiranju, prevenciji, privatnosti, hitnim pitanjima i traženju skrbi bez srama." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
     <script src="assets/js/story.js" defer></script>
     <script src="assets/js/game.js" defer></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "VideoGame",
-        "name": "Three Nights",
-        "alternateName": "Tri noći",
-        "url": "https://PROJECT-DOMAIN/play.html",
-        "gamePlatform": "Web browser",
-        "inLanguage": ["en", "hr"],
-        "genre": "Interactive fiction",
-        "isAccessibleForFree": true,
-        "description": "An interactive story about testing, prevention, privacy, urgent questions and finding care without shame."
-      }
-    </script>
-  </head>
+</head>
   <body class="game-page">
     <a class="skip-link" href="#game-root"><span class="lang-en" lang="en">Skip to the story</span><span class="lang-hr" lang="hr">Preskoči na priču</span></a>
     <header class="site-header">

@@ -6,22 +6,21 @@ including community-based access beyond one city — plus **Three
 Nights / Tri noći**, an episodic, choice-driven browser story in a night Art
 Deco style.
 
-Live: https://PROJECT-DOMAIN/
+Live: https://example.org/
 
 Maintained by: Karta bez stigme tim / Project team. Individual contributors are
 not publicly listed for privacy and safety reasons.
 
-Public contact placeholders: `contact@PROJECT-DOMAIN`,
-`privacy@PROJECT-DOMAIN`, `security@PROJECT-DOMAIN`.
+Public contact placeholders: `contact@example.org`,
+`privacy@example.org`, `security@example.org`.
 
 ## What's inside
 
 - **14 static pages**, every string in both languages inline
   (`.lang-en` / `.lang-hr` spans; `<html data-lang>` decides which shows).
   The site defaults to Croatian, and the header switch stores language choice
-  in `localStorage` through `assets/js/app.js`. Titles and meta descriptions
-  swap via a per-page
-  `window.PAGE_META` object.
+  through the namespaced helper in `assets/js/storage.js`. Titles and meta descriptions
+  swap via `assets/js/page-meta.js`.
 - **Three Nights** (`play.html`): a small visual-novel engine
   (`assets/js/game.js`) plus the full bilingual script, scene paintings and
   character cameos as inline SVG (`assets/js/story.js`). Three episodes:

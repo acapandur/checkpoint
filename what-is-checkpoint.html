@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Što je točka provjere? Razlika između koncepta i stvarnih usluga</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Što je točka provjere? Razlika između koncepta i stvarnih usluga</title>
     <meta name="description" content="Objašnjenje koncepta točke provjere, jasna napomena da ova stranica nije službena HUHIV/HZJZ stranica i status provjere naziva prije press/peticija pokretanja.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/what-is-checkpoint.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/what-is-checkpoint.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/what-is-checkpoint.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/what-is-checkpoint.html">
+    <link rel="canonical" href="https://example.org/what-is-checkpoint.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/what-is-checkpoint.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/what-is-checkpoint.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/what-is-checkpoint.html">
     <meta property="og:title" content="Što je točka provjere?">
     <meta property="og:description" content="Stani, udahni, provjeri što je važno i odaberi sljedeći put bez srama.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "What is a checkpoint? — Map Without Stigma",
-              desc: "A checkpoint means stop, breathe, check what matters and choose the next route. This independent prototype separates real services from campaign vision." },
-        hr: { title: "Što je točka provjere? – Karta bez stigme",
-              desc: "Točka provjere znači stati, udahnuti, provjeriti što je važno i odabrati sljedeći put. Ovaj neovisni prototip odvaja stvarne usluge od vizije kampanje." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -94,8 +80,8 @@
             <span class="lang-hr" lang="hr">Za aktualne lokacije, radno vrijeme, pravila naručivanja i točnu ponudu koristi službene izvore. Prije javnog outreacha kampanja mora potvrditi naziv, dopuštenja i eventualni partnerski status s organizacijama koje vode stvarne usluge.</span>
           </p>
           <ul class="source-list">
-            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV: CheckPoint Zagreb</a></li>
-            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ: savjetovanje i testiranje na HIV u Hrvatskoj</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer" referrerpolicy="no-referrer">HUHIV: CheckPoint Zagreb</a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ: savjetovanje i testiranje na HIV u Hrvatskoj</a></li>
           </ul>
           <p class="external-note"><span class="lang-en" lang="en">External link: you are leaving this prototype and opening an official or third-party website.</span><span class="lang-hr" lang="hr">Vanjska poveznica: napuštaš ovaj prototip i otvaraš službenu ili vanjsku stranicu.</span></p>
         </section>

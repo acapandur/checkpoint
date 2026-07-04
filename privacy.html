@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Privatnost – što ova statička stranica prikuplja, a što ne</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Privatnost – što ova statička stranica prikuplja, a što ne</title>
     <meta name="description" content="Precizna privacy napomena: site ne namjerno prikuplja osobne zdravstvene podatke, ali hosting i vanjski linkovi mogu obrađivati tehničke podatke.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/privacy.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/privacy.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/privacy.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/privacy.html">
+    <link rel="canonical" href="https://example.org/privacy.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/privacy.html">
     <meta property="og:title" content="Privatnost · Karta bez stigme">
     <meta property="og:description" content="Bez analitike i formi, uz realnu napomenu o hosting logovima i vanjskim servisima.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Privacy — Map Without Stigma",
-              desc: "This static site has no accounts, analytics or forms. It stores language and story progress in your browser, while the static hosting provider and external links may process standard technical data." },
-        hr: { title: "Privatnost – Karta bez stigme",
-              desc: "Ova statička stranica nema račune, analitiku ni obrasce. Sprema jezik i napredak priče u pregledniku, dok pružatelj statičkog hostinga i vanjski linkovi mogu obrađivati standardne tehničke podatke." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -88,9 +74,14 @@
         <section class="reveal">
           <h2><span class="lang-en" lang="en">What stays in your browser</span><span class="lang-hr" lang="hr">Što ostaje u tvom pregledniku</span></h2>
           <p>
-            <span class="lang-en" lang="en">This prototype may save your language choice, story progress and instant-text preference in your browser only. It does not send that information to us. The "Reset progress" button in the game clears story progress; clearing browser data may remove language and text-display preferences too.</span>
-            <span class="lang-hr" lang="hr">Ovaj prototip može spremiti odabir jezika, napredak priče i postavku trenutačnog prikaza teksta samo u tvom pregledniku. Ti se podaci ne šalju nama. Gumb "Poništi napredak" u igri briše napredak priče; brisanje podataka preglednika može ukloniti i jezik te postavke prikaza teksta.</span>
+            <span class="lang-en" lang="en">This prototype may save your language choice, story progress and instant-text preference in your browser only. It has no accounts, no backend storage, no analytics and no tracking cookies. It does not send that information to us.</span>
+            <span class="lang-hr" lang="hr">Ovaj prototip može spremiti odabir jezika, napredak priče i postavku trenutačnog prikaza teksta samo u tvom pregledniku. Nema račune, nema backend pohranu, nema analitiku i nema tracking kolačiće. Ti se podaci ne šalju nama.</span>
           </p>
+          <p class="status-note" id="local-data-status" aria-live="polite">
+            <span class="lang-en" lang="en">You can clear this project's local browser data here.</span>
+            <span class="lang-hr" lang="hr">Ovdje možeš obrisati lokalne podatke ovog projekta u pregledniku.</span>
+          </p>
+          <p><button type="button" class="button button-secondary" data-action="clear-local-data" aria-describedby="local-data-status"><span class="lang-en" lang="en">Clear local data</span><span class="lang-hr" lang="hr">Obriši lokalne podatke</span></button></p>
         </section>
 
         <section class="reveal">

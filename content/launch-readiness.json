@@ -10,7 +10,7 @@
       "labelHr": "Medicinska provjera",
       "labelEn": "Medical review",
       "status": "blocked",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Potrebna je stručna provjera svih zdravstvenih tvrdnji na hrvatskom i engleskom.",
       "notesEn": "Qualified review is required for every health claim in Croatian and English."
     },
@@ -19,7 +19,7 @@
       "labelHr": "Provjerene hrvatske rute skrbi",
       "labelEn": "Verified Croatian care routes",
       "status": "in progress",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Strukturirani imenik postoji, ali većina operativnih detalja ostaje označena kao potrebna provjera.",
       "notesEn": "A structured directory exists, but most operational details remain marked as needs verification."
     },
@@ -28,7 +28,7 @@
       "labelHr": "Odgovorni vlasnik i javni kontakt",
       "labelEn": "Responsible owner and public contact",
       "status": "blocked",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Prototip održava Karta bez stigme tim; javno lansiranje zahtijeva imenovanog organizacijskog vlasnika i aktivne kontakt adrese.",
       "notesEn": "The prototype is maintained by the Karta bez stigme project team; public launch requires an appointed organizational owner and active contact addresses."
     },
@@ -37,7 +37,7 @@
       "labelHr": "Provjera pristupačnosti",
       "labelEn": "Accessibility review",
       "status": "in progress",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Postoje osnovne provjere i fokus stanja; formalna WCAG provjera još nije dovršena.",
       "notesEn": "Basic checks and focus states exist; a formal WCAG review is not complete."
     },
@@ -46,7 +46,7 @@
       "labelHr": "Pravna i privacy provjera",
       "labelEn": "Legal and privacy review",
       "status": "blocked",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Statički site nema obrasce/analitiku, ali peticija, kontakt ili embedovi zahtijevaju pregled.",
       "notesEn": "The static site has no forms/analytics, but petition, contact or embeds require review."
     },
@@ -55,7 +55,7 @@
       "labelHr": "Korisničko testiranje",
       "labelEn": "User testing",
       "status": "not started",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Testirati s anksioznim/urgentnim korisnicima, osobama koje traže prevenciju/testiranje i stakeholderima.",
       "notesEn": "Test with anxious/urgent users, prevention/testing users and stakeholders."
     },
@@ -64,7 +64,7 @@
       "labelHr": "Stakeholder/NGO pregled",
       "labelEn": "Stakeholder/NGO review",
       "status": "not started",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Potrebna je provjera s relevantnim organizacijama i osobama pogođenima barijerama pristupa.",
       "notesEn": "Review is needed with relevant organizations and people affected by access barriers."
     },
@@ -73,7 +73,7 @@
       "labelHr": "Pregled naziva i povezanosti",
       "labelEn": "Naming and affiliation review",
       "status": "blocked",
-      "owner": "unassigned",
+      "owner": "not-appointed",
       "notesHr": "Treba potvrditi dopuštenja za nazive stvarnih usluga i spriječiti dojam partnerstva.",
       "notesEn": "Permissions for real-service names must be confirmed and affiliation confusion prevented."
     }

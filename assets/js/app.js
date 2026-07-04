@@ -1,25 +1,20 @@
-/* Map Without Stigma — shared site behavior
-   1) Bilingual switching (HR/EN). Both languages live in the HTML;
-      CSS shows one based on <html data-lang>. No text is fetched or stored
-      beyond a single language preference key.
-   2) Scroll reveals (respect prefers-reduced-motion).
-   3) Marks the current page in the nav. */
-
+/* Map Without Stigma — shared site behavior. */
 (function () {
   "use strict";
 
   var root = document.documentElement;
-  root.classList.add("js");
-
-  var STORE_KEY = "mws-lang";
+  var storage = window.MWS_STORAGE;
   var LANGS = ["hr", "en"];
 
+  root.classList.add("js");
+
+  function currentPage() {
+    return location.pathname.split("/").pop() || "index.html";
+  }
+
   function detectLang() {
-    try {
-      var saved = localStorage.getItem(STORE_KEY);
-      if (LANGS.indexOf(saved) !== -1) return saved;
-    } catch (e) { /* storage unavailable — fall through */ }
-    return "hr";
+    var saved = storage ? storage.getString("lang", null) : null;
+    return LANGS.indexOf(saved) !== -1 ? saved : "hr";
   }
 
   function applyLang(lang, persist) {
@@ -27,7 +22,8 @@
     root.setAttribute("data-lang", lang);
     root.setAttribute("lang", lang);
 
-    var meta = window.PAGE_META && window.PAGE_META[lang];
+    var pageMeta = window.MWS_PAGE_META || {};
+    var meta = pageMeta[currentPage()] && pageMeta[currentPage()][lang];
     if (meta) {
       if (meta.title) document.title = meta.title;
       var desc = document.querySelector('meta[name="description"]');
@@ -48,9 +44,7 @@
       btn.setAttribute("aria-pressed", btn.dataset.setlang === lang ? "true" : "false");
     });
 
-    if (persist) {
-      try { localStorage.setItem(STORE_KEY, lang); } catch (e) { /* ignore */ }
-    }
+    if (persist && storage) storage.setString("lang", lang);
     document.dispatchEvent(new CustomEvent("mws:lang", { detail: { lang: lang } }));
   }
 
@@ -61,6 +55,7 @@
     if (typeof obj === "string") return obj;
     return obj[window.MWS.lang()] || obj.hr || obj.en || "";
   };
+  window.MWS.applyLang = applyLang;
 
   document.addEventListener("DOMContentLoaded", function () {
     applyLang(detectLang(), false);
@@ -68,6 +63,20 @@
     document.querySelectorAll(".lang-switch button").forEach(function (btn) {
       btn.addEventListener("click", function () {
         applyLang(btn.dataset.setlang, true);
+      });
+    });
+
+    document.querySelectorAll("[data-action='clear-local-data']").forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (storage) storage.clearProjectStorage();
+        applyLang("hr", false);
+        var statusId = button.getAttribute("aria-describedby");
+        var status = statusId ? document.getElementById(statusId) : null;
+        if (status) {
+          status.textContent = window.MWS.lang() === "en"
+            ? "Local project data has been cleared in this browser."
+            : "Lokalni podaci projekta obrisani su u ovom pregledniku.";
+        }
       });
     });
 
@@ -79,19 +88,17 @@
         if (!target) return;
         window.setTimeout(function () {
           try { target.focus({ preventScroll: true }); }
-          catch (e) { target.focus(); }
+          catch (error) { target.focus(); }
         }, 0);
       });
     });
 
-    /* Current page in nav */
-    var here = location.pathname.split("/").pop() || "index.html";
+    var here = currentPage();
     document.querySelectorAll(".site-nav a").forEach(function (a) {
-      var target = a.getAttribute("href").split("/").pop();
+      var target = (a.getAttribute("href") || "").split("/").pop();
       if (target === here) a.setAttribute("aria-current", "page");
     });
 
-    /* Reveals */
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var items = document.querySelectorAll(".reveal");
     if (!items.length) return;
@@ -109,4 +116,4 @@
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     items.forEach(function (el) { io.observe(el); });
   });
-})();
+}());

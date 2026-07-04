@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Za medije – Karta bez stigme, prototip i status prije outreacha</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Za medije – Karta bez stigme, prototip i status prije outreacha</title>
     <meta name="description" content="Sažetak kampanje, status prototipa, kontakt nije imenovan, medicinski pregled nije dovršen i nema službenog partnerstva bez potvrde.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/press.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/press.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/press.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/press.html">
+    <link rel="canonical" href="https://example.org/press.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/press.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/press.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/press.html">
     <meta property="og:title" content="Za medije · Karta bez stigme">
     <meta property="og:description" content="Press materijali za prototip, uz jasne granice što je provjereno i što nije.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Press — Map Without Stigma",
-              desc: "Press materials for the Map Without Stigma campaign: what Three Nights is, the three demands, key facts about the bilingual prototype, and downloadable visual assets." },
-        hr: { title: "Za medije – Karta bez stigme",
-              desc: "Materijali za medije o kampanji Karta bez stigme: što su Tri noći, tri zahtjeva, ključne činjenice o dvojezičnom prototipu i vizualni materijali za preuzimanje." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -167,8 +153,8 @@
         <section class="notice reveal">
           <h3><span class="lang-en" lang="en">Contact</span><span class="lang-hr" lang="hr">Kontakt</span></h3>
           <p>
-            <span class="lang-en" lang="en">Prototype contact placeholders are contact@PROJECT-DOMAIN, privacy@PROJECT-DOMAIN and security@PROJECT-DOMAIN. Before outreach, replace placeholders with project-controlled addresses and publish a responsible organizer, press contact, medical reviewer status and confirmed partner list if any. Until then, this page should be treated as prototype documentation, not a press release.</span>
-            <span class="lang-hr" lang="hr">Placeholderi za kontakt prototipa su contact@PROJECT-DOMAIN, privacy@PROJECT-DOMAIN i security@PROJECT-DOMAIN. Prije outreacha treba zamijeniti placeholdere adresama pod kontrolom projekta te objaviti odgovornog organizatora, kontakt za medije, status medicinskog pregleda i potvrđeni popis partnera ako ih ima. Do tada ovu stranicu treba tretirati kao dokumentaciju prototipa, a ne kao priopćenje za medije.</span>
+            <span class="lang-en" lang="en">Prototype contact placeholders are contact@example.org, privacy@example.org and security@example.org. Before outreach, replace placeholders with project-controlled addresses and publish a responsible organizer, press contact, medical reviewer status and confirmed partner list if any. Until then, this page should be treated as prototype documentation, not a press release.</span>
+            <span class="lang-hr" lang="hr">Placeholderi za kontakt prototipa su contact@example.org, privacy@example.org i security@example.org. Prije outreacha treba zamijeniti placeholdere adresama pod kontrolom projekta te objaviti odgovornog organizatora, kontakt za medije, status medicinskog pregleda i potvrđeni popis partnera ako ih ima. Do tada ovu stranicu treba tretirati kao dokumentaciju prototipa, a ne kao priopćenje za medije.</span>
           </p>
         </section>
       </div>

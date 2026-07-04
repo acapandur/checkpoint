@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>Izvori i status provjere - Karta bez stigme</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>Izvori i status provjere - Karta bez stigme</title>
     <meta name="description" content="Službeni izvori konzultirani za prototip, status medicinske, pravne, privacy i civic/NGO provjere te blokatori prije javnog pokretanja.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/sources.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/sources.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/sources.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/sources.html">
+    <link rel="canonical" href="https://example.org/sources.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/sources.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/sources.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/sources.html">
     <meta property="og:title" content="Izvori i status provjere · Karta bez stigme">
     <meta property="og:description" content="Službeni izvori i review status za neovisni edukativni prototip.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "Sources and review status - Map Without Stigma",
-              desc: "Official sources consulted for the prototype, plus medical, legal/privacy and civic review status before any public campaign launch." },
-        hr: { title: "Izvori i status provjere - Karta bez stigme",
-              desc: "Službeni izvori konzultirani za prototip te status medicinske, pravne/privacy i civic provjere prije javnog pokretanja kampanje." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -96,13 +82,13 @@
         <section class="reference-list reveal">
           <h2><span class="lang-en" lang="en">Official sources consulted</span><span class="lang-hr" lang="hr">Konzultirani službeni izvori</span></h2>
           <ul>
-            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ - <span class="lang-en" lang="en">Croatian counseling and testing directory</span><span class="lang-hr" lang="hr">imenik savjetovanja i testiranja u Hrvatskoj</span></a></li>
-            <li><a href="https://www.hzjz.hr/sluzba-promicanje-zdravlja/odjel-za-promicanje-odgovornog-spolnog-ponasanja/savjetovaliste-za-hiv-spolno-zdravlje/" rel="noopener noreferrer">HZJZ - <span class="lang-en" lang="en">sexual health counseling page</span><span class="lang-hr" lang="hr">Savjetovalište za spolno zdravlje</span></a></li>
-            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV - CheckPoint Zagreb</a></li>
-            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer">Klinika "Dr. Fran Mihaljević" - <span class="lang-en" lang="en">HIV reference center and PEP information</span><span class="lang-hr" lang="hr">HIV referentni centar i PEP informacije</span></a></li>
-            <li><a href="https://www.cdc.gov/hivnexus/hcp/pep/index.html" rel="noopener noreferrer">CDC - <span class="lang-en" lang="en">clinical guidance for PEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PEP</span></a></li>
-            <li><a href="https://www.who.int/publications/i/item/9789240095137" rel="noopener noreferrer">WHO - <span class="lang-en" lang="en">guidelines for HIV post-exposure prophylaxis</span><span class="lang-hr" lang="hr">smjernice za postekspozicijsku profilaksu HIV-a</span></a></li>
-            <li><a href="https://www.cdc.gov/hivnexus/hcp/prep/index.html" rel="noopener noreferrer">CDC - <span class="lang-en" lang="en">clinical guidance for PrEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PrEP</span></a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ - <span class="lang-en" lang="en">Croatian counseling and testing directory</span><span class="lang-hr" lang="hr">imenik savjetovanja i testiranja u Hrvatskoj</span></a></li>
+            <li><a href="https://www.hzjz.hr/sluzba-promicanje-zdravlja/odjel-za-promicanje-odgovornog-spolnog-ponasanja/savjetovaliste-za-hiv-spolno-zdravlje/" rel="noopener noreferrer" referrerpolicy="no-referrer">HZJZ - <span class="lang-en" lang="en">sexual health counseling page</span><span class="lang-hr" lang="hr">Savjetovalište za spolno zdravlje</span></a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer" referrerpolicy="no-referrer">HUHIV - CheckPoint Zagreb</a></li>
+            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer" referrerpolicy="no-referrer">Klinika "Dr. Fran Mihaljević" - <span class="lang-en" lang="en">HIV reference center and PEP information</span><span class="lang-hr" lang="hr">HIV referentni centar i PEP informacije</span></a></li>
+            <li><a href="https://www.cdc.gov/hivnexus/hcp/pep/index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">CDC - <span class="lang-en" lang="en">clinical guidance for PEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PEP</span></a></li>
+            <li><a href="https://www.who.int/publications/i/item/9789240095137" rel="noopener noreferrer" referrerpolicy="no-referrer">WHO - <span class="lang-en" lang="en">guidelines for HIV post-exposure prophylaxis</span><span class="lang-hr" lang="hr">smjernice za postekspozicijsku profilaksu HIV-a</span></a></li>
+            <li><a href="https://www.cdc.gov/hivnexus/hcp/prep/index.html" rel="noopener noreferrer" referrerpolicy="no-referrer">CDC - <span class="lang-en" lang="en">clinical guidance for PrEP</span><span class="lang-hr" lang="hr">kliničke smjernice za PrEP</span></a></li>
           </ul>
           <p class="external-note"><span class="lang-en" lang="en">External link: you are leaving this prototype and opening an official or third-party website.</span><span class="lang-hr" lang="hr">Vanjska poveznica: napuštaš ovaj prototip i otvaraš službenu ili vanjsku stranicu.</span></p>
         </section>
@@ -158,9 +144,9 @@
           </p>
           <ul>
             <li><span class="lang-en" lang="en">Prototype maintainer: Karta bez stigme project team.</span><span class="lang-hr" lang="hr">Održavatelj prototipa: Karta bez stigme tim.</span></li>
-            <li><span class="lang-en" lang="en">Public contact placeholder: contact@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za javni kontakt: contact@PROJECT-DOMAIN.</span></li>
-            <li><span class="lang-en" lang="en">Privacy contact placeholder: privacy@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za privacy kontakt: privacy@PROJECT-DOMAIN.</span></li>
-            <li><span class="lang-en" lang="en">Security contact placeholder: security@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za sigurnosni kontakt: security@PROJECT-DOMAIN.</span></li>
+            <li><span class="lang-en" lang="en">Public contact placeholder: contact@example.org.</span><span class="lang-hr" lang="hr">Placeholder za javni kontakt: contact@example.org.</span></li>
+            <li><span class="lang-en" lang="en">Privacy contact placeholder: privacy@example.org.</span><span class="lang-hr" lang="hr">Placeholder za privacy kontakt: privacy@example.org.</span></li>
+            <li><span class="lang-en" lang="en">Security contact placeholder: security@example.org.</span><span class="lang-hr" lang="hr">Placeholder za sigurnosni kontakt: security@example.org.</span></li>
             <li><span class="lang-en" lang="en">Medical reviewer: not assigned yet.</span><span class="lang-hr" lang="hr">Medicinski recenzent: još nije određen.</span></li>
             <li><span class="lang-en" lang="en">Legal/privacy reviewer: not assigned yet.</span><span class="lang-hr" lang="hr">Pravni/privacy recenzent: još nije određen.</span></li>
             <li><span class="lang-en" lang="en">Civic/NGO reviewer: not assigned yet.</span><span class="lang-hr" lang="hr">Građanski/NGO recenzent: još nije određen.</span></li>

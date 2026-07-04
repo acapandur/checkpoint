@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var lang = "hr";
-        try {
-          var saved = localStorage.getItem("mws-lang");
-          if (saved === "en" || saved === "hr") lang = saved;
-        } catch (e) {}
-        document.documentElement.setAttribute("data-lang", lang);
-        document.documentElement.setAttribute("lang", lang);
-      }());
-    </script>
-    <title>O inicijativi – neovisni prototip, kontakt i medicinski pregled</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+<title>O inicijativi – neovisni prototip, kontakt i medicinski pregled</title>
     <meta name="description" content="Tko stoji iza prototipa, što je spremno, što nije medicinski pregledano i koji blokatori moraju biti riješeni prije ozbiljnog press/petition pusha.">
-    <link rel="canonical" href="https://PROJECT-DOMAIN/about.html">
-    <link rel="alternate" hreflang="hr" href="https://PROJECT-DOMAIN/about.html">
-    <link rel="alternate" hreflang="en" href="https://PROJECT-DOMAIN/about.html">
-    <link rel="alternate" hreflang="x-default" href="https://PROJECT-DOMAIN/about.html">
+    <link rel="canonical" href="https://example.org/about.html">
+    <link rel="alternate" hreflang="hr" href="https://example.org/about.html">
+    <link rel="alternate" hreflang="en" href="https://example.org/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://example.org/about.html">
     <meta property="og:title" content="O inicijativi · Karta bez stigme">
     <meta property="og:description" content="Neovisni edukativni prototip, bez tvrdnje o partnerstvu ili službenom statusu.">
-    <meta property="og:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta property="og:image" content="https://example.org/assets/img/share-card.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://PROJECT-DOMAIN/assets/img/share-card.png">
+    <meta name="twitter:image" content="https://example.org/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="stylesheet" href="assets/css/site.css">
-    <script>
-      window.PAGE_META = {
-        en: { title: "About the initiative — Map Without Stigma",
-              desc: "Why this campaign pairs a bilingual website with an episodic story, what the prototype deliberately leaves out, and what must happen before a public launch." },
-        hr: { title: "O inicijativi – Karta bez stigme",
-              desc: "Zašto ova kampanja spaja dvojezičnu stranicu s epizodnom pričom, što prototip namjerno izostavlja i što se mora dogoditi prije javnog pokretanja." }
-      };
-    </script>
+    <script src="assets/js/storage.js" defer></script>
+    <script src="assets/js/safety.js" defer></script>
+    <script src="assets/js/page-meta.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body>
@@ -130,9 +116,9 @@
           <ul>
             <li><span class="lang-en" lang="en">Prototype maintainer: Karta bez stigme project team.</span><span class="lang-hr" lang="hr">Održavatelj prototipa: Karta bez stigme tim.</span></li>
             <li><span class="lang-en" lang="en">Responsible organizational owner: not appointed yet.</span><span class="lang-hr" lang="hr">Odgovorni organizacijski vlasnik: nije još imenovan.</span></li>
-            <li><span class="lang-en" lang="en">Public contact placeholder: contact@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za javni kontakt: contact@PROJECT-DOMAIN.</span></li>
-            <li><span class="lang-en" lang="en">Privacy contact placeholder: privacy@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za privacy kontakt: privacy@PROJECT-DOMAIN.</span></li>
-            <li><span class="lang-en" lang="en">Security contact placeholder: security@PROJECT-DOMAIN.</span><span class="lang-hr" lang="hr">Placeholder za sigurnosni kontakt: security@PROJECT-DOMAIN.</span></li>
+            <li><span class="lang-en" lang="en">Public contact placeholder: contact@example.org.</span><span class="lang-hr" lang="hr">Placeholder za javni kontakt: contact@example.org.</span></li>
+            <li><span class="lang-en" lang="en">Privacy contact placeholder: privacy@example.org.</span><span class="lang-hr" lang="hr">Placeholder za privacy kontakt: privacy@example.org.</span></li>
+            <li><span class="lang-en" lang="en">Security contact placeholder: security@example.org.</span><span class="lang-hr" lang="hr">Placeholder za sigurnosni kontakt: security@example.org.</span></li>
             <li><span class="lang-en" lang="en">Medical review owner: not assigned yet.</span><span class="lang-hr" lang="hr">Vlasnik medicinske provjere: nije još imenovan.</span></li>
             <li><span class="lang-en" lang="en">Legal/privacy review owner: not assigned yet.</span><span class="lang-hr" lang="hr">Vlasnik pravne/privacy provjere: nije još imenovan.</span></li>
             <li><span class="lang-en" lang="en">Accessibility review owner: not assigned yet.</span><span class="lang-hr" lang="hr">Vlasnik provjere pristupačnosti: nije još imenovan.</span></li>

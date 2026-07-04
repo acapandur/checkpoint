@@ -4,8 +4,15 @@
   "private": true,
   "description": "Static public-health prototype checks for Map Without Stigma.",
   "scripts": {
-    "check": "node scripts/check-content.js && node scripts/check-site.js",
-    "check:content": "node scripts/check-content.js",
-    "check:site": "node scripts/check-site.js"
+    "check": "npm run check:inline && npm run check:security-meta && npm run check:urls && npm run check:storage && npm run check:workflows && npm run check:security-docs && npm run check:content && npm run check:placeholders",
+    "test": "npm run check",
+    "check:inline": "node scripts/check-security.js inline",
+    "check:security-meta": "node scripts/check-security.js security-meta",
+    "check:urls": "node scripts/check-security.js urls",
+    "check:storage": "node scripts/check-security.js storage",
+    "check:placeholders": "node scripts/check-security.js placeholders",
+    "check:workflows": "node scripts/check-security.js workflows",
+    "check:security-docs": "node scripts/check-security.js security-docs",
+    "check:content": "node scripts/check-content.js"
   }
 }
