@@ -142,12 +142,13 @@
 
   /* ---------------- Templates ---------------- */
   function metersHtml() {
-    return '<div class="meters">' + METER_ORDER.map(function (k) {
+    return '<div class="meter-pack"><div class="meters">' + METER_ORDER.map(function (k) {
       return '<div class="meter ' + METER_CLASS[k] + '">'
         + '<small><span>' + esc(t(S.UI.meters[k])) + "</span><span>" + state.meters[k] + "</span></small>"
         + '<div class="track"><div class="fill" style="width:' + state.meters[k] + '%"></div></div>'
         + "</div>";
-    }).join("") + "</div>";
+    }).join("") + "</div>"
+      + '<p class="meter-note">' + esc(t(S.UI.meterDisclaimer)) + "</p></div>";
   }
 
   function castHtml(list, speaker) {
@@ -165,6 +166,9 @@
       + '<p class="kicker">' + esc(t(S.UI.gateTitle)) + "</p>"
       + "<h2>" + esc(t({ en: "Three Nights", hr: "Tri noći" })) + "</h2>"
       + "<p>" + esc(t(S.UI.gateBody)) + "</p>"
+      + '<p class="gate-note independence-note">' + esc(t(S.UI.gateIndependence)) + "</p>"
+      + '<p class="gate-note urgent-help">' + esc(t(S.UI.urgentHelp)) + "</p>"
+      + '<p class="gate-note meter-note">' + esc(t(S.UI.meterDisclaimer)) + "</p>"
       + '<p class="gate-note">' + esc(t(S.UI.fiction)) + "</p>"
       + '<div class="action-row">'
       + '<button class="button button-primary" data-act="open-select">' + esc(t(S.UI.gateStart)) + "</button>"
@@ -266,6 +270,9 @@
     var insights = e.insights.map(function (ins, i) {
       return "<div><strong>" + (i + 1) + ".</strong><p>" + esc(t(ins)) + "</p></div>";
     }).join("");
+    var takeaway = e.takeaway
+      ? '<div class="civic-takeaway"><strong>' + esc(t(S.UI.civicTakeaway)) + "</strong><p>" + esc(t(e.takeaway)) + "</p></div>"
+      : "";
     var flavor = meterFlavor().map(function (l) { return "<p>" + esc(l) + "</p>"; }).join("");
     var primary = hasNext
       ? '<button class="button button-primary" data-act="start-ep" data-ep="' + nextIndex + '">' + esc(t(S.UI.continueStory)) + "</button>"
@@ -278,6 +285,7 @@
       + '<p class="sub">' + flavor + "</p>"
       + '<p class="kicker" style="margin-top:6px">' + esc(t(S.UI.whatTheNightShowed)) + "</p>"
       + '<div class="ledger-list">' + insights + "</div>"
+      + takeaway
       + '<div class="demand-unlock"><span class="gem" aria-hidden="true"></span>'
       + "<p><strong>" + esc(t(S.UI.demandUnlocked)) + "</strong>" + esc(t(e.demand)) + "</p></div>"
       + '<div class="action-row">' + primary

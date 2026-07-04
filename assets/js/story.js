@@ -299,10 +299,15 @@
     nightLedger: { en: "Night Ledger", hr: "Noćna bilanca" },
     whatTheNightShowed: { en: "What this night showed", hr: "Što je ova noć pokazala" },
     demandUnlocked: { en: "Campaign demand unlocked", hr: "Otključan zahtjev kampanje" },
+    civicTakeaway: { en: "Civic access takeaway", hr: "Pouka o dostupnosti" },
     meters: {
       calm: { en: "Calm support", hr: "Mirna podrška" },
       clarity: { en: "Route clarity", hr: "Jasnoća rute" },
       trust: { en: "System trust", hr: "Povjerenje u sustav" }
+    },
+    meterDisclaimer: {
+      en: "These meters show emotional support and route clarity. They do not measure medical risk or health outcome.",
+      hr: "Ovi pokazatelji prikazuju emocionalnu podršku i jasnoću puta. Ne mjere medicinski rizik ni zdravstveni ishod."
     },
     meterHigh: {
       calm: { en: "Steady hands by sunrise.", hr: "Mirne ruke do zore." },
@@ -330,6 +335,14 @@
       en: "Three Nights is a fictional, choice-driven story about finding sexual-health care without shame. It mentions a broken condom, HIV prevention (PEP and PrEP) and testing — calmly, without graphic content. Nothing you choose is recorded beyond this browser, and the game never asks for personal details. If you need real help right now, contact a health professional or emergency services.",
       hr: "Tri noći izmišljena je priča s odlukama o traženju skrbi za spolno zdravlje bez srama. Spominje puknuti kondom, prevenciju HIV-a (PEP i PrEP) i testiranje – smireno, bez eksplicitnog sadržaja. Tvoji se odabiri ne bilježe izvan ovog preglednika i igra nikad ne traži osobne podatke. Ako ti sada treba stvarna pomoć, obrati se zdravstvenom stručnjaku ili hitnoj službi."
     },
+    gateIndependence: {
+      en: "This is an independent educational prototype. It is not an official website of HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution.",
+      hr: "Ovo je neovisni edukativni prototip. Ovo nije službena stranica HUHIV-a, HZJZ-a, CheckPointa Zagreb, bilo koje klinike ili državne institucije."
+    },
+    urgentHelp: {
+      en: "Need help now? If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals immediately. This site cannot assess your personal risk.",
+      hr: "Trebaš pomoć odmah? Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova stranica ne može procijeniti tvoj osobni rizik."
+    },
     gateStart: { en: "Raise the curtain", hr: "Podigni zastor" }
   };
 
@@ -353,13 +366,17 @@
       poster: "bedroom",
       start: "t1",
       insights: [
-        { en: "PEP (post-exposure prophylaxis) exists: medicine that can prevent HIV after a possible exposure.", hr: "PEP (postekspozicijska profilaksa) postoji: lijek koji može spriječiti HIV nakon moguće izloženosti." },
-        { en: "It must start as soon as possible — no later than 72 hours. Every hour matters.", hr: "Mora početi što prije – najkasnije unutar 72 sata. Svaki sat je važan." },
+        { en: "PEP can reduce the chance of HIV infection when started in time after professional assessment and taken as prescribed. It is not guaranteed.", hr: "PEP može smanjiti mogućnost infekcije HIV-om ako se započne na vrijeme nakon stručne procjene i uzima prema uputama. Nije jamstvo." },
+        { en: "PEP is time-sensitive. Seek professional help as soon as possible, ideally within 24 hours and no later than 72 hours after possible exposure.", hr: "PEP je vremenski osjetljiv. Potražite stručnu pomoć što prije, idealno unutar 24 sata, a najkasnije unutar 72 sata nakon mogućeg izlaganja." },
         { en: "The route runs through professionals: emergency care and infectious-disease clinics, then follow-up testing.", hr: "Ruta ide preko stručnjaka: hitne službe i klinike za infektivne bolesti, a zatim kontrolna testiranja." }
       ],
       demand: {
         en: "A clear urgent PEP assessment route in every Croatian region.",
         hr: "Jasna urgentna ruta za procjenu PEP-a u svakoj hrvatskoj regiji."
+      },
+      takeaway: {
+        en: "Time-sensitive help should be easy to find at night, not hidden across confusing pages.",
+        hr: "Vremenski osjetljiva pomoć treba biti lako dostupna noću, ne skrivena po zbunjujućim stranicama."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -402,16 +419,16 @@
                   hr: "Kondom je pukao. Večeras. Ne znam njegov status. Iskreno, ne znam ni svoj. I ne znam što sad." },
           next: "n7" },
         n7: { bg: "bedroom", cast: [{ c: "ema", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "First: you're not the first person this has happened to, and you won't be the last. It's a health question, not a character question. Second: there's a thing called PEP — medicine that can prevent HIV after a possible exposure. But it's time-sensitive.",
-                  hr: "Prvo: nisi prva osoba kojoj se ovo dogodilo i nećeš biti zadnja. To je zdravstveno pitanje, ne pitanje karaktera. Drugo: postoji nešto što se zove PEP – lijek koji može spriječiti HIV nakon moguće izloženosti. Ali vezan je uz vrijeme." },
+          text: { en: "First: you're not the first person this has happened to, and you won't be the last. It's a health question, not a character question. Second: PEP can reduce the chance of HIV infection when started in time after professional assessment and taken as prescribed. It is not guaranteed, and it is time-sensitive.",
+                  hr: "Prvo: nisi prva osoba kojoj se ovo dogodilo i nećeš biti zadnja. To je zdravstveno pitanje, ne pitanje karaktera. Drugo: PEP može smanjiti mogućnost infekcije HIV-om ako se započne na vrijeme nakon stručne procjene i uzima prema uputama. Nije jamstvo i vremenski je osjetljiv." },
           choice: [
             { t: { en: "\"How much time do I have?\"", hr: "\"Koliko vremena imam?\"" }, fx: { clarity: +8 }, go: "n8a" },
             { t: { en: "\"I'm so embarrassed I could sink.\"", hr: "\"Toliko me sram da bih propala u pod.\"" }, fx: { trust: +6 }, go: "n8b" },
             { t: { en: "\"Is it dangerous? The medicine?\"", hr: "\"Je li to opasno? Taj lijek?\"" }, fx: { clarity: +5 }, go: "n8c" }
           ] },
         n8a: { bg: "bedroom", cast: [{ c: "ema", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "The official guidance is: start as soon as possible, and no later than 72 hours after the exposure. You're at hour one. That's not a countdown to panic about — it's a head start.",
-                  hr: "Službena uputa glasi: početi što prije, a najkasnije 72 sata nakon izloženosti. Ti si na prvom satu. To nije odbrojavanje za paniku – to je prednost." },
+          text: { en: "PEP is time-sensitive. Seek professional help as soon as possible, ideally within 24 hours and no later than 72 hours after possible exposure. You're at hour one. That's not a countdown to panic about — it's a head start.",
+                  hr: "PEP je vremenski osjetljiv. Potražite stručnu pomoć što prije, idealno unutar 24 sata, a najkasnije unutar 72 sata nakon mogućeg izlaganja. Ti si na prvom satu. To nije odbrojavanje za paniku – to je prednost." },
           next: "n9" },
         n8b: { bg: "bedroom", cast: [{ c: "ema", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
           text: { en: "Ema. Condoms break. Zippers stick, trams run late, condoms break. Shame is the only part of tonight that has zero medical use — leave it on the floor and take the next step.",
@@ -462,8 +479,8 @@
                   hr: "Neonsko svjetlo, obrazac, kemijska na lančiću. Nitko je ne gleda dvaput. U ovom hodniku njezin hitan slučaj jednostavno je hitan slučaj." },
           next: "n17" },
         n17: { bg: "clinic", cast: [{ c: "ema", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "I'm the doctor on duty — Novak. You came at the right time, and you came to the right place. We'll go through a few calm questions, check that PEP is appropriate for you, and if it is, you'll start tonight. It's usually a 28-day course, with follow-up tests after.",
-                  hr: "Ja sam dežurni liječnik – Novak. Došla si u pravo vrijeme i na pravo mjesto. Proći ćemo nekoliko mirnih pitanja, provjeriti odgovara li ti PEP i, ako odgovara, počinješ večeras. Obično je to terapija od 28 dana, s kontrolnim testiranjima poslije." },
+          text: { en: "I'm the doctor on duty — Novak. You came at the right time, and you came to the right place. We'll go through a few calm questions, assess whether PEP is appropriate for you, explain the next steps, and plan follow-up testing.",
+                  hr: "Ja sam dežurni liječnik – Novak. Došla si u pravo vrijeme i na pravo mjesto. Proći ćemo nekoliko mirnih pitanja, procijeniti odgovara li ti PEP, objasniti sljedeće korake i planirati kontrolno testiranje." },
           choice: [
             { t: { en: "\"Will this stay private?\"", hr: "\"Hoće li ovo ostati privatno?\"" }, fx: { trust: +8 }, go: "n18a" },
             { t: { en: "\"What do I tell people?\"", hr: "\"Što da kažem ljudima?\"" }, fx: { calm: +5 }, go: "n18b" },
@@ -510,6 +527,10 @@
       demand: {
         en: "Clearer, more equitable and less stigmatized PrEP access and counseling.",
         hr: "Jasniji, ravnopravniji i manje stigmatiziran PrEP pristup i savjetovanje."
+      },
+      takeaway: {
+        en: "People should be able to ask about PrEP without shame or judgment.",
+        hr: "Ljudi bi trebali moći pitati o PrEP-u bez srama ili osude."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -619,6 +640,10 @@
       demand: {
         en: "CheckPoint-style community access within real reach of every region — not only one city.",
         hr: "CheckPoint-style pristup u zajednici stvarno nadohvat svakoj regiji – ne samo jednom gradu."
+      },
+      takeaway: {
+        en: "Testing access should not depend on living near Zagreb or being able to travel easily.",
+        hr: "Pristup testiranju ne bi trebao ovisiti o životu blizu Zagreba ili mogućnosti lakog putovanja."
       },
       nodes: {
         t1: { type: "title", bg: "title",
