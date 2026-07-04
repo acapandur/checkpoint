@@ -1,25 +1,38 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="hr" data-lang="hr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Privacy — Map Without Stigma</title>
-    <meta name="description" content="This website collects no personal data: no accounts, no analytics, no forms. The story saves progress and language choice only in your own browser, and you can erase both at any time.">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>Privatnost – što ova statička stranica prikuplja, a što ne</title>
+    <meta name="description" content="Precizna privacy napomena: site ne namjerno prikuplja osobne zdravstvene podatke, ali hosting i vanjski linkovi mogu obrađivati tehničke podatke.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/privacy.html">
-    <meta property="og:title" content="Privacy · Privatnost">
-    <meta property="og:description" content="No accounts, no analytics, no data collection — privacy as a design principle.">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/privacy.html">
+    <meta property="og:title" content="Privatnost · Karta bez stigme">
+    <meta property="og:description" content="Bez analitike i formi, uz realnu napomenu o hosting logovima i vanjskim servisima.">
     <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
     <script>
       window.PAGE_META = {
         en: { title: "Privacy — Map Without Stigma",
-              desc: "This website collects no personal data: no accounts, no analytics, no forms. The story saves progress and language choice only in your own browser, and you can erase both at any time." },
+              desc: "This static site has no accounts, analytics or forms. It stores language and story progress in your browser, while GitHub Pages and external links may process standard technical data." },
         hr: { title: "Privatnost – Karta bez stigme",
-              desc: "Ova stranica ne prikuplja osobne podatke: nema računa, analitike ni obrazaca. Priča sprema napredak i odabir jezika samo u tvom pregledniku, a oboje možeš izbrisati u bilo kojem trenutku." }
+              desc: "Ova statička stranica nema račune, analitiku ni obrasce. Sprema jezik i napredak priče u pregledniku, dok GitHub Pages i vanjski linkovi mogu obrađivati standardne tehničke podatke." }
       };
     </script>
     <script src="assets/js/app.js" defer></script>
@@ -54,8 +67,8 @@
             <span class="lang-hr" lang="hr">Privatnost ovdje nije stranica. Ona je arhitektura.</span>
           </h1>
           <p class="hero-lede">
-            <span class="lang-en" lang="en">A sexual-health campaign carries a special duty: to be a place people can visit without leaving a trace. This site was built accordingly.</span>
-            <span class="lang-hr" lang="hr">Kampanja o spolnom zdravlju nosi posebnu dužnost: biti mjesto koje ljudi mogu posjetiti bez ostavljanja traga. Ova je stranica tako i izgrađena.</span>
+            <span class="lang-en" lang="en">A sexual-health campaign carries a special duty: avoid asking for sensitive data, and be honest about the few technical traces that any hosted website can involve.</span>
+            <span class="lang-hr" lang="hr">Kampanja o spolnom zdravlju nosi posebnu dužnost: ne tražiti osjetljive podatke i pošteno objasniti malobrojne tehničke tragove koje svaka hostana web stranica može uključivati.</span>
           </p>
         </div>
       </section>
@@ -66,31 +79,31 @@
           <ul>
             <li><span class="lang-en" lang="en">No accounts, no log-ins, no forms — there is nothing to fill in anywhere on the site.</span><span class="lang-hr" lang="hr">Nema računa, prijava ni obrazaca – nigdje na stranici nema ničega za ispuniti.</span></li>
             <li><span class="lang-en" lang="en">No analytics, no tracking pixels, no advertising or social scripts.</span><span class="lang-hr" lang="hr">Nema analitike, pratećih piksela, oglašivačkih ni društvenih skripti.</span></li>
-            <li><span class="lang-en" lang="en">No collection of names, contacts, locations or any sexual-health details — the story never asks, and there is nowhere to answer.</span><span class="lang-hr" lang="hr">Nema prikupljanja imena, kontakata, lokacija ni bilo kakvih podataka o spolnom zdravlju – priča nikad ne pita, a nema ni mjesta za odgovor.</span></li>
+            <li><span class="lang-en" lang="en">No intentional collection of names, contacts, locations or sexual-health details — the story never asks, and there is nowhere to answer.</span><span class="lang-hr" lang="hr">Nema namjernog prikupljanja imena, kontakata, lokacija ni podataka o spolnom zdravlju – priča nikad ne pita, a nema ni mjesta za odgovor.</span></li>
           </ul>
         </section>
 
         <section class="reveal">
           <h2><span class="lang-en" lang="en">What stays in your browser</span><span class="lang-hr" lang="hr">Što ostaje u tvom pregledniku</span></h2>
           <p>
-            <span class="lang-en" lang="en">Two small values are stored locally on your device only, using your browser's storage: your language choice (English or Croatian) and which story episodes you have finished. They never leave your device, and the "Reset progress" button in the game — or clearing your browser data — erases them completely.</span>
-            <span class="lang-hr" lang="hr">Dvije male vrijednosti spremaju se lokalno, samo na tvom uređaju, u pohrani preglednika: odabir jezika (hrvatski ili engleski) i koje si epizode priče završio ili završila. One nikad ne napuštaju tvoj uređaj, a gumb "Poništi napredak" u igri – ili brisanje podataka preglednika – u potpunosti ih uklanja.</span>
+            <span class="lang-en" lang="en">Two small values are stored locally in your browser: your language choice (English or Croatian) and which story episodes you have finished. The website does not send those values to a server. The "Reset progress" button in the game — or clearing your browser data — erases them.</span>
+            <span class="lang-hr" lang="hr">Dvije male vrijednosti spremaju se lokalno u tvom pregledniku: odabir jezika (hrvatski ili engleski) i koje si epizode priče završio ili završila. Stranica te vrijednosti ne šalje na server. Gumb "Poništi napredak" u igri – ili brisanje podataka preglednika – uklanja ih.</span>
           </p>
         </section>
 
         <section class="reveal">
           <h2><span class="lang-en" lang="en">Third parties</span><span class="lang-hr" lang="hr">Treće strane</span></h2>
           <p>
-            <span class="lang-en" lang="en">The site is hosted on GitHub Pages and loads two typefaces from Google Fonts; like any web host or font service, those providers technically process standard connection data (such as an IP address) to deliver files. A production launch aiming for zero third-party requests should self-host the fonts — a one-file change noted in the project README.</span>
-            <span class="lang-hr" lang="hr">Stranica se poslužuje putem GitHub Pagesa i učitava dva pisma s Google Fontsa; kao i svaki poslužitelj ili servis za fontove, ti pružatelji tehnički obrađuju standardne podatke o povezivanju (poput IP adrese) kako bi isporučili datoteke. Produkcijsko izdanje koje cilja na nula zahtjeva prema trećim stranama trebalo bi fontove posluživati samostalno – izmjena od jedne datoteke, zabilježena u README-u projekta.</span>
+            <span class="lang-en" lang="en">The site is hosted on GitHub Pages. Like any web host, GitHub may process standard connection data, such as IP address, browser information, request path and time, to deliver files and protect the service. This site does not load Google Fonts, analytics, advertising scripts or social widgets. External links, including official health resources and any future petition platform, have their own privacy terms.</span>
+            <span class="lang-hr" lang="hr">Stranica se poslužuje putem GitHub Pagesa. Kao i svaki web-host, GitHub može obrađivati standardne podatke o povezivanju, poput IP adrese, podataka o pregledniku, tražene putanje i vremena zahtjeva, radi isporuke datoteka i zaštite usluge. Ova stranica ne učitava Google Fonts, analitiku, oglašivačke skripte ni društvene widgete. Vanjske poveznice, uključujući službene zdravstvene izvore i eventualnu buduću platformu za peticiju, imaju vlastite uvjete privatnosti.</span>
           </p>
         </section>
 
         <section class="notice reveal">
           <h3><span class="lang-en" lang="en">One honest sentence</span><span class="lang-hr" lang="hr">Jedna iskrena rečenica</span></h3>
           <p>
-            <span class="lang-en" lang="en">The safest data is the data that was never collected. That is the whole policy.</span>
-            <span class="lang-hr" lang="hr">Najsigurniji podaci oni su koji nikad nisu prikupljeni. To je cijela politika.</span>
+            <span class="lang-en" lang="en">The policy is intentionally small: do not ask visitors for sensitive data, keep story progress local, and disclose hosting and external-link limits plainly.</span>
+            <span class="lang-hr" lang="hr">Politika je namjerno mala: ne tražiti od posjetitelja osjetljive podatke, držati napredak priče lokalno i jasno navesti granice hostinga i vanjskih poveznica.</span>
           </p>
         </section>
       </div>

@@ -1,18 +1,31 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="hr" data-lang="hr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About the initiative — Map Without Stigma</title>
-    <meta name="description" content="Why this campaign pairs a bilingual website with an episodic story, what the prototype deliberately leaves out, and what must happen before a public launch.">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>O inicijativi – neovisni prototip, TODO kontakt i medicinski pregled</title>
+    <meta name="description" content="Tko stoji iza prototipa, što je launch-ready, što nije medicinski pregledano i koji TODO-i moraju biti riješeni prije ozbiljnog press/petition pusha.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/about.html">
-    <meta property="og:title" content="About · O inicijativi">
-    <meta property="og:description" content="A campaign built website-first, story-second, petition-third — on purpose.">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/about.html">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/about.html">
+    <meta property="og:title" content="O inicijativi · Karta bez stigme">
+    <meta property="og:description" content="Neovisni edukativni prototip, bez tvrdnje o partnerstvu ili službenom statusu.">
     <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
     <script>
       window.PAGE_META = {
@@ -54,8 +67,8 @@
             <span class="lang-hr" lang="hr">Izgrađeno redoslijedom koji poštovanje zahtijeva.</span>
           </h1>
           <p class="hero-lede">
-            <span class="lang-en" lang="en">Website first, so facts are findable. Story second, so the system gap becomes felt. Petition third, so the signature follows understanding.</span>
-            <span class="lang-hr" lang="hr">Prvo stranica, da činjenice budu pronalazive. Zatim priča, da se rupa u sustavu osjeti. Tek onda peticija, da potpis slijedi razumijevanje.</span>
+            <span class="lang-en" lang="en">Website first, so facts are findable. Story second, so the system gap becomes felt. Petition third, so public support follows understanding.</span>
+            <span class="lang-hr" lang="hr">Prvo stranica, da činjenice budu pronalazive. Zatim priča, da se rupa u sustavu osjeti. Tek onda peticija, da javna podrška slijedi razumijevanje.</span>
           </p>
         </div>
       </section>
@@ -80,18 +93,27 @@
           <article class="panel">
             <h3><span class="lang-en" lang="en">What it deliberately leaves out</span><span class="lang-hr" lang="hr">Što namjerno izostavlja</span></h3>
             <p>
-              <span class="lang-en" lang="en">Data collection of any kind, medical specifics such as drug names or dosing, claims about concrete Croatian services and hours, and a live signature form — each belongs to the launch phase, with expert review and named partners.</span>
-              <span class="lang-hr" lang="hr">Bilo kakvo prikupljanje podataka, medicinske pojedinosti poput naziva lijekova i doziranja, tvrdnje o konkretnim hrvatskim službama i radnim vremenima te aktivni obrazac za potpise – sve to pripada fazi pokretanja, uz stručnu provjeru i imenovane partnere.</span>
+              <span class="lang-en" lang="en">Health forms, signatures, medical specifics such as drug names or dosing, claims about concrete Croatian services and hours, and any statement of official partnership — each belongs to the launch phase, with expert review and named responsible organizers.</span>
+              <span class="lang-hr" lang="hr">Zdravstvene obrasce, potpise, medicinske pojedinosti poput naziva lijekova i doziranja, tvrdnje o konkretnim hrvatskim službama i radnim vremenima te bilo kakvu tvrdnju o službenom partnerstvu – sve to pripada fazi pokretanja, uz stručnu provjeru i imenovane odgovorne organizatore.</span>
             </p>
           </article>
+        </section>
+
+        <section class="notice reveal">
+          <h2><span class="lang-en" lang="en">Current status</span><span class="lang-hr" lang="hr">Trenutačni status</span></h2>
+          <p>
+            <span class="lang-en" lang="en">This is an independent educational prototype. It is not an official HUHIV, CheckPoint, HZJZ or clinic website, and it does not yet have a public petition organizer, press contact or completed medical review.</span>
+            <span class="lang-hr" lang="hr">Ovo je neovisni edukativni prototip. Nije službena stranica HUHIV-a, CheckPointa, HZJZ-a ni klinike, i još nema javnog organizatora peticije, kontakt za medije ni dovršen medicinski pregled.</span>
+          </p>
         </section>
 
         <section class="reveal">
           <h2><span class="lang-en" lang="en">Before public launch</span><span class="lang-hr" lang="hr">Prije javnog pokretanja</span></h2>
           <ol>
             <li><span class="lang-en" lang="en">Medical review of every health statement, in both languages, by qualified professionals.</span><span class="lang-hr" lang="hr">Medicinska provjera svake zdravstvene tvrdnje, na oba jezika, od strane kvalificiranih stručnjaka.</span></li>
-            <li><span class="lang-en" lang="en">Partnership with the organizations running real CheckPoint services, so descriptions match reality.</span><span class="lang-hr" lang="hr">Partnerstvo s organizacijama koje vode stvarne CheckPoint usluge, kako bi opisi odgovarali stvarnosti.</span></li>
-            <li><span class="lang-en" lang="en">A vetted external petition platform, linked from the petition page.</span><span class="lang-hr" lang="hr">Provjerena vanjska platforma za peticije, povezana sa stranice peticije.</span></li>
+            <li><span class="lang-en" lang="en">Named responsible organizer, public contact and confirmed permission for any use of CheckPoint naming in advocacy materials.</span><span class="lang-hr" lang="hr">Imenovani odgovorni organizator, javni kontakt i potvrđeno dopuštenje za svako korištenje naziva CheckPoint u zagovaračkim materijalima.</span></li>
+            <li><span class="lang-en" lang="en">Verification with organizations running real services, so descriptions, hours, locations and offers match reality.</span><span class="lang-hr" lang="hr">Provjera s organizacijama koje vode stvarne usluge, kako bi opisi, radno vrijeme, lokacije i ponuda odgovarali stvarnosti.</span></li>
+            <li><span class="lang-en" lang="en">A vetted external petition platform with clear privacy terms, linked from the petition page only when ready.</span><span class="lang-hr" lang="hr">Provjerena vanjska platforma za peticije s jasnim uvjetima privatnosti, povezana sa stranice peticije tek kad je spremna.</span></li>
           </ol>
         </section>
 

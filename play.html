@@ -1,18 +1,31 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="hr" data-lang="hr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Play Three Nights — the Map Without Stigma interactive story</title>
-    <meta name="description" content="Play Three Nights free in your browser: an episodic, choice-driven Art Deco story about a broken condom and PEP, a question about PrEP, and a test three hours away.">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>Igraj Tri noći – interaktivna priča Karte bez stigme</title>
+    <meta name="description" content="Tri noći je dvojezična, tipkovnicom dostupna interaktivna priča o PEP-u, PrEP-u, testiranju i jasnijim rutama do skrbi u Hrvatskoj.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/play.html">
-    <meta property="og:title" content="Three Nights · Tri noći — play the story">
-    <meta property="og:description" content="An episodic, choice-driven night story about sexual-health routes without shame.">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/play.html">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/play.html">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/play.html">
+    <meta property="og:title" content="Tri noći · Igraj priču">
+    <meta property="og:description" content="Edukativna Art Deco priča o seksualno-zdravstvenim rutama bez srama.">
     <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
     <script>
       window.PAGE_META = {
@@ -71,13 +84,13 @@
       </div>
 
       <section class="marquee deco-frame" aria-label="Three Nights — story stage"><span class="frame-b"></span>
-        <div id="game-root" class="stage" aria-live="off">
+        <div id="game-root" class="stage" role="region" aria-live="off" aria-label="Three Nights story stage / Pozornica priče Tri noći" tabindex="-1">
           <noscript>
             <div class="ledger">
               <h2><span class="lang-en" lang="en">The stage needs JavaScript</span><span class="lang-hr" lang="hr">Pozornici treba JavaScript</span></h2>
               <p>
-                <span class="lang-en" lang="en">Three Nights is an interactive story and needs JavaScript to run. All of its facts also live on the regular pages: see PrEP &amp; PEP, Testing, and the CheckPoint network.</span>
-                <span class="lang-hr" lang="hr">Tri noći interaktivna je priča i za rad treba JavaScript. Sve njezine činjenice postoje i na običnim stranicama: pogledaj PrEP i PEP, Testiranje i mrežu CheckPointa.</span>
+                <span class="lang-en" lang="en">Three Nights is an interactive story and needs JavaScript to run. All of its facts also live on the regular pages: see PrEP &amp; PEP, Testing, and the CheckPoint-style access map.</span>
+                <span class="lang-hr" lang="hr">Tri noći interaktivna je priča i za rad treba JavaScript. Sve njezine činjenice postoje i na običnim stranicama: pogledaj PrEP i PEP, Testiranje i kartu CheckPoint-style pristupa.</span>
               </p>
             </div>
           </noscript>

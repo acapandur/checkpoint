@@ -1,25 +1,38 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="hr" data-lang="hr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The regional CheckPoint network — Map Without Stigma</title>
-    <meta name="description" content="One city should not hold all the doors: the campaign vision for a connected Croatian CheckPoint network — fixed points, mobile teams and clear digital navigation across all regions.">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>Mreža CheckPoint-style pristupa u Hrvatskoj – postojeće usluge i kampanjska vizija</title>
+    <meta name="description" content="Konceptualna karta razlikuje postojeće usluge, službene izvore i prijedlog buduće CheckPoint-style mreže u Hrvatskoj.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/map-network.html">
-    <meta property="og:title" content="The CheckPoint network · Mreža CheckPointa">
-    <meta property="og:description" content="Fixed points, mobile teams, clear digital navigation — a constellation instead of a single star.">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/map-network.html">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/map-network.html">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/map-network.html">
+    <meta property="og:title" content="Mreža CheckPoint-style pristupa">
+    <meta property="og:description" content="Što postoji danas, što je kampanjska vizija i zašto karta ne smije biti rupa.">
     <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
     <script>
       window.PAGE_META = {
-        en: { title: "The regional CheckPoint network — Map Without Stigma",
-              desc: "One city should not hold all the doors: the campaign vision for a connected Croatian CheckPoint network — fixed points, mobile teams and clear digital navigation across all regions." },
-        hr: { title: "Regionalna mreža CheckPointa – Karta bez stigme",
-              desc: "Jedan grad ne bi smio imati sva vrata: vizija kampanje za povezanu hrvatsku mrežu CheckPointa – stalne točke, mobilni timovi i jasna digitalna navigacija u svim regijama." }
+        en: { title: "Concept map for CheckPoint-style access — Map Without Stigma",
+              desc: "A campaign concept map, not a service directory: existing official Croatian testing sources, proposed regional access and the demand for clearer digital navigation." },
+        hr: { title: "Konceptualna karta CheckPoint-style pristupa – Karta bez stigme",
+              desc: "Konceptualna karta kampanje, ne imenik usluga: postojeći službeni hrvatski izvori testiranja, prijedlog regionalne dostupnosti i zahtjev za jasnijom digitalnom navigacijom." }
       };
     </script>
     <script src="assets/js/app.js" defer></script>
@@ -54,26 +67,38 @@
             <span class="lang-hr" lang="hr">Zviježđe, a ne jedna zvijezda.</span>
           </h1>
           <p class="hero-lede">
-            <span class="lang-en" lang="en">Petra and Sara crossed half the country for a twenty-minute appointment. The network exists so that sentence stops being true.</span>
-            <span class="lang-hr" lang="hr">Petra i Sara prešle su pola zemlje za termin od dvadeset minuta. Mreža postoji da ta rečenica prestane biti istinita.</span>
+            <span class="lang-en" lang="en">Petra and Sara crossed half the country for a twenty-minute appointment. This page shows the campaign vision for regional access, not a current service directory.</span>
+            <span class="lang-hr" lang="hr">Petra i Sara prešle su pola zemlje za termin od dvadeset minuta. Ova stranica prikazuje kampanjsku viziju regionalne dostupnosti, a ne trenutačni imenik usluga.</span>
           </p>
         </div>
       </section>
 
       <div class="page-layout prose">
+        <section class="notice reveal">
+          <h2><span class="lang-en" lang="en">Concept map, not live locations</span><span class="lang-hr" lang="hr">Konceptualna karta, ne žive lokacije</span></h2>
+          <p>
+            <span class="lang-en" lang="en">The Art Deco constellation is an advocacy illustration. For real Croatian counseling and testing locations, use official directories and service pages, then verify current hours before going.</span>
+            <span class="lang-hr" lang="hr">Ar deko zviježđe je zagovaračka ilustracija. Za stvarne hrvatske lokacije savjetovanja i testiranja koristi službene imenike i stranice usluga, a prije odlaska provjeri aktualno radno vrijeme.</span>
+          </p>
+          <ul class="source-list">
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener">HUHIV: CheckPoint Zagreb</a></li>
+          </ul>
+        </section>
+
         <section class="reveal">
           <h2><span class="lang-en" lang="en">What "connected" means in practice</span><span class="lang-hr" lang="hr">Što "povezano" znači u praksi</span></h2>
           <p>
-            <span class="lang-en" lang="en">The campaign vision has three layers that only work together. Fixed CheckPoints anchor the regions. Mobile teams reach the towns between them on a published schedule. And a single, plain-language digital map answers the 2:47 a.m. question — where to go, what to say, what to ask — in Croatian and English, for every region, without collecting a single personal detail.</span>
-            <span class="lang-hr" lang="hr">Vizija kampanje ima tri sloja koji djeluju samo zajedno. Stalni CheckPointi sidre regije. Mobilni timovi po objavljenom rasporedu dolaze do gradova između njih. A jedinstvena, jednostavna digitalna karta odgovara na pitanje iz 2:47 ujutro – kamo ići, što reći, što pitati – na hrvatskom i engleskom, za svaku regiju, bez prikupljanja ijednog osobnog podatka.</span>
+            <span class="lang-en" lang="en">The campaign vision has three layers that only work together: regional low-threshold access points, mobile outreach for smaller towns and islands, and one official plain-language digital route that answers the 2:47 a.m. question — where to go, what to say, what to ask — in Croatian and English.</span>
+            <span class="lang-hr" lang="hr">Vizija kampanje ima tri sloja koji djeluju samo zajedno: regionalne pristupne točke niskog praga, mobilni doseg za manje gradove i otoke te jedna službena, jednostavna digitalna ruta koja odgovara na pitanje iz 2:47 ujutro – kamo ići, što reći, što pitati – na hrvatskom i engleskom.</span>
           </p>
         </section>
 
         <section class="reveal">
           <h2><span class="lang-en" lang="en">The map the story plays on</span><span class="lang-hr" lang="hr">Karta na kojoj se priča igra</span></h2>
           <p>
-            <span class="lang-en" lang="en">The constellation above sketches eight anchor regions — Zagreb, Varaždin, Rijeka, Pula, Zadar, Split, Dubrovnik and Osijek — joined by lit routes. It is a campaign illustration, not a promise of concrete locations: the point is the shape. Coverage should look like a net, because that is what catches people.</span>
-            <span class="lang-hr" lang="hr">Zviježđe gore skicira osam sidrenih regija – Zagreb, Varaždin, Rijeku, Pulu, Zadar, Split, Dubrovnik i Osijek – povezanih osvijetljenim rutama. To je ilustracija kampanje, a ne obećanje konkretnih lokacija: poanta je oblik. Pokrivenost treba izgledati kao mreža, jer mreža je ono što hvata ljude.</span>
+            <span class="lang-en" lang="en">The visual concept names eight anchor cities — Zagreb, Varaždin, Rijeka, Pula, Zadar, Split, Dubrovnik and Osijek — joined by lit routes. These labels are illustrative regional anchors, not confirmed service addresses. The point is the shape: coverage should look like a net, because that is what catches people.</span>
+            <span class="lang-hr" lang="hr">Vizualni koncept imenuje osam sidrenih gradova – Zagreb, Varaždin, Rijeku, Pulu, Zadar, Split, Dubrovnik i Osijek – povezanih osvijetljenim rutama. Ti nazivi su ilustrativna regionalna sidra, a ne potvrđene adrese usluga. Poanta je oblik: pokrivenost treba izgledati kao mreža, jer mreža je ono što hvata ljude.</span>
           </p>
         </section>
 
@@ -84,25 +109,25 @@
             <p role="columnheader"><span class="lang-en" lang="en">Which night it answers</span><span class="lang-hr" lang="hr">Kojoj noći odgovara</span></p>
           </div>
           <div class="info-row" role="row">
-            <p role="cell"><strong><span class="lang-en" lang="en">Fixed CheckPoints</span><span class="lang-hr" lang="hr">Stalni CheckPointi</span></strong></p>
-            <p role="cell"><span class="lang-en" lang="en">Free testing, counseling, prevention support with evening hours and anonymous options, in every region.</span><span class="lang-hr" lang="hr">Besplatno testiranje, savjetovanje i podrška prevenciji s večernjim radnim vremenom i mogućnošću anonimnosti, u svakoj regiji.</span></p>
+            <p role="cell"><strong><span class="lang-en" lang="en">Fixed community access points</span><span class="lang-hr" lang="hr">Stalne pristupne točke u zajednici</span></strong></p>
+            <p role="cell"><span class="lang-en" lang="en">Low-threshold testing, counseling and prevention support, with exact offers verified by each service.</span><span class="lang-hr" lang="hr">Testiranje, savjetovanje i podrška prevenciji niskog praga, uz točnu ponudu provjerenu kod svake službe.</span></p>
             <p role="cell"><span class="lang-en" lang="en">Petra &amp; Sara's three-hour road.</span><span class="lang-hr" lang="hr">Trosatna cesta Petre i Sare.</span></p>
           </div>
           <div class="info-row" role="row">
             <p role="cell"><strong><span class="lang-en" lang="en">Mobile teams</span><span class="lang-hr" lang="hr">Mobilni timovi</span></strong></p>
-            <p role="cell"><span class="lang-en" lang="en">Scheduled visits to smaller towns and islands, so distance stops deciding who gets tested.</span><span class="lang-hr" lang="hr">Planirani dolasci u manje gradove i na otoke, da udaljenost prestane odlučivati tko se testira.</span></p>
+            <p role="cell"><span class="lang-en" lang="en">Published outreach visits to smaller towns and islands, so distance stops deciding who gets tested.</span><span class="lang-hr" lang="hr">Javno objavljeni terenski dolasci u manje gradove i na otoke, da udaljenost prestane odlučivati tko se testira.</span></p>
             <p role="cell"><span class="lang-en" lang="en">Every town the tram never reaches.</span><span class="lang-hr" lang="hr">Svaki grad do kojeg tramvaj ne stiže.</span></p>
           </div>
           <div class="info-row" role="row">
             <p role="cell"><strong><span class="lang-en" lang="en">Digital navigation</span><span class="lang-hr" lang="hr">Digitalna navigacija</span></strong></p>
-            <p role="cell"><span class="lang-en" lang="en">One official, plain-language map of routes and hours — including the urgent PEP route — findable at 2:47 a.m.</span><span class="lang-hr" lang="hr">Jedna službena, jednostavna karta ruta i radnih vremena – uključujući urgentnu PEP rutu – pronalaziva u 2:47 ujutro.</span></p>
+            <p role="cell"><span class="lang-en" lang="en">One official plain-language route page for locations, hours and urgent PEP navigation, findable at 2:47 a.m.</span><span class="lang-hr" lang="hr">Jedna službena, jednostavna stranica ruta za lokacije, radna vremena i urgentnu PEP navigaciju, pronalaziva u 2:47 ujutro.</span></p>
             <p role="cell"><span class="lang-en" lang="en">Ema's eleven arguing tabs.</span><span class="lang-hr" lang="hr">Eminih jedanaest posvađanih kartica.</span></p>
           </div>
         </section>
 
         <section class="reveal">
           <div class="action-row">
-            <a class="button button-primary" href="petition.html"><span class="lang-en" lang="en">Read the petition</span><span class="lang-hr" lang="hr">Pročitaj peticiju</span></a>
+            <a class="button button-primary" href="petition.html"><span class="lang-en" lang="en">Read the campaign demands</span><span class="lang-hr" lang="hr">Pročitaj zahtjeve kampanje</span></a>
             <a class="button button-secondary" href="play.html"><span class="lang-en" lang="en">Play the story first</span><span class="lang-hr" lang="hr">Prvo odigraj priču</span></a>
           </div>
         </section>

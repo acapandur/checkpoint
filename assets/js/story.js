@@ -300,9 +300,9 @@
     whatTheNightShowed: { en: "What this night showed", hr: "Što je ova noć pokazala" },
     demandUnlocked: { en: "Campaign demand unlocked", hr: "Otključan zahtjev kampanje" },
     meters: {
-      calm: { en: "Calm", hr: "Mir" },
-      clarity: { en: "Clarity", hr: "Jasnoća" },
-      trust: { en: "Trust", hr: "Povjerenje" }
+      calm: { en: "Calm support", hr: "Mirna podrška" },
+      clarity: { en: "Route clarity", hr: "Jasnoća rute" },
+      trust: { en: "System trust", hr: "Povjerenje u sustav" }
     },
     meterHigh: {
       calm: { en: "Steady hands by sunrise.", hr: "Mirne ruke do zore." },
@@ -316,10 +316,10 @@
     },
     finaleTitle: { en: "Three nights. One map.", hr: "Tri noći. Jedna karta." },
     finaleBody: {
-      en: "Ema needed a clock that someone had already thought about. Ivan needed a question that wasn't treated as a confession. Petra and Sara needed a door closer than three hours away. None of them needed a miracle — they needed a connected CheckPoint network. That is what the petition asks for.",
-      hr: "Emi je trebao sat o kojem je netko već razmišljao. Ivanu je trebalo pitanje koje se ne tretira kao priznanje. Petri i Sari trebala su vrata bliža od tri sata vožnje. Nikome od njih nije trebalo čudo – trebala im je povezana mreža CheckPointa. Upravo to traži peticija."
+      en: "Ema needed a clock that someone had already thought about. Ivan needed a question that wasn't treated as a confession. Petra and Sara needed a door closer than three hours away. None of them needed a miracle — they needed clearer Croatian routes and CheckPoint-style community access within real reach. That is what the campaign demands describe.",
+      hr: "Emi je trebao sat o kojem je netko već razmišljao. Ivanu je trebalo pitanje koje se ne tretira kao priznanje. Petri i Sari trebala su vrata bliža od tri sata vožnje. Nikome od njih nije trebalo čudo – trebale su im jasnije hrvatske rute i CheckPoint-style pristup u zajednici stvarno nadohvat. Upravo to opisuju zahtjevi kampanje."
     },
-    toPetition: { en: "Read and sign the petition", hr: "Pročitaj i potpiši peticiju" },
+    toPetition: { en: "Read the campaign demands", hr: "Pročitaj zahtjeve kampanje" },
     resetSave: { en: "Reset progress", hr: "Poništi napredak" },
     fiction: {
       en: "A fictional story for education. Not medical advice — see the PrEP & PEP page and talk to professionals.",
@@ -358,8 +358,8 @@
         { en: "The route runs through professionals: emergency care and infectious-disease clinics, then follow-up testing.", hr: "Ruta ide preko stručnjaka: hitne službe i klinike za infektivne bolesti, a zatim kontrolna testiranja." }
       ],
       demand: {
-        en: "A clearly signposted, round-the-clock urgent PEP route in every Croatian region.",
-        hr: "Jasno označena urgentna PEP ruta dostupna 0–24 u svakoj hrvatskoj regiji."
+        en: "A clear urgent PEP assessment route in every Croatian region.",
+        hr: "Jasna urgentna ruta za procjenu PEP-a u svakoj hrvatskoj regiji."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -478,8 +478,8 @@
                   hr: "Što god ti odlučiš. \"Imala sam zdravstvenu stvar, riješeno je\" potpuna je rečenica. Nikome ne duguješ cijeli film ove noći." },
           next: "n19" },
         n19: { bg: "clinic", cast: [{ c: "ema", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "One more thing for later, when tonight is behind you: there are community CheckPoints for testing and honest conversations — including prevention like PrEP, if it ever fits your life. Places built so that nights like this get shorter.",
-                  hr: "Još nešto za poslije, kad ova noć bude iza tebe: postoje CheckPointi u zajednici za testiranje i iskrene razgovore – uključujući prevenciju poput PrEP-a, ako ti ikad bude odgovarala. Mjesta stvorena da noći poput ove postanu kraće." },
+          text: { en: "One more thing for later, when tonight is behind you: there are community-based services, including CheckPoint Zagreb, for testing and honest conversations — including prevention like PrEP, if it ever fits your life. The point is to make nights like this shorter.",
+                  hr: "Još nešto za poslije, kad ova noć bude iza tebe: postoje usluge u zajednici, uključujući CheckPoint Zagreb, za testiranje i iskrene razgovore – uključujući prevenciju poput PrEP-a, ako ti ikad bude odgovarala. Poanta je da noći poput ove postanu kraće." },
           next: "n20" },
         n20: { bg: "coast", cast: [{ c: "ema", side: "L" }], speaker: "think",
           text: { en: "First light over the rooftops. The clock mattered tonight — but the map mattered more. If I hadn't found the route... how many people don't?",
@@ -508,8 +508,8 @@
         { en: "PrEP targets HIV specifically; condoms still matter for other infections. Asking about prevention is responsibility, not confession.", hr: "PrEP cilja specifično HIV; kondomi su i dalje važni za druge infekcije. Pitati o prevenciji odgovornost je, a ne priznanje." }
       ],
       demand: {
-        en: "Free, stigma-free PrEP counseling paths inside public healthcare.",
-        hr: "Besplatni putevi PrEP savjetovanja bez stigme unutar javnog zdravstva."
+        en: "Clearer, more equitable and less stigmatized PrEP access and counseling.",
+        hr: "Jasniji, ravnopravniji i manje stigmatiziran PrEP pristup i savjetovanje."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -544,8 +544,8 @@
                   hr: "Dobar kliničar to pitanje čuje kao što zubar čuje \"kako se pravilno koristi konac\" – s olakšanjem. Ljudi koji pitaju laki su pacijenti. A ako te netko ipak osudi, to govori o njemu, ne o tebi." },
           next: "n6" },
         n5c: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "Family doctor works. And there's the community CheckPoint — testing, counseling, zero raised eyebrows. Ema went there after her own long night. She said the hardest part was the door handle.",
-                  hr: "Obiteljski liječnik može. A postoji i CheckPoint u zajednici – testiranje, savjetovanje, nula podignutih obrva. Ema je otišla onamo nakon svoje duge noći. Kaže da je najteži dio bila kvaka." },
+          text: { en: "A family doctor can be a route. So can a community service like CheckPoint Zagreb: testing, counseling, fewer raised eyebrows. Ema went for follow-up after her own long night. She said the hardest part was the door handle.",
+                  hr: "Obiteljski liječnik može biti ruta. Može i usluga u zajednici poput CheckPointa Zagreb: testiranje, savjetovanje, manje podignutih obrva. Ema je otišla na kontrolu nakon svoje duge noći. Kaže da je najteži dio bila kvaka." },
           next: "n6" },
         n6: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "think",
           text: { en: "The strange thing about self-stigma: nobody in this café said a word, and I still heard a whole jury.",
@@ -614,11 +614,11 @@
       insights: [
         { en: "Getting tested together is routine care for a new couple — a fresh start, not an accusation.", hr: "Zajedničko testiranje rutinska je skrb za novi par – novi početak, a ne optužba." },
         { en: "Some infections take time to show on tests, so a counselor helps time and, if needed, repeat them. That's normal, not a verdict.", hr: "Neke se infekcije na testovima pokažu tek nakon nekog vremena, pa savjetnik pomaže odrediti trenutak i po potrebi ponoviti test. To je normalno, a ne presuda." },
-        { en: "Confidential and anonymous options exist — but today they cluster in big cities, and distance is where stigma hides.", hr: "Povjerljive i anonimne opcije postoje – ali danas su skupljene u velikim gradovima, a udaljenost je mjesto gdje se stigma skriva." }
+        { en: "Confidential care exists, and anonymous options may exist depending on the service — but distance is still where stigma hides.", hr: "Povjerljiva skrb postoji, a anonimne opcije mogu postojati ovisno o službi – ali udaljenost je i dalje mjesto gdje se stigma skriva." }
       ],
       demand: {
-        en: "A CheckPoint within real reach of every region — not only the capital.",
-        hr: "CheckPoint stvarno dostupan u svakoj regiji – ne samo u glavnom gradu."
+        en: "CheckPoint-style community access within real reach of every region — not only one city.",
+        hr: "CheckPoint-style pristup u zajednici stvarno nadohvat svakoj regiji – ne samo jednom gradu."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -665,24 +665,24 @@
                   hr: "Na pola puta kući zastanem pod svjetiljkom. Eto što stigma zapravo radi – ne viče. Samo tiho dodaje kilometre." },
           next: "n6b2" },
         n6b2: { bg: "street", cast: [{ c: "petra", side: "L" }, { c: "sara", side: "R" }], speaker: "sara",
-          text: { en: "Hey. New plan, no corridors with familiar faces: there's a community CheckPoint in Zagreb. Free, confidential, anonymous if you want. One catch — it's in Zagreb.",
-                  hr: "Hej. Novi plan, bez hodnika s poznatim licima: u Zagrebu postoji CheckPoint u zajednici. Besplatno, povjerljivo, anonimno ako želiš. Jedna kvaka – u Zagrebu je." },
+          text: { en: "Hey. New plan, no corridors with familiar faces: HUHIV has CheckPoint Zagreb. It is built for confidential community testing; we check the current terms before we go. One catch — it's in Zagreb.",
+                  hr: "Hej. Novi plan, bez hodnika s poznatim licima: HUHIV ima CheckPoint Zagreb. Osmišljen je za povjerljivo testiranje u zajednici; provjerimo aktualne uvjete prije odlaska. Jedna kvaka – u Zagrebu je." },
           next: "n8" },
         n6c: { bg: "clinic", cast: [{ c: "petra", side: "L" }], speaker: "narr",
           text: { en: "The receptionist has heard \"for a friend\" approximately four thousand times and treats it with perfect grace. The real answer is the same either way: the tests aren't done here. A referral. A road.",
                   hr: "Recepcionarka je \"za prijateljicu\" čula otprilike četiri tisuće puta i prima to savršeno dostojanstveno. Pravi odgovor u oba je slučaja isti: testovi se ovdje ne rade. Uputnica. Cesta." },
           next: "n7" },
         n7: { bg: "coast", cast: [{ c: "petra", side: "L" }, { c: "sara", side: "R" }], speaker: "sara",
-          text: { en: "So the nearest door that fits us is in Zagreb. Community CheckPoint — free, confidential, anonymous if we want. Three hours there, three hours back. For a twenty-minute appointment.",
-                  hr: "Dakle, najbliža vrata koja nam odgovaraju su u Zagrebu. CheckPoint u zajednici – besplatno, povjerljivo, anonimno ako želimo. Tri sata tamo, tri sata natrag. Za termin od dvadeset minuta." },
+          text: { en: "So the nearest door that fits us is in Zagreb. CheckPoint Zagreb — community-based, confidential, with current terms to verify before we go. Three hours there, three hours back. For a twenty-minute appointment.",
+                  hr: "Dakle, najbliža vrata koja nam odgovaraju su u Zagrebu. CheckPoint Zagreb – u zajednici, povjerljivo, s aktualnim uvjetima koje treba provjeriti prije odlaska. Tri sata tamo, tri sata natrag. Za termin od dvadeset minuta." },
           next: "n8" },
         n8: { bg: "tram", speaker: "narr",
           text: { en: "Zagreb. The tram sighs them into the city. Six hours of road buys them a room where nobody knows their grandmother.",
                   hr: "Zagreb. Tramvaj ih uzdahom uvozi u grad. Šest sati ceste kupilo im je prostoriju u kojoj nitko ne poznaje njihovu baku." },
           next: "n9" },
         n9: { bg: "checkpoint", cast: [{ c: "petra", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "Welcome, both of you. Here's how this works: a short conversation, the tests you choose, results explained privately. Free, confidential — anonymous if you prefer. And couples testing together is one of my favourite appointments. It means the relationship is being built by adults.",
-                  hr: "Dobro došle obje. Ovako to ide: kratak razgovor, testovi koje odaberete, rezultati objašnjeni nasamo. Besplatno, povjerljivo – anonimno ako želite. A parovi koji se testiraju zajedno među mojim su najdražim terminima. To znači da vezu grade odrasli ljudi." },
+          text: { en: "Welcome, both of you. Here's how this works: a short conversation, the tests you choose, results explained privately. Confidential, with anonymous options where the service allows them. And couples testing together is one of my favourite appointments. It means the relationship is being built by adults.",
+                  hr: "Dobro došle obje. Ovako to ide: kratak razgovor, testovi koje odaberete, rezultati objašnjeni nasamo. Povjerljivo, uz anonimne opcije ondje gdje ih usluga omogućuje. A parovi koji se testiraju zajedno među mojim su najdražim terminima. To znači da vezu grade odrasli ljudi." },
           next: "n10" },
         n10: { bg: "checkpoint", cast: [{ c: "petra", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
           text: { en: "One honest detail so nothing surprises you: some infections take time to show on a test — days to weeks, depending on the test. If the timing is off, we simply repeat it later. That's calendar work, not a verdict. And whatever a result says, there is always a next step. Knowing is the strong move.",

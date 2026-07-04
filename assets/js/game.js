@@ -11,6 +11,7 @@
   var S = window.MWS_STORY;
   var root = document.getElementById("game-root");
   if (!S || !root) return;
+  root.setAttribute("tabindex", "-1");
 
   var SAVE_KEY = "mws-save";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -106,6 +107,33 @@
     if (choices) choices.classList.remove("pending");
     var hint = root.querySelector(".dialogue-hint");
     if (hint) hint.hidden = !!root.querySelector(".choices");
+    focusStoryReady();
+  }
+
+  function focusEl(el) {
+    if (!el || typeof el.focus !== "function") return;
+    try { el.focus({ preventScroll: true }); }
+    catch (e) { el.focus(); }
+  }
+
+  function focusStoryReady() {
+    var firstChoice = root.querySelector(".choices:not(.pending) .choice");
+    var hint = root.querySelector(".dialogue-hint:not([hidden])");
+    focusEl(firstChoice || hint || root);
+  }
+
+  function focusAfterRender() {
+    window.requestAnimationFrame(function () {
+      var target = root;
+      if (state.screen === "gate" || state.screen === "ledger" || state.screen === "finale") {
+        target = root.querySelector("button, a[href]") || root;
+      } else if (state.screen === "select") {
+        target = root.querySelector(".playbill:not(:disabled), button, a[href]") || root;
+      } else if (state.screen === "story" && state.typing && state.typing.done) {
+        target = root.querySelector(".choices:not(.pending) .choice, .dialogue-hint:not([hidden])") || root;
+      }
+      focusEl(target);
+    });
   }
 
   /* ---------------- Templates ---------------- */
@@ -276,6 +304,7 @@
     else if (state.screen === "story") renderStory();
     else if (state.screen === "ledger") renderLedger();
     else if (state.screen === "finale") renderFinale();
+    focusAfterRender();
   }
 
   /* ---------------- Flow ---------------- */
@@ -293,7 +322,7 @@
     if (n.type === "end") { finishEpisode(); return; }
     state.nodeId = id;
     if (n.fx) applyFx(n.fx);
-    renderStory();
+    render();
   }
 
   function finishEpisode() {

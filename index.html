@@ -1,25 +1,38 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="hr" data-lang="hr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Map Without Stigma — an interactive night story about sexual health without shame</title>
-    <meta name="description" content="Play Three Nights, a free episodic browser story about testing, PrEP and PEP, and see why Croatia needs a connected CheckPoint network without stigma. In English and Croatian.">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>Karta bez stigme – interaktivna priča o PEP-u, PrEP-u i testiranju u Hrvatskoj</title>
+    <meta name="description" content="Tri noći je dvojezična Art Deco priča i kampanja za jasniji pristup HIV/STI testiranju, PrEP-u, PEP-u i zajedničkoj seksualno-zdravstvenoj navigaciji u Hrvatskoj.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/">
-    <meta property="og:title" content="Map Without Stigma · Karta bez stigme">
-    <meta property="og:description" content="Three Nights — an interactive Art Deco story about clear sexual-health routes and CheckPoint access without shame.">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/">
+    <meta property="og:title" content="Karta bez stigme · Map Without Stigma">
+    <meta property="og:description" content="Interaktivna priča i kampanja za jasne rute do testiranja, PrEP-a, PEP-a i skrbi bez stigme.">
     <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Poiret+One&amp;display=swap">
     <link rel="stylesheet" href="assets/css/site.css">
     <script>
       window.PAGE_META = {
         en: { title: "Map Without Stigma — an interactive night story about sexual health without shame",
-              desc: "Play Three Nights, a free episodic browser story about testing, PrEP and PEP, and see why Croatia needs a connected CheckPoint network without stigma. In English and Croatian." },
+              desc: "Play Three Nights, a free episodic browser story about testing, PrEP and PEP, and see why Croatia needs clearer sexual-health routes and CheckPoint-style access without stigma. In English and Croatian." },
         hr: { title: "Karta bez stigme – interaktivna noćna priča o spolnom zdravlju bez srama",
-              desc: "Igraj Tri noći, besplatnu epizodnu priču u pregledniku o testiranju, PrEP-u i PEP-u, i saznaj zašto Hrvatskoj treba povezana mreža CheckPointa bez stigme. Na hrvatskom i engleskom." }
+              desc: "Igraj Tri noći, besplatnu epizodnu priču u pregledniku o testiranju, PrEP-u i PEP-u, i saznaj zašto Hrvatskoj trebaju jasnije rute i CheckPoint-style pristup bez stigme. Na hrvatskom i engleskom." }
       };
     </script>
     <script src="assets/js/app.js" defer></script>
@@ -31,7 +44,7 @@
         "alternateName": "Karta bez stigme",
         "url": "https://acapandur.github.io/checkpoint/",
         "inLanguage": ["en", "hr"],
-        "description": "A bilingual campaign website and episodic browser story about sexual-health access, PrEP, PEP, testing and CheckPoint care without stigma."
+        "description": "A bilingual campaign website and episodic browser story about sexual-health access, PrEP, PEP, testing and CheckPoint-style care without stigma."
       }
     </script>
   </head>
@@ -65,14 +78,49 @@
             <span class="lang-hr" lang="hr">Nakon seksa ljudima trebaju jasni putevi – ne sram.</span>
           </h1>
           <p class="hero-lede">
-            <span class="lang-en" lang="en">Play <strong>Three Nights</strong>, a short episodic story set in a nocturnal Croatia, and see why the country needs a connected <strong>CheckPoint network</strong> for testing, PrEP, PEP and counseling without stigma.</span>
-            <span class="lang-hr" lang="hr">Zaigraj <strong>Tri noći</strong>, kratku epizodnu priču smještenu u noćnu Hrvatsku, i saznaj zašto zemlji treba povezana <strong>mreža CheckPointa</strong> za testiranje, PrEP, PEP i savjetovanje bez stigme.</span>
+            <span class="lang-en" lang="en">Play <strong>Three Nights</strong>, a short episodic story set in a nocturnal Croatia, and see why the country needs clearer routes to testing, PrEP, PEP and CheckPoint-style counseling without stigma.</span>
+            <span class="lang-hr" lang="hr">Zaigraj <strong>Tri noći</strong>, kratku epizodnu priču smještenu u noćnu Hrvatsku, i saznaj zašto zemlji trebaju jasnije rute do testiranja, PrEP-a, PEP-a i CheckPoint-style savjetovanja bez stigme.</span>
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Play the story</span><span class="lang-hr" lang="hr">Igraj priču</span></a>
             <a class="button button-secondary" href="petition.html"><span class="lang-en" lang="en">Read the demands</span><span class="lang-hr" lang="hr">Pročitaj zahtjeve</span></a>
           </div>
         </div>
+      </section>
+
+      <section class="band action-route reveal" id="help-now" aria-labelledby="help-now-title">
+        <h2 id="help-now-title">
+          <span class="lang-hr" lang="hr">Trebaš pomoć sada?</span>
+          <span class="lang-en" lang="en">Need help now?</span>
+        </h2>
+        <p class="lead">
+          <span class="lang-hr" lang="hr">Ova stranica nije hitna služba i ne daje osobni medicinski savjet. Ako misliš da trebaš hitnu pomoć, obrati se hitnoj službi, infektološkoj službi ili kvalificiranom zdravstvenom djelatniku. Za aktualne lokacije i uvjete uvijek provjeri službenu stranicu prije odlaska.</span>
+          <span class="lang-en" lang="en">This site is not an emergency service and cannot give individual medical advice. If you may need urgent help, contact emergency services, an infectious disease service or a qualified healthcare provider. Always verify current locations and conditions on the official page before going.</span>
+        </p>
+        <div class="receipt-grid">
+          <article class="receipt-card">
+            <h3><span class="lang-hr" lang="hr">Gdje gledati</span><span class="lang-en" lang="en">Where to look</span></h3>
+            <p><span class="lang-hr" lang="hr">Počni od službenog HZJZ imenika savjetovališta/testiranja, HUHIV CheckPoint Zagreb stranice i, za PEP, informacija Klinike za infektivne bolesti.</span><span class="lang-en" lang="en">Start with the official HZJZ testing/counseling directory, the HUHIV CheckPoint Zagreb page and, for PEP, infectious disease clinic information.</span></p>
+          </article>
+          <article class="receipt-card">
+            <h3><span class="lang-hr" lang="hr">Što reći</span><span class="lang-en" lang="en">What to say</span></h3>
+            <p><span class="lang-hr" lang="hr">"Imam pitanje o mogućoj izloženosti HIV-u/STI-ju. Trebam stručnu procjenu, testiranje ili informaciju o PEP/PrEP ruti."</span><span class="lang-en" lang="en">"I have a question about possible HIV/STI exposure. I need professional assessment, testing or information about the PEP/PrEP route."</span></p>
+          </article>
+          <article class="receipt-card">
+            <h3><span class="lang-hr" lang="hr">Što pitati</span><span class="lang-en" lang="en">What to ask</span></h3>
+            <p><span class="lang-hr" lang="hr">Pitaj gdje je najbliža službena ruta, trebaš li doći odmah, što vrijedi za period prozora i treba li kontrolno testiranje.</span><span class="lang-en" lang="en">Ask where the nearest official route is, whether you should go now, how the window period applies and whether follow-up testing is needed.</span></p>
+          </article>
+          <article class="receipt-card">
+            <h3><span class="lang-hr" lang="hr">Što ne odgađati</span><span class="lang-en" lang="en">What not to delay</span></h3>
+            <p><span class="lang-hr" lang="hr">Moguću potrebu za PEP-om, hitne simptome, nasilje, prisilu ili situaciju u kojoj se ne osjećaš sigurno.</span><span class="lang-en" lang="en">Possible need for PEP, urgent symptoms, violence, coercion or any situation where you do not feel safe.</span></p>
+          </article>
+        </div>
+        <ul class="source-list">
+          <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener">HZJZ: savjetovanje i testiranje na HIV/hepatitise/STI u Hrvatskoj</a></li>
+          <li><a href="https://huhiv.hr/checkpoint/" rel="noopener">HUHIV: CheckPoint Zagreb</a></li>
+          <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener">Klinika "Dr. Fran Mihaljević": HIV referentni centar i PEP informacije</a></li>
+          <li><a href="https://www.hzjz.hr/sluzba-promicanje-zdravlja/odjel-za-promicanje-odgovornog-spolnog-ponasanja/savjetovaliste-za-hiv-spolno-zdravlje/" rel="noopener">HZJZ: Savjetovalište za spolno zdravlje</a></li>
+        </ul>
       </section>
 
       <section class="band" aria-labelledby="promise-title">
@@ -83,8 +131,8 @@
             <span class="lang-hr" lang="hr">Skandal nije seks. Skandal su šutnja, stigma i nejasan pristup.</span>
           </h2>
           <p>
-            <span class="lang-en" lang="en">The campaign runs in three deliberate acts, in this order — because a signature is worth most when it follows understanding.</span>
-            <span class="lang-hr" lang="hr">Kampanja se odvija u tri promišljena čina, ovim redom – jer potpis najviše vrijedi kad dolazi nakon razumijevanja.</span>
+            <span class="lang-en" lang="en">The campaign runs in three deliberate acts, in this order — because public support is strongest when it follows understanding.</span>
+            <span class="lang-hr" lang="hr">Kampanja se odvija u tri promišljena čina, ovim redom – jer je javna podrška najjača kad dolazi nakon razumijevanja.</span>
           </p>
         </div>
         <div class="programme reveal" role="list">
@@ -93,8 +141,8 @@
             <div>
               <h3><span class="lang-en" lang="en">The website</span><span class="lang-hr" lang="hr">Web-stranica</span></h3>
               <p>
-                <span class="lang-en" lang="en">Readable, searchable pages in Croatian and English — so the facts about testing, PrEP and PEP can be found by anyone, at any hour, through search, partners and press.</span>
-                <span class="lang-hr" lang="hr">Čitljive stranice na hrvatskom i engleskom, vidljive tražilicama – da činjenice o testiranju, PrEP-u i PEP-u svatko može pronaći, u bilo koje doba, preko pretrage, partnera i medija.</span>
+                <span class="lang-en" lang="en">Readable, searchable pages in Croatian and English — so the facts about testing, PrEP and PEP can be found by anyone, at any hour, through search, official sources and press.</span>
+                <span class="lang-hr" lang="hr">Čitljive stranice na hrvatskom i engleskom, vidljive tražilicama – da činjenice o testiranju, PrEP-u i PEP-u svatko može pronaći, u bilo koje doba, preko pretrage, službenih izvora i medija.</span>
               </p>
             </div>
             <span class="act-tail" aria-hidden="true">◆</span>
@@ -115,8 +163,8 @@
             <div>
               <h3><span class="lang-en" lang="en">The petition</span><span class="lang-hr" lang="hr">Peticija</span></h3>
               <p>
-                <span class="lang-en" lang="en">Each finished night unlocks one concrete demand. After the third, the Night Ledger hands you the pen — a petition for a connected CheckPoint network.</span>
-                <span class="lang-hr" lang="hr">Svaka završena noć otključava jedan konkretan zahtjev. Nakon treće, Noćna bilanca predaje ti pero – peticiju za povezanu mrežu CheckPointa.</span>
+                <span class="lang-en" lang="en">Each finished night unlocks one concrete demand. The petition is not active yet; for now, the Night Ledger points to the campaign demands and launch TODOs.</span>
+                <span class="lang-hr" lang="hr">Svaka završena noć otključava jedan konkretan zahtjev. Peticija još nije aktivna; za sada Noćna bilanca vodi na zahtjeve kampanje i TODO-e prije pokretanja.</span>
               </p>
             </div>
             <span class="act-tail" aria-hidden="true">◆</span>
@@ -140,7 +188,7 @@
           <a href="after-sex.html"><span class="lang-en" lang="en">Post-sex uncertainty</span><span class="lang-hr" lang="hr">Nesigurnost nakon seksa</span></a>
           <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP, plainly</span><span class="lang-hr" lang="hr">PrEP i PEP, jednostavno</span></a>
           <a href="testing-sti.html"><span class="lang-en" lang="en">Testing &amp; confidentiality</span><span class="lang-hr" lang="hr">Testiranje i povjerljivost</span></a>
-          <a href="map-network.html"><span class="lang-en" lang="en">The regional CheckPoint network</span><span class="lang-hr" lang="hr">Regionalna mreža CheckPointa</span></a>
+          <a href="map-network.html"><span class="lang-en" lang="en">The CheckPoint-style access map</span><span class="lang-hr" lang="hr">Karta CheckPoint-style pristupa</span></a>
         </nav>
       </section>
 
@@ -152,8 +200,8 @@
             <span class="lang-hr" lang="hr">Peticija treba slijediti razumijevanje, a ne pritisak.</span>
           </h3>
           <p>
-            <span class="lang-en" lang="en">The story ends by translating three nights into campaign demands: a round-the-clock urgent PEP route, stigma-free PrEP counseling, and a CheckPoint within reach of every region — with confidential care and sustainable public funding.</span>
-            <span class="lang-hr" lang="hr">Priča završava tako da tri noći prevodi u zahtjeve kampanje: urgentnu PEP rutu dostupnu 0–24, PrEP savjetovanje bez stigme i CheckPoint dostupan u svakoj regiji – uz povjerljivu skrb i održivo javno financiranje.</span>
+            <span class="lang-en" lang="en">The story ends by translating three nights into campaign demands: a clear urgent PEP assessment route, clearer and fairer PrEP access, and CheckPoint-style community access within real reach of every region.</span>
+            <span class="lang-hr" lang="hr">Priča završava tako da tri noći prevodi u zahtjeve kampanje: jasnu urgentnu rutu za procjenu PEP-a, jasniji i pravedniji PrEP pristup te CheckPoint-style pristup u zajednici stvarno nadohvat svakoj regiji.</span>
           </p>
           <div class="action-row">
             <a class="button button-primary" href="play.html"><span class="lang-en" lang="en">Begin Night I</span><span class="lang-hr" lang="hr">Započni Noć I.</span></a>

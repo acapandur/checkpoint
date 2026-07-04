@@ -2,7 +2,7 @@
    Map Without Stigma / Karta bez stigme
    Night Art Deco design system
    Palette: midnight blue-black, brass & gold, jade, garnet, champagne.
-   Type:    "Poiret One" (display) + "Jost" (text/UI), both Latin Extended.
+   Type:    static-safe system stacks; no third-party font requests.
    ========================================================================== */
 
 :root {
@@ -63,6 +63,9 @@
   --z-header: 40;
   --z-skip: 50;
   --z-grain: 60;
+
+  --font-body: "Aptos", "Segoe UI", "Century Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Century Gothic", "Aptos Display", "Segoe UI Light", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* ---------- Reset & base ---------- */
@@ -79,11 +82,16 @@ body {
     radial-gradient(900px 620px at 8% 4%, rgba(201, 162, 75, 0.08), transparent 55%),
     var(--midnight);
   color: var(--champagne);
-  font-family: "Jost", Futura, "Century Gothic", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.6;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 4px;
 }
 
 /* film grain, fixed and inert */
@@ -165,9 +173,9 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   white-space: nowrap;
 }
 .brand-name {
-  font-family: "Poiret One", "Jost", sans-serif;
+  font-family: var(--font-display);
   font-size: 1.22rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--gold-soft);
 }
@@ -186,7 +194,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   color: var(--parlor);
   font-weight: 500;
   font-size: 0.95rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   text-decoration: none;
   transition: color var(--fast) var(--ease);
 }
@@ -220,7 +228,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   padding: 8px 12px;
   font-weight: 600;
   font-size: 0.82rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
 }
 .lang-switch button[aria-pressed="true"] {
@@ -264,7 +272,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   color: var(--jade);
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.32em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -354,11 +362,11 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 .hero-copy h1 {
   max-width: 15ch;
   margin: 14px 0 20px;
-  font-family: "Poiret One", "Jost", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.5rem, 6.4vw, 5.2rem);
+  font-size: 4.4rem;
   line-height: 1.04;
-  letter-spacing: 0.015em;
+  letter-spacing: 0;
   color: var(--gold-soft);
   text-shadow: 0 2px 30px rgba(6, 10, 18, 0.8);
 }
@@ -366,7 +374,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   max-width: 58ch;
   margin: 0;
   color: var(--parlor);
-  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  font-size: 1.12rem;
   font-weight: 300;
 }
 .hero-lede strong { color: var(--champagne); font-weight: 500; }
@@ -393,7 +401,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   border: 0;
   font-weight: 600;
   font-size: 0.98rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   text-decoration: none;
   overflow: hidden;
   transition: transform var(--fast) var(--ease), filter var(--fast) var(--ease);
@@ -462,11 +470,11 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 .band-head { max-width: 720px; margin-bottom: 44px; }
 .band-head h2, .prose h2 {
   margin: 0 0 14px;
-  font-family: "Poiret One", "Jost", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  font-size: 2.35rem;
   line-height: 1.14;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   color: var(--gold-soft);
 }
 .band-head p { margin: 0; color: var(--muted); max-width: 62ch; }
@@ -484,13 +492,13 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 .programme-act + .programme-act { border-top: 1px solid var(--brass-line-soft); }
 .programme-act:hover { background: rgba(201, 162, 75, 0.05); }
 .act-no {
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0;
   color: var(--brass);
   text-transform: uppercase;
 }
-.programme-act h3 { margin: 0 0 4px; font-size: 1.12rem; font-weight: 600; letter-spacing: 0.03em; }
+.programme-act h3 { margin: 0 0 4px; font-size: 1.12rem; font-weight: 600; letter-spacing: 0; }
 .programme-act p { margin: 0; color: var(--muted); max-width: 60ch; }
 .act-tail { color: var(--jade); font-size: 1.4rem; }
 
@@ -515,7 +523,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   box-shadow: inset 0 0 0 1px var(--brass-line-soft);
   color: var(--champagne);
   font-weight: 500;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   text-decoration: none;
   transition: background var(--fast) var(--ease), box-shadow var(--fast) var(--ease), transform var(--fast) var(--ease);
 }
@@ -536,10 +544,10 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 }
 .poster h3 {
   margin: 0 0 10px;
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 1.5rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   color: var(--gold-soft);
 }
 .poster p { margin: 0 0 18px; color: var(--muted); }
@@ -553,7 +561,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 }
 .prose { display: grid; gap: 44px; }
 .prose > section > p, .prose li { color: var(--parlor); max-width: 68ch; }
-.prose h3 { margin: 0 0 8px; font-weight: 600; letter-spacing: 0.02em; color: var(--champagne); }
+.prose h3 { margin: 0 0 8px; font-weight: 600; letter-spacing: 0; color: var(--champagne); }
 .prose ul, .prose ol { margin: 12px 0 0; padding-left: 22px; }
 .prose li + li { margin-top: 10px; }
 .prose li::marker { color: var(--brass); }
@@ -574,7 +582,7 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   background: var(--jade-tint);
   box-shadow: inset 0 0 0 1px rgba(63, 201, 178, 0.35);
 }
-.notice h2, .notice h3 { margin: 0 0 8px; font-family: "Jost", sans-serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #aef0e3; }
+.notice h2, .notice h3 { margin: 0 0 8px; font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; letter-spacing: 0; text-transform: uppercase; color: #aef0e3; }
 .notice p { margin: 0; color: var(--champagne); }
 .notice.warning { background: var(--garnet-tint); box-shadow: inset 0 0 0 1px rgba(224, 86, 78, 0.4); }
 .notice.warning h2, .notice.warning h3 { color: #ffc9c4; }
@@ -582,10 +590,88 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 .reference-list a { color: var(--jade); font-weight: 500; }
 .reference-list a:hover { color: #7fe6d4; }
 
+.action-route {
+  padding: 26px;
+  background:
+    linear-gradient(180deg, rgba(63, 201, 178, 0.12), rgba(17, 27, 46, 0.74)),
+    var(--nocturne);
+  box-shadow: inset 0 0 0 1px rgba(63, 201, 178, 0.38), var(--shadow-soft);
+}
+.action-route h2 {
+  margin-bottom: 10px;
+}
+.action-route .lead {
+  margin: 0 0 20px;
+  color: var(--champagne);
+  max-width: 78ch;
+}
+.receipt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.receipt-card {
+  min-height: 190px;
+  padding: 17px;
+  background: rgba(6, 10, 18, 0.45);
+  box-shadow: inset 0 0 0 1px var(--brass-line-soft);
+}
+.receipt-card h3 {
+  color: var(--gold-soft);
+}
+.receipt-card p {
+  margin: 0;
+  color: var(--parlor);
+}
+.receipt-card a,
+.source-list a {
+  color: var(--jade);
+  font-weight: 600;
+}
+.source-list {
+  display: grid;
+  gap: 9px;
+  margin: 18px 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.source-list li {
+  margin: 0;
+}
+.review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+.review-meta span {
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.status-note {
+  padding: 18px 20px;
+  background: rgba(201, 162, 75, 0.09);
+  box-shadow: inset 0 0 0 1px var(--brass-line);
+}
+.status-note strong {
+  color: var(--gold-soft);
+}
+.disabled-link,
+.button[aria-disabled="true"] {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+.button[aria-disabled="true"] {
+  pointer-events: none;
+}
+
 .info-table { border: 1px solid var(--brass-line-soft); overflow: hidden; }
 .info-row { display: grid; grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr); }
 .info-row > * { margin: 0; padding: 14px 16px; border-top: 1px solid rgba(201, 162, 75, 0.12); color: var(--parlor); }
-.info-row:first-child > * { border-top: 0; background: rgba(201, 162, 75, 0.12); color: var(--gold-soft); font-weight: 600; letter-spacing: 0.04em; }
+.info-row:first-child > * { border-top: 0; background: rgba(201, 162, 75, 0.12); color: var(--gold-soft); font-weight: 600; letter-spacing: 0; }
 
 /* ---------- Footer ---------- */
 
@@ -642,10 +728,10 @@ html.js .reveal-late { transition-delay: 120ms; }
 .game-masthead { text-align: center; margin: 10px 0 30px; }
 .game-masthead h1 {
   margin: 10px 0 6px;
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.2rem, 5.6vw, 3.6rem);
-  letter-spacing: 0.22em;
+  font-size: 3.1rem;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--gold-soft);
 }
@@ -729,7 +815,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   color: #241a05;
   font-weight: 600;
   font-size: 0.82rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 .nameplate.thought { background: var(--nocturne-2); color: var(--jade); box-shadow: inset 0 0 0 1px rgba(63, 201, 178, 0.5); }
@@ -749,7 +835,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   right: 16px; bottom: 10px;
   color: var(--brass);
   font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-transform: uppercase;
   opacity: 0.85;
 }
@@ -788,8 +874,8 @@ html.js .reveal-late { transition-delay: 120ms; }
   background: rgba(6, 10, 18, 0.75);
 }
 .ep-label {
-  font-family: "Poiret One", sans-serif;
-  letter-spacing: 0.24em;
+  font-family: var(--font-display);
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--gold-soft);
   font-size: 0.95rem;
@@ -801,7 +887,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   justify-content: space-between;
   color: var(--muted);
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
 }
@@ -848,29 +934,29 @@ html.js .reveal-late { transition-delay: 120ms; }
   color: var(--jade);
   font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 .bill-body h3 {
   margin: 6px 0 8px;
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 1.45rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--gold-soft);
 }
 .bill-body p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.bill-state { margin-top: 12px; color: var(--brass); font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.bill-state { margin-top: 12px; color: var(--brass); font-size: 0.8rem; letter-spacing: 0; text-transform: uppercase; }
 .playbill.done .bill-state { color: var(--jade); }
 
 /* Ledger / interlude panels */
 .ledger { padding: 34px 30px 30px; }
 .ledger h2 {
   margin: 0 0 6px;
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 1.9rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   color: var(--gold-soft);
 }
 .ledger .sub { color: var(--muted); margin: 0 0 20px; }
@@ -880,7 +966,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   background: rgba(255, 255, 255, 0.04);
   box-shadow: inset 0 0 0 1px var(--brass-line-soft);
 }
-.ledger-list strong { color: var(--jade); display: block; margin-bottom: 3px; letter-spacing: 0.04em; }
+.ledger-list strong { color: var(--jade); display: block; margin-bottom: 3px; letter-spacing: 0; }
 .ledger-list p { margin: 0; color: var(--parlor); font-size: 0.98rem; }
 .demand-unlock {
   display: flex;
@@ -893,7 +979,7 @@ html.js .reveal-late { transition-delay: 120ms; }
 }
 .demand-unlock .gem { flex: none; width: 12px; height: 12px; background: var(--gold); transform: rotate(45deg); box-shadow: 0 0 14px rgba(233, 195, 104, 0.7); }
 .demand-unlock p { margin: 0; color: var(--gold-soft); }
-.demand-unlock p strong { display: block; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; color: var(--brass); }
+.demand-unlock p strong { display: block; letter-spacing: 0; text-transform: uppercase; font-size: 0.8rem; color: var(--brass); }
 
 .safety-gate p { max-width: 66ch; color: var(--parlor); }
 .gate-note { color: var(--muted); font-size: 0.92rem; }
@@ -915,6 +1001,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   .site-header { flex-wrap: wrap; }
   .split-band { grid-template-columns: 1fr; }
   .trio { grid-template-columns: 1fr 1fr; }
+  .receipt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .playbills { grid-template-columns: 1fr; }
   .programme-act { grid-template-columns: 64px minmax(0, 1fr); }
   .act-tail { display: none; }
@@ -927,6 +1014,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   .hero-copy { width: calc(100% - 28px); padding: 80px 0 66px; }
   .page-layout { width: calc(100% - 28px); }
   .duet, .trio { grid-template-columns: 1fr; }
+  .receipt-grid { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
   .info-row:first-child { display: none; }
   .scene { aspect-ratio: auto; height: 300px; }
@@ -935,7 +1023,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   .choices { margin: 10px 2px 2px; }
   .meters { width: 100%; }
   .meter { flex: 1; min-width: 90px; }
-  .brand-name { font-size: 1.02rem; letter-spacing: 0.1em; }
+  .brand-name { font-size: 1.02rem; letter-spacing: 0; }
 }
 
 /* ---------- Game support ---------- */
@@ -965,11 +1053,11 @@ html.js .reveal-late { transition-delay: 120ms; }
 }
 .title-card h2 {
   margin: 0 0 18px;
-  font-family: "Poiret One", sans-serif;
+  font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.6rem, 4.6vw, 3rem);
+  font-size: 2.45rem;
   line-height: 1.3;
-  letter-spacing: 0.22em;
+  letter-spacing: 0;
   color: var(--gold-soft);
   text-shadow: 0 2px 26px rgba(6, 10, 18, 0.9);
 }
@@ -977,7 +1065,7 @@ html.js .reveal-late { transition-delay: 120ms; }
   margin: 0;
   color: var(--brass);
   font-size: 0.8rem;
-  letter-spacing: 0.24em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
