@@ -117,12 +117,16 @@
   }
 
   function focusStoryReady() {
+    if (!root.contains(document.activeElement)) return;
+
     var firstChoice = root.querySelector(".choices:not(.pending) .choice");
     var hint = root.querySelector(".dialogue-hint:not([hidden])");
     focusEl(firstChoice || hint || root);
   }
 
-  function focusAfterRender() {
+  function focusAfterRender(shouldFocus) {
+    if (!shouldFocus) return;
+
     window.requestAnimationFrame(function () {
       var target = root;
       if (state.screen === "gate" || state.screen === "ledger" || state.screen === "finale") {
@@ -130,7 +134,7 @@
       } else if (state.screen === "select") {
         target = root.querySelector(".playbill:not(:disabled), button, a[href]") || root;
       } else if (state.screen === "story" && state.typing && state.typing.done) {
-        target = root.querySelector(".choices:not(.pending) .choice, .dialogue-hint:not([hidden])") || root;
+        target = root.querySelector(".title-card, .choices:not(.pending) .choice, .dialogue-hint:not([hidden])") || root;
       }
       focusEl(target);
     });
@@ -204,9 +208,10 @@
     if (n.type === "title") {
       root.innerHTML =
         '<div class="stage-top"><span class="ep-label">' + esc(t(S.UI.episode)) + " " + e.no + "</span>" + metersHtml() + "</div>"
-        + '<div class="scene scene-fade" data-act="advance">' + S.BG[n.bg || "title"]
-        + '<div class="title-card"><h2>' + esc(t(n.text)).replace(/\n/g, "<br>") + "</h2>"
-        + '<p class="tap">' + esc(t(S.UI.tapToContinue)) + "</p></div></div>"
+        + '<div class="scene scene-fade">' + S.BG[n.bg || "title"]
+        + '<button type="button" class="title-card" data-act="advance">'
+        + "<h2>" + esc(t(n.text)).replace(/\n/g, "<br>") + "</h2>"
+        + '<span class="tap">' + esc(t(S.UI.tapToContinue)) + "</span></button></div>"
         + '<p class="sr-line sr-only" aria-live="polite">' + esc(t(n.text)) + "</p>";
       state.typing = { full: t(n.text), done: true };
       return;
@@ -232,7 +237,7 @@
       + '<span class="ep-label">' + esc(t(S.UI.episode)) + " " + e.no + " — " + esc(t(e.title)) + "</span>"
       + metersHtml()
       + "</div>"
-      + '<div class="scene scene-fade" data-act="advance">' + S.BG[n.bg] + castHtml(n.cast, speakerKey) + "</div>"
+      + '<div class="scene scene-fade">' + S.BG[n.bg] + castHtml(n.cast, speakerKey) + "</div>"
       + '<div class="dialogue">'
       + '<span class="nameplate' + narrPlate + '">' + esc(plate) + "</span>"
       + '<p class="line' + thoughtCls + '" aria-hidden="true"></p>'
@@ -297,14 +302,15 @@
       + "</div></div>";
   }
 
-  function render() {
+  function render(opts) {
+    opts = opts || {};
     stopTyping();
     if (state.screen === "gate") renderGate();
     else if (state.screen === "select") renderSelect();
     else if (state.screen === "story") renderStory();
     else if (state.screen === "ledger") renderLedger();
     else if (state.screen === "finale") renderFinale();
-    focusAfterRender();
+    focusAfterRender(!!opts.focus);
   }
 
   /* ---------------- Flow ---------------- */
@@ -313,7 +319,7 @@
     state.meters = { calm: 50, clarity: 50, trust: 50 };
     state.nodeId = S.EPISODES[i].start;
     state.screen = "story";
-    render();
+    render({ focus: true });
   }
 
   function goNode(id) {
@@ -322,14 +328,14 @@
     if (n.type === "end") { finishEpisode(); return; }
     state.nodeId = id;
     if (n.fx) applyFx(n.fx);
-    render();
+    render({ focus: true });
   }
 
   function finishEpisode() {
     save.done[ep().id] = true;
     persist();
     state.screen = "ledger";
-    render();
+    render({ focus: true });
   }
 
   function advance() {
@@ -364,21 +370,24 @@
     if (act === "advance") advance();
     else if (act === "choice") choose(parseInt(el.getAttribute("data-idx"), 10));
     else if (act === "start-ep") startEpisode(parseInt(el.getAttribute("data-ep"), 10));
-    else if (act === "open-select") { state.screen = "select"; render(); }
-    else if (act === "finale") { state.screen = "finale"; render(); }
+    else if (act === "open-select") { state.screen = "select"; render({ focus: true }); }
+    else if (act === "finale") { state.screen = "finale"; render({ focus: true }); }
     else if (act === "reset") {
       save = { v: 1, done: {} };
       persist();
       state.screen = "select";
-      render();
+      render({ focus: true });
     }
   });
 
   document.addEventListener("keydown", function (evt) {
     if (state.screen !== "story") return;
     if (evt.key !== " " && evt.key !== "Enter") return;
-    var tag = document.activeElement && document.activeElement.tagName;
-    if (tag === "BUTTON" || tag === "A" || tag === "INPUT") return;
+    var active = document.activeElement;
+    if (!root.contains(active)) return;
+    var tag = active && active.tagName;
+    if (tag === "BUTTON" || tag === "A" || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+    if (active && active.isContentEditable) return;
     evt.preventDefault();
     advance();
   });
@@ -386,9 +395,10 @@
   document.addEventListener("mws:lang", function () {
     /* Re-render the current screen in the new language.
        Mid-line, the text simply completes in the new language. */
+    var hadGameFocus = root.contains(document.activeElement);
     if (state.screen === "story") {
       var n = node();
-      render();
+      render({ focus: hadGameFocus });
       if (n && n.type !== "title") {
         var lineEl = root.querySelector(".line");
         stopTyping();
@@ -397,9 +407,9 @@
         onTypeDone();
       }
     } else {
-      render();
+      render({ focus: hadGameFocus });
     }
   });
 
-  render();
+  render({ focus: false });
 })();

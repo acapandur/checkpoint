@@ -61,6 +61,19 @@
       });
     });
 
+    document.querySelectorAll(".skip-link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        var id = link.getAttribute("href");
+        if (!id || id.charAt(0) !== "#") return;
+        var target = document.getElementById(id.slice(1));
+        if (!target) return;
+        window.setTimeout(function () {
+          try { target.focus({ preventScroll: true }); }
+          catch (e) { target.focus(); }
+        }, 0);
+      });
+    });
+
     /* Current page in nav */
     var here = location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".site-nav a").forEach(function (a) {

@@ -94,6 +94,14 @@ body {
   outline-offset: 4px;
 }
 
+main:focus {
+  outline: none;
+}
+
+main:focus-visible {
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
 /* film grain, fixed and inert */
 body::after {
   content: "";
@@ -1049,7 +1057,15 @@ html.js .reveal-late { transition-delay: 120ms; }
   place-content: center;
   text-align: center;
   padding: 24px;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
   cursor: pointer;
+}
+.title-card:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px var(--gold-soft), inset 0 0 0 8px rgba(6, 10, 18, 0.7);
 }
 .title-card h2 {
   margin: 0 0 18px;
@@ -1068,8 +1084,6 @@ html.js .reveal-late { transition-delay: 120ms; }
   letter-spacing: 0;
   text-transform: uppercase;
 }
-
-.scene[data-act="advance"] { cursor: pointer; }
 
 .dialogue-hint {
   border: 0;
