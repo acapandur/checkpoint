@@ -289,25 +289,38 @@
     tapToContinue: { en: "Tap / space to continue", hr: "Dodirni / razmaknica za dalje" },
     chooseHint: { en: "Choose", hr: "Odaberi" },
     episodes: { en: "Choose an episode", hr: "Odaberi epizodu" },
+    selectKicker: { en: "Three routes · Three nights", hr: "Tri rute · Tri noći" },
+    selectTitle: { en: "Choose your situation", hr: "Odaberi situaciju" },
+    selectHint: {
+      en: "Three nights, three routes. Pick the one closest to you — there are no locked levels here, only different doors.",
+      hr: "Tri noći, tri rute. Odaberi onu koja ti je najbliža – ovdje nema zaključanih razina, samo različita vrata."
+    },
     episode: { en: "Episode", hr: "Epizoda" },
     locked: { en: "Play the previous night first", hr: "Prvo odigraj prethodnu noć" },
     ready: { en: "Play", hr: "Igraj" },
     replay: { en: "Play again", hr: "Igraj ponovno" },
     done: { en: "Completed", hr: "Završeno" },
     continueStory: { en: "Continue", hr: "Nastavi" },
-    backToEpisodes: { en: "All episodes", hr: "Sve epizode" },
+    backToEpisodes: { en: "All situations", hr: "Sve situacije" },
     nightLedger: { en: "Night Ledger", hr: "Noćna bilanca" },
     whatTheNightShowed: { en: "What this night showed", hr: "Što je ova noć pokazala" },
     demandUnlocked: { en: "Campaign demand unlocked", hr: "Otključan zahtjev kampanje" },
     civicTakeaway: { en: "Civic access takeaway", hr: "Pouka o dostupnosti" },
+    instantText: { en: "Instant text", hr: "Trenutačni tekst" },
+    reflectTitle: { en: "How the night feels", hr: "Kako protječe noć" },
     meters: {
       calm: { en: "Calm support", hr: "Mirna podrška" },
       clarity: { en: "Route clarity", hr: "Jasnoća rute" },
       trust: { en: "System trust", hr: "Povjerenje u sustav" }
     },
+    meterLevels: {
+      low: { en: "Low", hr: "Nisko" },
+      mid: { en: "Steady", hr: "Stabilno" },
+      high: { en: "Strong", hr: "Snažno" }
+    },
     meterDisclaimer: {
-      en: "These meters show emotional support and route clarity. They do not measure medical risk or health outcome.",
-      hr: "Ovi pokazatelji prikazuju emocionalnu podršku i jasnoću puta. Ne mjere medicinski rizik ni zdravstveni ishod."
+      en: "Reflection indicators, not scores. They show emotional support and how clear the route felt — never medical risk or health outcome.",
+      hr: "Pokazatelji za promišljanje, ne bodovi. Prikazuju emocionalnu podršku i koliko je ruta bila jasna – nikad medicinski rizik ni zdravstveni ishod."
     },
     meterHigh: {
       calm: { en: "Steady hands by sunrise.", hr: "Mirne ruke do zore." },
@@ -331,6 +344,10 @@
       hr: "Izmišljena priča u edukativne svrhe. Nije medicinski savjet – pogledaj stranicu PrEP i PEP i razgovaraj sa stručnjacima."
     },
     gateTitle: { en: "Before the curtain", hr: "Prije zastora" },
+    gateFormat: {
+      en: "Interactive story · Educational prototype · Free in your browser",
+      hr: "Interaktivna priča · Edukativni prototip · Besplatno u pregledniku"
+    },
     gateBody: {
       en: "Three Nights is a fictional, choice-driven story about finding sexual-health care without shame. It mentions a broken condom, HIV prevention (PEP and PrEP) and testing — calmly, without graphic content. Nothing you choose is recorded beyond this browser, and the game never asks for personal details. If you need real help right now, contact a health professional or emergency services.",
       hr: "Tri noći izmišljena je priča s odlukama o traženju skrbi za spolno zdravlje bez srama. Spominje puknuti kondom, prevenciju HIV-a (PEP i PrEP) i testiranje – smireno, bez eksplicitnog sadržaja. Tvoji se odabiri ne bilježe izvan ovog preglednika i igra nikad ne traži osobne podatke. Ako ti sada treba stvarna pomoć, obrati se zdravstvenom stručnjaku ili hitnoj službi."
@@ -339,11 +356,13 @@
       en: "This is an independent educational prototype. It is not an official website of HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution.",
       hr: "Ovo je neovisni edukativni prototip. Ovo nije službena stranica HUHIV-a, HZJZ-a, CheckPointa Zagreb, bilo koje klinike ili državne institucije."
     },
+    urgentHelpTitle: { en: "Need help now?", hr: "Trebaš pomoć odmah?" },
     urgentHelp: {
-      en: "Need help now? If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals immediately. This site cannot assess your personal risk.",
-      hr: "Trebaš pomoć odmah? Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova stranica ne može procijeniti tvoj osobni rizik."
+      en: "If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This story cannot assess your personal risk.",
+      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova priča ne može procijeniti tvoj osobni rizik."
     },
-    gateStart: { en: "Raise the curtain", hr: "Podigni zastor" }
+    gateStart: { en: "Start the story", hr: "Započni priču" },
+    gateStartPoetic: { en: "Raise the curtain", hr: "Podigni zastor" }
   };
 
   /* ================================================================
@@ -363,6 +382,11 @@
         en: "2:47 a.m. The condom broke. The clock is honest — the city should be too.",
         hr: "2:47 ujutro. Kondom je pukao. Sat je iskren – grad bi trebao biti isto."
       },
+      situation: {
+        en: "I'm worried about something that happened after sex",
+        hr: "Brine me nešto što se dogodilo nakon seksa"
+      },
+      mood: "ep1",
       poster: "bedroom",
       start: "t1",
       insights: [
@@ -517,6 +541,11 @@
         en: "Ivan has rehearsed one sentence for months. Asking it should not feel like a confession.",
         hr: "Ivan mjesecima uvježbava jednu rečenicu. Postaviti je ne bi smjelo biti kao priznanje."
       },
+      situation: {
+        en: "I want to ask about PrEP",
+        hr: "Želim pitati za PrEP"
+      },
+      mood: "ep2",
       poster: "cafe",
       start: "t1",
       insights: [
@@ -630,6 +659,11 @@
         en: "A new couple, one small town, and a door that turns out to be three hours away.",
         hr: "Novi par, jedan mali grad i vrata koja su, ispostavi se, tri sata vožnje daleko."
       },
+      situation: {
+        en: "I want testing without shame",
+        hr: "Želim testiranje bez srama"
+      },
+      mood: "ep3",
       poster: "coast",
       start: "t1",
       insights: [

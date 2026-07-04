@@ -14,7 +14,17 @@
   root.setAttribute("tabindex", "-1");
 
   var SAVE_KEY = "mws-save";
+  var INSTANT_KEY = "mws-instant";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function loadInstant() {
+    try { return localStorage.getItem(INSTANT_KEY) === "1"; }
+    catch (e) { return false; }
+  }
+  function saveInstant(on) {
+    try { localStorage.setItem(INSTANT_KEY, on ? "1" : "0"); }
+    catch (e) { /* ignore */ }
+  }
 
   function t(obj) {
     if (window.MWS && window.MWS.t) return window.MWS.t(obj);
@@ -46,11 +56,13 @@
     epIndex: 0,
     nodeId: null,
     meters: { calm: 50, clarity: 50, trust: 50 },
-    typing: null             // { full, i, timer, done }
+    typing: null,            // { full, i, timer, done }
+    instant: loadInstant(),
+    reflectOpen: true
   };
 
   var METER_ORDER = ["calm", "clarity", "trust"];
-  var METER_CLASS = { calm: "", clarity: "gold", trust: "silver" };
+  var METER_CLASS = { calm: "jade", clarity: "gold", trust: "silver" };
   var NEUTRAL_LINE = {
     en: "A night survived is a night learned from.",
     hr: "Preživljena noć – naučena noć."
@@ -76,7 +88,7 @@
   }
   function typeInto(el, full) {
     stopTyping();
-    if (reduced) {
+    if (reduced || state.instant) {
       el.textContent = full;
       state.typing = { full: full, done: true };
       onTypeDone();
@@ -141,14 +153,47 @@
   }
 
   /* ---------------- Templates ---------------- */
+  function meterLevelKey(v) {
+    if (v >= 58) return "high";
+    if (v <= 42) return "low";
+    return "mid";
+  }
   function metersHtml() {
-    return '<div class="meter-pack"><div class="meters">' + METER_ORDER.map(function (k) {
-      return '<div class="meter ' + METER_CLASS[k] + '">'
-        + '<small><span>' + esc(t(S.UI.meters[k])) + "</span><span>" + state.meters[k] + "</span></small>"
-        + '<div class="track"><div class="fill" style="width:' + state.meters[k] + '%"></div></div>'
+    var rows = METER_ORDER.map(function (k) {
+      var lvlKey = meterLevelKey(state.meters[k]);
+      var label = t(S.UI.meters[k]);
+      var level = t(S.UI.meterLevels[lvlKey]);
+      return '<div class="meter ' + METER_CLASS[k] + " lvl-" + lvlKey + '" role="img" aria-label="' + esc(label + ": " + level) + '">'
+        + '<small><span>' + esc(label) + '</span><span class="lvl">' + esc(level) + "</span></small>"
+        + '<div class="track" aria-hidden="true"><div class="fill" style="width:' + state.meters[k] + '%"></div></div>'
         + "</div>";
-    }).join("") + "</div>"
-      + '<p class="meter-note">' + esc(t(S.UI.meterDisclaimer)) + "</p></div>";
+    }).join("");
+    return '<details class="reflect"' + (state.reflectOpen ? " open" : "") + ">"
+      + "<summary>" + esc(t(S.UI.reflectTitle)) + "</summary>"
+      + '<div class="meter-pack"><div class="meters">' + rows + "</div>"
+      + '<p class="meter-note">' + esc(t(S.UI.meterDisclaimer)) + "</p></div>"
+      + "</details>";
+  }
+
+  function instantToggleHtml() {
+    return '<button type="button" class="instant-toggle" data-act="instant" aria-pressed="'
+      + (state.instant ? "true" : "false") + '">'
+      + '<span class="dot" aria-hidden="true"></span>' + esc(t(S.UI.instantText)) + "</button>";
+  }
+
+  function stageTopHtml(labelInner) {
+    return '<div class="stage-top">'
+      + '<div class="stage-top-row"><span class="ep-label">' + labelInner + "</span>"
+      + instantToggleHtml() + "</div>"
+      + metersHtml() + "</div>";
+  }
+
+  function applyMood() {
+    root.classList.remove("mood-ep1", "mood-ep2", "mood-ep3");
+    if (state.screen === "story" || state.screen === "ledger") {
+      var m = S.EPISODES[state.epIndex] && S.EPISODES[state.epIndex].mood;
+      if (m) root.classList.add("mood-" + m);
+    }
   }
 
   function castHtml(list, speaker) {
@@ -160,18 +205,28 @@
     }).join("") + "</div>";
   }
 
+  function urgentPanelHtml() {
+    return '<aside class="urgent-help" role="note" aria-label="' + esc(t(S.UI.urgentHelpTitle)) + '">'
+      + '<p class="urgent-help-title">' + esc(t(S.UI.urgentHelpTitle)) + "</p>"
+      + "<p>" + esc(t(S.UI.urgentHelp)) + "</p></aside>";
+  }
+
   function renderGate() {
     root.innerHTML =
       '<div class="stage-inner ledger safety-gate">'
       + '<p class="kicker">' + esc(t(S.UI.gateTitle)) + "</p>"
       + "<h2>" + esc(t({ en: "Three Nights", hr: "Tri noći" })) + "</h2>"
+      + '<p class="gate-format">' + esc(t(S.UI.gateFormat)) + "</p>"
       + "<p>" + esc(t(S.UI.gateBody)) + "</p>"
+      + urgentPanelHtml()
+      + '<div class="trust-notes">'
       + '<p class="gate-note independence-note">' + esc(t(S.UI.gateIndependence)) + "</p>"
-      + '<p class="gate-note urgent-help">' + esc(t(S.UI.urgentHelp)) + "</p>"
-      + '<p class="gate-note meter-note">' + esc(t(S.UI.meterDisclaimer)) + "</p>"
       + '<p class="gate-note">' + esc(t(S.UI.fiction)) + "</p>"
+      + "</div>"
       + '<div class="action-row">'
-      + '<button class="button button-primary" data-act="open-select">' + esc(t(S.UI.gateStart)) + "</button>"
+      + '<button class="button button-primary button-cta" data-act="open-select">'
+      + '<span class="cta-main">' + esc(t(S.UI.gateStart)) + "</span>"
+      + '<span class="cta-sub">' + esc(t(S.UI.gateStartPoetic)) + "</span></button>"
       + (Object.keys(save.done).length
           ? '<button class="button button-ghost" data-act="reset">' + esc(t(S.UI.resetSave)) + "</button>"
           : "")
@@ -183,12 +238,14 @@
       var isDone = !!save.done[e.id];
       var isOpen = unlocked(i);
       var stateLabel = !isOpen ? t(S.UI.locked) : (isDone ? t(S.UI.done) + " · " + t(S.UI.replay) : t(S.UI.ready));
-      return '<button class="playbill' + (isDone ? " done" : "") + '" data-act="start-ep" data-ep="' + i + '"'
+      var situation = e.situation ? t(e.situation) : t(e.title);
+      return '<button class="playbill mood-' + (e.mood || "ep1") + (isDone ? " done" : "") + '" data-act="start-ep" data-ep="' + i + '"'
         + (isOpen ? "" : " disabled")
-        + ' aria-label="' + esc(t(S.UI.episode) + " " + e.no + ": " + t(e.title)) + '">'
+        + ' aria-label="' + esc(t(S.UI.episode) + " " + e.no + " — " + situation) + '">'
         + '<span class="bill-art" aria-hidden="true">' + S.BG[e.poster] + "</span>"
         + '<span class="bill-body">'
         + '<span class="bill-ep">' + esc(t(S.UI.episode)) + " " + e.no + "</span>"
+        + '<span class="bill-situation">' + esc(situation) + "</span>"
         + "<h3>" + esc(t(e.title)) + "</h3>"
         + "<p>" + esc(t(e.tagline)) + "</p>"
         + '<span class="bill-state">' + esc(stateLabel) + "</span>"
@@ -196,7 +253,9 @@
     }).join("");
     root.innerHTML =
       '<div class="stage-inner ledger">'
-      + '<p class="kicker">' + esc(t(S.UI.episodes)) + "</p>"
+      + '<p class="kicker">' + esc(t(S.UI.selectKicker)) + "</p>"
+      + "<h2>" + esc(t(S.UI.selectTitle)) + "</h2>"
+      + '<p class="sub">' + esc(t(S.UI.selectHint)) + "</p>"
       + '<div class="playbills">' + bills + "</div>"
       + (allDone()
           ? '<div class="action-row" style="margin-top:22px"><button class="button button-primary" data-act="finale">'
@@ -211,7 +270,7 @@
 
     if (n.type === "title") {
       root.innerHTML =
-        '<div class="stage-top"><span class="ep-label">' + esc(t(S.UI.episode)) + " " + e.no + "</span>" + metersHtml() + "</div>"
+        stageTopHtml(esc(t(S.UI.episode) + " " + e.no))
         + '<div class="scene scene-fade">' + S.BG[n.bg || "title"]
         + '<button type="button" class="title-card" data-act="advance">'
         + "<h2>" + esc(t(n.text)).replace(/\n/g, "<br>") + "</h2>"
@@ -237,10 +296,7 @@
     }
 
     root.innerHTML =
-      '<div class="stage-top">'
-      + '<span class="ep-label">' + esc(t(S.UI.episode)) + " " + e.no + " — " + esc(t(e.title)) + "</span>"
-      + metersHtml()
-      + "</div>"
+      stageTopHtml(esc(t(S.UI.episode) + " " + e.no) + ' <span class="ep-title">' + esc(t(e.title)) + "</span>")
       + '<div class="scene scene-fade">' + S.BG[n.bg] + castHtml(n.cast, speakerKey) + "</div>"
       + '<div class="dialogue">'
       + '<span class="nameplate' + narrPlate + '">' + esc(plate) + "</span>"
@@ -313,11 +369,15 @@
   function render(opts) {
     opts = opts || {};
     stopTyping();
+    /* remember whether the reflection panel is open before we rebuild */
+    var det = root.querySelector(".reflect");
+    if (det) state.reflectOpen = det.open;
     if (state.screen === "gate") renderGate();
     else if (state.screen === "select") renderSelect();
     else if (state.screen === "story") renderStory();
     else if (state.screen === "ledger") renderLedger();
     else if (state.screen === "finale") renderFinale();
+    applyMood();
     focusAfterRender(!!opts.focus);
   }
 
@@ -377,6 +437,14 @@
     var act = el.getAttribute("data-act");
     if (act === "advance") advance();
     else if (act === "choice") choose(parseInt(el.getAttribute("data-idx"), 10));
+    else if (act === "instant") {
+      state.instant = !state.instant;
+      saveInstant(state.instant);
+      el.setAttribute("aria-pressed", state.instant ? "true" : "false");
+      if (state.instant && state.typing && !state.typing.done) {
+        finishTyping(root.querySelector(".line"));
+      }
+    }
     else if (act === "start-ep") startEpisode(parseInt(el.getAttribute("data-ep"), 10));
     else if (act === "open-select") { state.screen = "select"; render({ focus: true }); }
     else if (act === "finale") { state.screen = "finale"; render({ focus: true }); }
@@ -388,13 +456,19 @@
     }
   });
 
+  /* keep the reflection-panel open state in sync (toggle does not bubble) */
+  root.addEventListener("toggle", function (evt) {
+    var d = evt.target;
+    if (d && d.classList && d.classList.contains("reflect")) state.reflectOpen = d.open;
+  }, true);
+
   document.addEventListener("keydown", function (evt) {
     if (state.screen !== "story") return;
     if (evt.key !== " " && evt.key !== "Enter") return;
     var active = document.activeElement;
     if (!root.contains(active)) return;
     var tag = active && active.tagName;
-    if (tag === "BUTTON" || tag === "A" || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+    if (tag === "BUTTON" || tag === "A" || tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "SUMMARY") return;
     if (active && active.isContentEditable) return;
     evt.preventDefault();
     advance();

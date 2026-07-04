@@ -619,7 +619,34 @@ html[data-lang="hr"] .lang-en { display: none !important; }
 .review-status,
 .governance-note,
 .independence-note { background: rgba(201, 162, 75, 0.1); box-shadow: inset 0 0 0 1px var(--brass-line); }
-.urgent-help { background: rgba(224, 86, 78, 0.18); box-shadow: inset 0 0 0 1px rgba(224, 86, 78, 0.5), var(--shadow-soft); }
+
+/* Urgent help — a calm, serious safety panel. Garnet edge, not a red alarm. */
+.urgent-help {
+  position: relative;
+  padding-left: 22px;
+  background: rgba(13, 21, 36, 0.96);
+  box-shadow: inset 4px 0 0 var(--garnet), inset 0 0 0 1px var(--brass-line-soft), var(--shadow-soft);
+}
+.urgent-help-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 7px !important;
+  color: #f0b7b2;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.urgent-help-title::before {
+  /* triangular alert glyph — meaning is not carried by colour alone */
+  content: "";
+  flex: none;
+  width: 15px; height: 14px;
+  background: var(--garnet);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.urgent-help p { color: var(--champagne); }
 .external-note { padding: 12px 14px; margin-top: 14px; color: var(--parlor); font-size: 0.92rem; }
 .safety-stack p,
 .urgent-help p,
@@ -789,34 +816,53 @@ html.js .reveal-late { transition-delay: 120ms; }
   box-shadow: var(--shadow), inset 0 0 0 1px var(--brass-line);
 }
 .marquee::before {
-  /* bulb strip */
+  /* bulb strip — brass, dim, decorative (gold is reserved for the CTA) */
   content: "";
   position: absolute;
   top: 9px; left: 20px; right: 20px;
-  height: 8px;
-  background-image: radial-gradient(circle 3px, var(--gold) 98%, transparent), radial-gradient(circle 3px, rgba(233, 195, 104, 0.25) 98%, transparent);
-  background-size: 28px 8px, 28px 8px;
-  background-position: 0 0, 14px 0;
+  height: 7px;
+  background-image: radial-gradient(circle 2.5px, rgba(201, 162, 75, 0.7) 98%, transparent), radial-gradient(circle 2.5px, rgba(201, 162, 75, 0.22) 98%, transparent);
+  background-size: 30px 7px, 30px 7px;
+  background-position: 0 0, 15px 0;
   background-repeat: repeat-x;
 }
 .marquee::after {
+  /* the same strip, gently breathing — a slow glow, never a flicker */
   content: "";
   position: absolute;
   top: 9px; left: 20px; right: 20px;
-  height: 8px;
-  background-image: radial-gradient(circle 3px, rgba(233, 195, 104, 0.25) 98%, transparent), radial-gradient(circle 3px, var(--gold) 98%, transparent);
-  background-size: 28px 8px, 28px 8px;
-  background-position: 0 0, 14px 0;
+  height: 7px;
+  background-image: radial-gradient(circle 2.5px, rgba(233, 195, 104, 0.55) 98%, transparent);
+  background-size: 30px 7px;
+  background-position: 15px 0;
   background-repeat: repeat-x;
-  animation: bulbs 1.6s steps(2) infinite;
+  animation: bulbGlow 5s ease-in-out infinite;
   opacity: 0;
 }
-@keyframes bulbs { 0%, 49% { opacity: 0; } 50%, 100% { opacity: 1; } }
+@keyframes bulbGlow { 0%, 100% { opacity: 0; } 50% { opacity: 0.55; } }
 
-.stage { position: relative; background: var(--pit); box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.22); }
+.stage {
+  position: relative;
+  background: var(--pit);
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.22);
+  /* Per-episode mood accent (set by JS: mood-ep1/2/3). Default: house brass. */
+  --mood: rgba(201, 162, 75, 0.38);
+  --mood-ink: var(--brass);
+}
+.stage.mood-ep1 { --mood: rgba(224, 86, 78, 0.45); --mood-ink: #e0796f; } /* Ema — cold, urgent */
+.stage.mood-ep2 { --mood: rgba(63, 201, 178, 0.45); --mood-ink: #3fc9b2; } /* Ivan — quiet support */
+.stage.mood-ep3 { --mood: rgba(138, 166, 224, 0.42); --mood-ink: #9db6e8; } /* Petra & Sara — distance */
 
 .scene { position: relative; aspect-ratio: 16 / 8.4; min-height: 300px; overflow: hidden; }
 .scene svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.scene::after {
+  /* thin mood accent under the scene — ties each night to its palette */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -3px 0 var(--mood);
+}
 .scene-fade { animation: sceneIn 650ms var(--ease); }
 @keyframes sceneIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -842,12 +888,12 @@ html.js .reveal-late { transition-delay: 120ms; }
 /* Dialogue */
 .dialogue {
   position: relative;
-  margin: 14px 6px 6px;
-  padding: 20px 20px 16px;
+  margin: 16px 6px 6px;
+  padding: 24px 22px 20px;
   background: rgba(16, 26, 46, 0.94);
   clip-path: var(--chamfer);
   box-shadow: inset 0 0 0 1px var(--brass-line);
-  min-height: 132px;
+  min-height: 138px;
 }
 .nameplate {
   position: absolute;
@@ -855,8 +901,9 @@ html.js .reveal-late { transition-delay: 120ms; }
   left: 22px;
   padding: 4px 14px;
   clip-path: var(--chamfer-sm);
-  background: linear-gradient(180deg, var(--gold), var(--brass));
-  color: #241a05;
+  /* muted brass, not bright gold — gold is reserved for the primary CTA */
+  background: linear-gradient(180deg, var(--brass), #9c7d38);
+  color: #1c1503;
   font-weight: 600;
   font-size: 0.82rem;
   letter-spacing: 0;
@@ -864,10 +911,11 @@ html.js .reveal-late { transition-delay: 120ms; }
 }
 .nameplate.thought { background: var(--nocturne-2); color: var(--jade); box-shadow: inset 0 0 0 1px rgba(63, 201, 178, 0.5); }
 .line {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
+  max-width: 62ch;
   min-height: 3.2em;
-  font-size: 1.08rem;
-  line-height: 1.55;
+  font-size: 1.14rem;
+  line-height: 1.66;
   color: var(--champagne);
 }
 .line.thought { font-style: italic; color: var(--parlor); }
@@ -884,86 +932,191 @@ html.js .reveal-late { transition-delay: 120ms; }
   opacity: 0.85;
 }
 
-/* Choices */
-.choices { display: grid; gap: 10px; margin: 12px 6px 4px; }
+/* Choices — supportive navigation, not game performance */
+.choices { display: grid; gap: 12px; margin: 18px 6px 4px; }
 .choice {
   display: flex;
   align-items: center;
   gap: 14px;
   text-align: left;
-  padding: 13px 16px;
+  min-height: 54px;
+  padding: 15px 18px;
   clip-path: var(--chamfer-sm);
-  background: rgba(201, 162, 75, 0.07);
-  box-shadow: inset 0 0 0 1px var(--brass-line);
+  /* neutral base — less gold glitter around the reading path */
+  background: rgba(198, 205, 220, 0.05);
+  box-shadow: inset 0 0 0 1px var(--brass-line-soft);
   color: var(--champagne);
   border: 0;
-  font-size: 1rem;
-  transition: background var(--fast) var(--ease), transform var(--fast) var(--ease);
+  font-size: 1.04rem;
+  line-height: 1.45;
+  transition: background var(--fast) var(--ease), box-shadow var(--fast) var(--ease), transform var(--fast) var(--ease);
 }
-.choice:hover, .choice:focus-visible { background: rgba(201, 162, 75, 0.18); transform: translateX(4px); outline: none; }
+.choice:hover, .choice:focus-visible {
+  background: rgba(201, 162, 75, 0.12);
+  box-shadow: inset 0 0 0 1px var(--brass-line);
+  transform: translateX(3px);
+  outline: none;
+}
 .choice:focus-visible { box-shadow: inset 0 0 0 2px var(--gold-soft); }
 .choice .gem { flex: none; width: 8px; height: 8px; background: var(--brass); transform: rotate(45deg); }
-.choice.urgent { box-shadow: inset 0 0 0 1px rgba(224, 86, 78, 0.55); }
-.choice.urgent .gem { background: var(--garnet); }
+/* Urgent = the clear safe next step. Jade route language, calm, not alarm-red. */
+.choice.urgent {
+  background: var(--jade-tint);
+  box-shadow: inset 4px 0 0 var(--jade), inset 0 0 0 1px rgba(63, 201, 178, 0.4);
+}
+.choice.urgent:hover, .choice.urgent:focus-visible {
+  background: rgba(63, 201, 178, 0.2);
+  box-shadow: inset 4px 0 0 var(--jade), inset 0 0 0 1px rgba(63, 201, 178, 0.6);
+}
+.choice.urgent:focus-visible { box-shadow: inset 4px 0 0 var(--jade), inset 0 0 0 2px var(--gold-soft); }
+.choice.urgent .gem { background: var(--jade); }
 
 /* Game top bar: episode label + meters */
 .stage-top {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(201, 162, 75, 0.22);
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--mood);
   background: rgba(6, 10, 18, 0.75);
 }
+.stage-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 .ep-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-display);
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--gold-soft);
   font-size: 0.95rem;
 }
-.meter-pack {
-  display: grid;
-  gap: 7px;
-  flex: 1 1 430px;
-  max-width: 660px;
+.ep-label::before {
+  content: "";
+  flex: none;
+  width: 8px; height: 8px;
+  background: var(--mood-ink);
+  transform: rotate(45deg);
 }
-.meters { display: flex; gap: 16px; flex-wrap: wrap; }
+.ep-title {
+  font-family: var(--font-body);
+  text-transform: none;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* Instant-text preference toggle */
+.instant-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 0;
+  clip-path: var(--chamfer-sm);
+  background: rgba(198, 205, 220, 0.06);
+  box-shadow: inset 0 0 0 1px var(--brass-line-soft);
+  color: var(--parlor);
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+.instant-toggle .dot {
+  flex: none;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px var(--muted);
+  transition: background var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+.instant-toggle:hover { color: #fff; }
+.instant-toggle:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--gold-soft); }
+.instant-toggle[aria-pressed="true"] {
+  color: var(--jade);
+  background: var(--jade-tint);
+  box-shadow: inset 0 0 0 1px rgba(63, 201, 178, 0.5);
+}
+.instant-toggle[aria-pressed="true"] .dot { background: var(--jade); box-shadow: inset 0 0 0 2px var(--jade); }
+
+/* Reflection panel — collapsible, quiet, never a scoreboard */
+.reflect { border-top: 1px solid var(--brass-line-soft); }
+.reflect summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 0 5px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.reflect summary::-webkit-details-marker { display: none; }
+.reflect summary::before {
+  content: "";
+  flex: none;
+  width: 6px; height: 6px;
+  border-right: 2px solid var(--brass);
+  border-bottom: 2px solid var(--brass);
+  transform: rotate(-45deg);
+  transition: transform var(--fast) var(--ease);
+}
+.reflect[open] summary::before { transform: rotate(45deg); }
+.reflect summary:hover, .reflect summary:focus-visible { color: var(--gold-soft); outline: none; }
+
+.meter-pack { padding: 4px 0 2px; }
+.meters { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 8px; }
 .meter-note {
   margin: 0;
   color: var(--muted);
   font-size: 0.78rem;
-  line-height: 1.4;
+  line-height: 1.45;
+  max-width: 70ch;
 }
-.meter { min-width: 118px; }
+.meter { flex: 1 1 130px; min-width: 120px; }
 .meter small {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   letter-spacing: 0;
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
 }
+.meter small .lvl {
+  color: var(--parlor);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+.meter.lvl-low small .lvl { color: var(--muted); }
 .meter .track {
-  margin-top: 4px;
-  height: 6px;
-  background: rgba(198, 205, 220, 0.14);
-  clip-path: polygon(3px 0, 100% 0, calc(100% - 3px) 100%, 0 100%);
+  margin-top: 5px;
+  height: 5px;
+  background: rgba(198, 205, 220, 0.12);
+  border-radius: 3px;
   overflow: hidden;
 }
 .meter .fill {
   height: 100%;
   width: 50%;
-  background: linear-gradient(90deg, var(--jade-deep), var(--jade));
+  border-radius: 3px;
+  /* soft, low-saturation fills — support indicators, not reward bars */
+  background: rgba(63, 201, 178, 0.5);
   transition: width 500ms var(--ease);
 }
-.meter.gold .fill { background: linear-gradient(90deg, var(--brass), var(--gold)); }
-.meter.garnet .fill { background: linear-gradient(90deg, #8f2f29, var(--garnet)); }
+.meter.gold .fill { background: rgba(201, 162, 75, 0.5); }
+.meter.silver .fill { background: rgba(198, 205, 220, 0.42); }
 
-/* Episode select — playbills */
+/* Situation select — signposts, not locked levels */
 .playbills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
 .playbill {
   position: relative;
@@ -976,33 +1129,58 @@ html.js .reveal-late { transition-delay: 120ms; }
   box-shadow: inset 0 0 0 1px var(--brass-line), var(--shadow-soft);
   color: var(--champagne);
   transition: transform 260ms var(--ease), box-shadow 260ms var(--ease);
+  --sig: var(--brass);
 }
+.playbill.mood-ep1 { --sig: #e0796f; } /* Ema — urgent */
+.playbill.mood-ep2 { --sig: #3fc9b2; } /* Ivan — support */
+.playbill.mood-ep3 { --sig: #9db6e8; } /* Petra & Sara — distance */
 .playbill:hover:not(:disabled), .playbill:focus-visible:not(:disabled) {
   transform: translateY(-5px);
   box-shadow: inset 0 0 0 1px var(--gold), var(--shadow);
   outline: none;
 }
 .playbill:disabled { cursor: not-allowed; filter: grayscale(0.7) brightness(0.7); }
-.playbill .bill-art { aspect-ratio: 4 / 3; }
+.playbill .bill-art { position: relative; aspect-ratio: 4 / 3; }
 .playbill .bill-art svg { width: 100%; height: 100%; }
-.bill-body { padding: 18px 18px 20px; border-top: 1px solid var(--brass-line-soft); }
+.bill-body {
+  position: relative;
+  padding: 18px 18px 20px;
+  border-top: 3px solid var(--sig);
+}
 .bill-ep {
-  color: var(--jade);
+  color: var(--sig);
   font-size: 0.74rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* The wayfinding line — what this route is for, in plain words */
+.bill-situation {
+  display: block;
+  margin: 9px 0 6px;
+  color: var(--champagne);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.36;
+}
+.bill-body h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  color: var(--gold-soft);
+  opacity: 0.9;
+}
+.bill-body p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.bill-state {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--brass);
+  font-size: 0.8rem;
   letter-spacing: 0;
   text-transform: uppercase;
 }
-.bill-body h3 {
-  margin: 6px 0 8px;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 1.45rem;
-  letter-spacing: 0;
-  color: var(--gold-soft);
-}
-.bill-body p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.bill-state { margin-top: 12px; color: var(--brass); font-size: 0.8rem; letter-spacing: 0; text-transform: uppercase; }
 .playbill.done .bill-state { color: var(--jade); }
 
 /* Ledger / interlude panels */
@@ -1038,16 +1216,43 @@ html.js .reveal-late { transition-delay: 120ms; }
 .demand-unlock p strong { display: block; letter-spacing: 0; text-transform: uppercase; font-size: 0.8rem; color: var(--brass); }
 
 .safety-gate p { max-width: 66ch; color: var(--parlor); }
-.safety-gate .urgent-help,
-.safety-gate .independence-note {
-  margin: 14px 0 0;
-  max-width: 72ch;
+.gate-format {
+  margin: -2px 0 16px !important;
+  color: var(--jade);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
-.safety-gate .meter-note {
-  margin-top: 14px;
-  max-width: 72ch;
+.safety-gate .urgent-help {
+  margin: 20px 0;
+  max-width: 74ch;
 }
+.trust-notes {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 4px;
+  max-width: 74ch;
+}
+.trust-notes .gate-note { margin: 0; }
+.safety-gate .independence-note { max-width: 74ch; }
 .gate-note { color: var(--muted); font-size: 0.92rem; }
+
+/* Primary CTA with a poetic subtitle — clarity first, curtain second */
+.button-cta {
+  flex-direction: column;
+  gap: 1px;
+  min-height: 60px;
+  padding: 9px 30px;
+  line-height: 1.15;
+}
+.button-cta .cta-main { font-size: 1.04rem; font-weight: 700; }
+.button-cta .cta-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
 .civic-takeaway {
   margin: 0 0 20px;
 }
@@ -1094,12 +1299,18 @@ html.js .reveal-late { transition-delay: 120ms; }
   .receipt-grid { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
   .info-row:first-child { display: none; }
-  .scene { aspect-ratio: auto; height: 300px; }
+  .scene { aspect-ratio: auto; height: 250px; }
   .cast { padding: 0 2%; }
-  .dialogue { margin: 12px 2px 2px; }
-  .choices { margin: 10px 2px 2px; }
-  .meters { width: 100%; }
-  .meter { flex: 1; min-width: 90px; }
+  .marquee { padding: 22px 10px 12px; }
+  .dialogue { margin: 14px 2px 2px; padding: 22px 18px 18px; }
+  .line { font-size: 1.16rem; line-height: 1.68; }
+  .choices { margin: 16px 2px 4px; gap: 12px; }
+  .choice { padding: 16px; font-size: 1.06rem; }
+  .stage-top { padding: 11px 13px; }
+  .meters { width: 100%; flex-direction: column; gap: 12px; }
+  .meter { flex: 1 1 auto; min-width: 0; }
+  .instant-toggle { flex: 1 1 auto; justify-content: center; }
+  .button-cta { width: 100%; }
   .brand-name { font-size: 1.02rem; letter-spacing: 0; }
 }
 
@@ -1115,7 +1326,6 @@ html.js .reveal-late { transition-delay: 120ms; }
   border: 0;
 }
 
-.meter.silver .fill { background: linear-gradient(90deg, #6d7890, #c6cddc); }
 
 .stage-inner { position: relative; }
 
@@ -1182,7 +1392,7 @@ html.js .reveal-late { transition-delay: 120ms; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .marquee::after { opacity: 1; animation: none; }
+  .marquee::after { opacity: 0; animation: none; }
   html.js .reveal { opacity: 1; transform: none; }
   .line .caret { animation: none; }
 }
