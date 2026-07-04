@@ -2,10 +2,14 @@
 
 Current status: prototype only. Do not present this as an official public-health service, official partner website, active petition or launch-ready campaign.
 
+Prototype maintenance: Karta bez stigme tim / Project team. Individual contributors are not publicly listed for privacy and safety reasons.
+
+Contact placeholders: contact@PROJECT-DOMAIN, privacy@PROJECT-DOMAIN, security@PROJECT-DOMAIN. Replace them with project-controlled inboxes before public launch.
+
 ## Blockers
 
-- No named responsible organizer.
-- No public contact email.
+- No named responsible organizational owner.
+- No active public contact inbox.
 - Medical review is not complete.
 - Legal/privacy review is not complete.
 - Croatian service details need owner verification close to launch.

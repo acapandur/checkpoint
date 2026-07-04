@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://acapandur.github.io/checkpoint/sitemap.xml
+Sitemap: https://PROJECT-DOMAIN/sitemap.xml

@@ -2,6 +2,8 @@
 
 This prototype contains public-health adjacent educational copy. It is not launch-ready until every claim has a named owner, source, review date and reviewer sign-off.
 
+This project is maintained by the Karta bez stigme project team. Individual contributors are not publicly listed for privacy and safety reasons.
+
 ## Source of truth
 
 - `content/health-claims.json` is the working inventory of health, service, privacy and emergency claims.

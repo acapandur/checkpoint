@@ -15,3 +15,8 @@ dist/
 build/
 .env
 .env.*
+
+# Private local privacy/audit material
+privacy-identifiers.local.txt
+*.local
+karta-bez-stigme-public-clean*/

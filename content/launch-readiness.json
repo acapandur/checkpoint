@@ -29,8 +29,8 @@
       "labelEn": "Responsible owner and public contact",
       "status": "blocked",
       "owner": "unassigned",
-      "notesHr": "Nije još imenovano — potrebno prije javnog lansiranja.",
-      "notesEn": "Not assigned yet — required before public launch."
+      "notesHr": "Prototip održava Karta bez stigme tim; javno lansiranje zahtijeva imenovanog organizacijskog vlasnika i aktivne kontakt adrese.",
+      "notesEn": "The prototype is maintained by the Karta bez stigme project team; public launch requires an appointed organizational owner and active contact addresses."
     },
     {
       "id": "accessibility-review",

@@ -6,7 +6,13 @@ including community-based access beyond one city — plus **Three
 Nights / Tri noći**, an episodic, choice-driven browser story in a night Art
 Deco style.
 
-Live: https://acapandur.github.io/checkpoint/
+Live: https://PROJECT-DOMAIN/
+
+Maintained by: Karta bez stigme tim / Project team. Individual contributors are
+not publicly listed for privacy and safety reasons.
+
+Public contact placeholders: `contact@PROJECT-DOMAIN`,
+`privacy@PROJECT-DOMAIN`, `security@PROJECT-DOMAIN`.
 
 ## What's inside
 
@@ -35,11 +41,11 @@ Live: https://acapandur.github.io/checkpoint/
 
 ## Principles kept from v1
 
-- **Zero build step** — plain HTML/CSS/JS, deploys to GitHub Pages as-is.
+- **Zero build step** — plain HTML/CSS/JS, deploys to static hosting as-is.
 - **Privacy-minimal static site** — no accounts, analytics or forms; the only
   app values stored by this site are the language choice and story progress, in
-  the visitor's own browser. GitHub Pages and external links may still process
-  standard technical connection data.
+  the visitor's own browser. The static hosting provider and external links may
+  still process standard technical connection data.
 - **Cautious medical wording** — PEP: start as soon as possible, no later than
   72 h, typically a 28-day course, via emergency/infectious-disease care;
   PrEP: prevention for HIV-negative people via prescription and regular
@@ -58,6 +64,8 @@ Live: https://acapandur.github.io/checkpoint/
    actual hours, locations and offerings.
 4. Replace the inactive petition placeholder with a vetted external platform and clear privacy
    terms only when the campaign is ready.
+5. Publish from a clean repository/history using neutral project identity; do
+   not publish private development history.
 
 ## Development
 

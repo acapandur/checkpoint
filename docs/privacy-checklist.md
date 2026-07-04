@@ -7,7 +7,7 @@ Current prototype model: static pages only. No accounts, no forms, no analytics,
 - `mws-lang`: selected language.
 - `mws-save`: local story progress.
 
-Both are stored in the visitor's browser only. GitHub Pages and external links may still process standard technical data outside this project's control.
+Both are stored in the visitor's browser only. The static hosting provider and external links may still process standard technical data outside this project's control.
 
 ## Before adding data collection
 
