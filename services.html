@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="hr" data-lang="hr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function () {
+        var lang = "hr";
+        try {
+          var saved = localStorage.getItem("mws-lang");
+          if (saved === "en" || saved === "hr") lang = saved;
+        } catch (e) {}
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.setAttribute("lang", lang);
+      }());
+    </script>
+    <title>Službe i rute skrbi - Karta bez stigme</title>
+    <meta name="description" content="Strukturirani prototip imenika hrvatskih hitnih, PEP, testnih i savjetodavnih ruta, s jasnim statusom provjere i službenim izvorima.">
+    <link rel="canonical" href="https://acapandur.github.io/checkpoint/services.html">
+    <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/services.html">
+    <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://acapandur.github.io/checkpoint/services.html">
+    <meta property="og:title" content="Službe i rute skrbi - Karta bez stigme">
+    <meta property="og:description" content="Nije službeni imenik: strukturirane rute sa statusom provjere, datumima i izvorima.">
+    <meta property="og:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <meta property="og:locale" content="hr_HR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://acapandur.github.io/checkpoint/assets/img/share-card.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script>
+      window.PAGE_META = {
+        en: { title: "Services and care routes - Map Without Stigma",
+              desc: "A structured prototype directory for Croatian emergency, PEP, testing and counseling routes, with verification status and official sources." },
+        hr: { title: "Službe i rute skrbi - Karta bez stigme",
+              desc: "Strukturirani prototip imenika hrvatskih hitnih, PEP, testnih i savjetodavnih ruta, sa statusom provjere i službenim izvorima." }
+      };
+    </script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/services.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main"><span class="lang-en" lang="en">Skip to content</span><span class="lang-hr" lang="hr">Preskoči na sadržaj</span></a>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
+        <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Glavna navigacija" data-aria-hr="Glavna navigacija" data-aria-en="Main navigation">
+        <a href="services.html"><span class="lang-en" lang="en">Services</span><span class="lang-hr" lang="hr">Službe</span></a>
+        <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
+        <a href="testing-sti.html"><span class="lang-en" lang="en">Testing</span><span class="lang-hr" lang="hr">Testiranje</span></a>
+        <a href="play.html"><span class="lang-en" lang="en">Story</span><span class="lang-hr" lang="hr">Priča</span></a>
+        <a href="status.html"><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></a>
+        <span class="lang-switch" role="group" aria-label="Jezik" data-aria-hr="Jezik" data-aria-en="Language">
+          <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+          <button type="button" data-setlang="hr" aria-pressed="true">HR</button>
+        </span>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero page-hero" aria-labelledby="services-title">
+        <img class="hero-art" src="assets/img/deco-network.svg" alt="" aria-hidden="true">
+        <div class="hero-copy">
+          <p class="kicker"><span class="lang-en" lang="en">Care routes</span><span class="lang-hr" lang="hr">Rute skrbi</span></p>
+          <h1 id="services-title">
+            <span class="lang-en" lang="en">Find a route, then verify it before going.</span>
+            <span class="lang-hr" lang="hr">Pronađi rutu, zatim je provjeri prije odlaska.</span>
+          </h1>
+          <p class="hero-lede">
+            <span class="lang-en" lang="en">This is a maintainable prototype directory. It separates emergency help, PEP routes, testing, PrEP information and counseling/support, and it marks unverified details plainly.</span>
+            <span class="lang-hr" lang="hr">Ovo je održivi prototip imenika. Odvaja hitnu pomoć, PEP rute, testiranje, informacije o PrEP-u i savjetovanje/podršku te jasno označava neprovjerene detalje.</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="safety-stack reveal" aria-label="Sigurnost i status provjere" data-aria-hr="Sigurnost i status provjere" data-aria-en="Safety and review status">
+        <div class="urgent-help" role="note">
+          <p class="urgent-help-title"><span class="lang-en" lang="en">Need help now?</span><span class="lang-hr" lang="hr">Trebaš pomoć odmah?</span></p>
+          <p><span class="lang-en" lang="en">In Croatia, call 112 or 194 if there is immediate danger, injury, coercion, or an urgent medical situation. If you think you may need PEP, seek medical help as soon as possible. PEP is time-sensitive.</span><span class="lang-hr" lang="hr">Ako postoji neposredna opasnost, ozljeda, prisila ili hitna medicinska situacija, nazovi 112 ili 194. Ako misliš da ti možda treba PEP, potraži medicinsku pomoć što prije. PEP je vremenski osjetljiv.</span></p>
+          <p class="urgent-help-numbers"><a href="tel:112">112</a><a href="tel:194">194</a></p>
+        </div>
+        <div class="safety-notice">
+          <p><span class="lang-en" lang="en">Informational prototype. Not a substitute for professional medical advice. Always verify current service conditions on official pages or by phone.</span><span class="lang-hr" lang="hr">Informativni prototip. Nije zamjena za profesionalni medicinski savjet. Aktualne uvjete usluge uvijek provjeri na službenim stranicama ili telefonom.</span></p>
+        </div>
+        <div class="review-status">
+          <p><span class="lang-en" lang="en">Directory status: source-based draft. Service owners have not confirmed this inventory. Most entries require verification before public launch.</span><span class="lang-hr" lang="hr">Status imenika: nacrt temeljen na izvorima. Vlasnici usluga nisu potvrdili ovaj inventar. Većina stavki zahtijeva provjeru prije javnog lansiranja.</span></p>
+        </div>
+        <div class="independence-note">
+          <p><span class="lang-en" lang="en">This page is not the official website of listed institutions or organizations unless an explicit partnership is formally stated.</span><span class="lang-hr" lang="hr">Ova stranica nije službena stranica navedenih ustanova/organizacija, osim ako je izričito navedeno partnerstvo.</span></p>
+        </div>
+        <p class="review-meta"><span><span class="lang-en" lang="en">Source data checked: 2026-07-04</span><span class="lang-hr" lang="hr">Izvorni podaci provjereni: 2026-07-04</span></span><span><span class="lang-en" lang="en">Medical review: needs review</span><span class="lang-hr" lang="hr">Medicinska provjera: potrebna</span></span></p>
+      </section>
+
+      <div class="page-layout prose">
+        <section class="action-route reveal" aria-labelledby="route-first-title">
+          <h2 id="route-first-title"><span class="lang-en" lang="en">Start with the route you need</span><span class="lang-hr" lang="hr">Kreni od rute koja ti treba</span></h2>
+          <div class="route-cards">
+            <a class="route-card" href="#service-directory-root"><strong><span class="lang-en" lang="en">I need urgent help</span><span class="lang-hr" lang="hr">Trebam hitnu pomoć</span></strong><span><span class="lang-en" lang="en">Use 112/194 for danger, injury, coercion or urgent medical situations.</span><span class="lang-hr" lang="hr">Za opasnost, ozljedu, prisilu ili hitnu medicinsku situaciju koristi 112/194.</span></span><small><span class="lang-en" lang="en">Go to emergency route</span><span class="lang-hr" lang="hr">Idi na hitnu rutu</span></small></a>
+            <a class="route-card" href="prep-pep.html"><strong><span class="lang-en" lang="en">Maybe I need PEP</span><span class="lang-hr" lang="hr">Možda trebam PEP</span></strong><span><span class="lang-en" lang="en">Seek medical help as soon as possible; a doctor assesses whether PEP is indicated.</span><span class="lang-hr" lang="hr">Potraži medicinsku pomoć što prije; liječnik procjenjuje je li PEP indiciran.</span></span><small>PEP</small></a>
+            <a class="route-card" href="testing-sti.html"><strong><span class="lang-en" lang="en">I want testing</span><span class="lang-hr" lang="hr">Želim testiranje</span></strong><span><span class="lang-en" lang="en">Find counseling/testing options and verify current hours before going.</span><span class="lang-hr" lang="hr">Pronađi savjetovanje/testiranje i provjeri aktualno radno vrijeme prije odlaska.</span></span><small><span class="lang-en" lang="en">Testing</span><span class="lang-hr" lang="hr">Testiranje</span></small></a>
+            <a class="route-card" href="prep-pep.html"><strong><span class="lang-en" lang="en">I am asking about PrEP</span><span class="lang-hr" lang="hr">Zanima me PrEP</span></strong><span><span class="lang-en" lang="en">Planned prevention needs testing, assessment, prescription and follow-up.</span><span class="lang-hr" lang="hr">Planirana prevencija traži testiranje, procjenu, recept i praćenje.</span></span><small>PrEP</small></a>
+            <a class="route-card" href="#service-directory-root"><strong><span class="lang-en" lang="en">I need support</span><span class="lang-hr" lang="hr">Trebam razgovor/podršku</span></strong><span><span class="lang-en" lang="en">Look for counseling or psychosocial support entries and official sources.</span><span class="lang-hr" lang="hr">Potraži savjetovanje ili psihosocijalnu podršku i službene izvore.</span></span><small><span class="lang-en" lang="en">Support</span><span class="lang-hr" lang="hr">Podrška</span></small></a>
+            <a class="route-card" href="play.html"><strong><span class="lang-en" lang="en">I want the interactive story</span><span class="lang-hr" lang="hr">Želim interaktivnu priču</span></strong><span><span class="lang-en" lang="en">The story is secondary to urgent and practical routes.</span><span class="lang-hr" lang="hr">Priča je sekundarna u odnosu na hitne i konkretne rute.</span></span><small><span class="lang-en" lang="en">Story</span><span class="lang-hr" lang="hr">Priča</span></small></a>
+          </div>
+        </section>
+
+        <section class="notice reveal">
+          <h2><span class="lang-en" lang="en">What the statuses mean</span><span class="lang-hr" lang="hr">Što znače statusi</span></h2>
+          <p><span class="lang-en" lang="en"><strong>Source verified</strong> means the source page was reachable and supported the route. <strong>Needs verification</strong> means current hours, appointment rules, costs or scope must be checked with the service before public launch or before going.</span><span class="lang-hr" lang="hr"><strong>Provjeren izvor</strong> znači da je izvorna stranica bila dostupna i podupire rutu. <strong>Potrebna provjera</strong> znači da radno vrijeme, naručivanje, cijenu ili opseg treba provjeriti sa službom prije javnog lansiranja ili prije odlaska.</span></p>
+        </section>
+
+        <section class="reveal" aria-labelledby="directory-title">
+          <h2 id="directory-title"><span class="lang-en" lang="en">Structured service directory</span><span class="lang-hr" lang="hr">Strukturirani imenik službi</span></h2>
+          <div id="service-directory-root" aria-live="polite"></div>
+          <noscript>
+            <div class="notice warning">
+              <p><span class="lang-en" lang="en">JavaScript is needed for filters. Use the official sources below and verify current conditions before going.</span><span class="lang-hr" lang="hr">JavaScript je potreban za filtere. Koristi službene izvore ispod i provjeri aktualne uvjete prije odlaska.</span></p>
+            </div>
+          </noscript>
+        </section>
+
+        <section class="reference-list reveal">
+          <h2><span class="lang-en" lang="en">Official sources behind this draft</span><span class="lang-hr" lang="hr">Službeni izvori iza ovog nacrta</span></h2>
+          <ul>
+            <li><a href="https://gov.hr/hr/hitne-sluzbe/338" rel="noopener noreferrer">gov.hr: hitne službe 112 i 194</a></li>
+            <li><a href="https://www.hzjz.hr/news-2/gdje-se-u-hrvatskoj-moze-savjetovati-i-testirati-na-hiv/" rel="noopener noreferrer">HZJZ: gdje se u Hrvatskoj može savjetovati i testirati</a></li>
+            <li><a href="https://bfm.hr/referentni-centar-za-dijagnostiku-i-lijecenje-zaraze-hiv-om/" rel="noopener noreferrer">Klinika "Dr. Fran Mihaljević": HIV/PEP informacije</a></li>
+            <li><a href="https://huhiv.hr/checkpoint/" rel="noopener noreferrer">HUHIV: CheckPoint Zagreb</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
+      <div class="footer-row">
+        <p><span class="lang-en" lang="en">Independent educational prototype. Not medical advice. Not an official health-service website. Not affiliated with HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution unless formally stated.</span><span class="lang-hr" lang="hr">Neovisni edukativni prototip. Nije medicinski savjet. Nije službena zdravstvena stranica. Nije povezan s HUHIV-om, HZJZ-om, CheckPointom Zagreb, bilo kojom klinikom ili državnom institucijom osim ako je to formalno navedeno.</span></p>
+        <nav aria-label="Podnožje" data-aria-hr="Podnožje" data-aria-en="Footer">
+          <a href="services.html"><span class="lang-en" lang="en">Services</span><span class="lang-hr" lang="hr">Službe</span></a>
+          <a href="status.html"><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></a>
+          <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
+          <a href="sources.html"><span class="lang-en" lang="en">Sources</span><span class="lang-hr" lang="hr">Izvori</span></a>
+          <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O projektu</span></a>
+          <a href="press.html"><span class="lang-en" lang="en">Press</span><span class="lang-hr" lang="hr">Za medije</span></a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

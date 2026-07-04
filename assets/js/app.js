@@ -32,7 +32,17 @@
       if (meta.title) document.title = meta.title;
       var desc = document.querySelector('meta[name="description"]');
       if (desc && meta.desc) desc.setAttribute("content", meta.desc);
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      var ogLocale = document.querySelector('meta[property="og:locale"]');
+      if (ogTitle && meta.title) ogTitle.setAttribute("content", meta.title);
+      if (ogDesc && meta.desc) ogDesc.setAttribute("content", meta.desc);
+      if (ogLocale) ogLocale.setAttribute("content", lang === "hr" ? "hr_HR" : "en_US");
     }
+
+    document.querySelectorAll("[data-aria-hr][data-aria-en]").forEach(function (el) {
+      el.setAttribute("aria-label", el.getAttribute("data-aria-" + lang));
+    });
 
     document.querySelectorAll(".lang-switch button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.setlang === lang ? "true" : "false");

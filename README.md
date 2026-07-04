@@ -2,7 +2,7 @@
 
 A bilingual (Croatian / English) campaign prototype arguing that Croatia needs
 clearer routes to HIV/STI testing, PrEP, PEP and counseling without stigma,
-including CheckPoint-style community access beyond one city — plus **Three
+including community-based access beyond one city — plus **Three
 Nights / Tri noći**, an episodic, choice-driven browser story in a night Art
 Deco style.
 
@@ -10,7 +10,7 @@ Live: https://acapandur.github.io/checkpoint/
 
 ## What's inside
 
-- **11 static pages**, every string in both languages inline
+- **14 static pages**, every string in both languages inline
   (`.lang-en` / `.lang-hr` spans; `<html data-lang>` decides which shows).
   The site defaults to Croatian, and the header switch stores language choice
   in `localStorage` through `assets/js/app.js`. Titles and meta descriptions
@@ -43,9 +43,11 @@ Live: https://acapandur.github.io/checkpoint/
 - **Cautious medical wording** — PEP: start as soon as possible, no later than
   72 h, typically a 28-day course, via emergency/infectious-disease care;
   PrEP: prevention for HIV-negative people via prescription and regular
-  check-ups. No drug names, no dosing. Official Croatian routes and review TODOs
-  are surfaced on the site; international clinical references (CDC, WHO) are
-  linked on the PrEP & PEP page.
+  check-ups. No drug names, no dosing. Official Croatian routes and launch
+  readiness blockers are surfaced on the site; international clinical references
+  (CDC, WHO) are linked on the PrEP & PEP page.
+- **Governance data** in `content/`: health-claim inventory, Croatian service
+  route directory, launch-readiness checklist and JSON schemas.
 
 ## Before public launch
 
@@ -54,12 +56,12 @@ Live: https://acapandur.github.io/checkpoint/
    for any use of CheckPoint naming in advocacy materials.
 3. Verification with organizations running real services, so descriptions match
    actual hours, locations and offerings.
-4. Replace the petition TODO with a vetted external platform and clear privacy
+4. Replace the inactive petition placeholder with a vetted external platform and clear privacy
    terms only when the campaign is ready.
 
 ## Development
 
-No tooling required. To preview locally:
+No build tooling required. To preview locally:
 
 ```
 python3 -m http.server 8000
@@ -69,3 +71,9 @@ then open http://localhost:8000/.
 
 All characters and events in Three Nights are fictional. Educational campaign
 prototype — not medical advice.
+
+Optional checks:
+
+```
+npm run check
+```

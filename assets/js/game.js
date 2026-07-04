@@ -293,7 +293,7 @@
         + '<button type="button" class="title-card" data-act="advance">'
         + "<h2>" + esc(t(n.text)).replace(/\n/g, "<br>") + "</h2>"
         + '<span class="tap">' + esc(t(S.UI.tapToContinue)) + "</span></button></div>"
-      + '<p class="choice-status sr-only" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
+      + '<p class="choice-status" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
       + '<p class="sr-line sr-only" aria-live="polite">' + esc(t(n.text)) + "</p>";
       state.typing = { full: t(n.text), done: true };
       return;
@@ -323,7 +323,7 @@
       + '<button class="dialogue-hint" data-act="advance" hidden>' + esc(t(S.UI.tapToContinue)) + "</button>"
       + "</div>"
       + choicesHtml
-      + '<p class="choice-status sr-only" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
+      + '<p class="choice-status" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
       + '<p class="sr-line sr-only" aria-live="polite"></p>';
 
     typeInto(root.querySelector(".line"), t(n.text));
@@ -350,6 +350,8 @@
     var takeaway = e.takeaway
       ? '<div class="civic-takeaway"><strong>' + esc(t(S.UI.civicTakeaway)) + "</strong><p>" + esc(t(e.takeaway)) + "</p></div>"
       : "";
+    var whatNowText = e.whatNow ? t(e.whatNow) : t(S.UI.whatNowDefault);
+    var whatNow = '<div class="status-note story-what-now"><strong>' + esc(t(S.UI.whatNowTitle)) + "</strong> " + esc(whatNowText) + "</div>";
     var flavor = meterFlavor().map(function (l) { return "<p>" + esc(l) + "</p>"; }).join("");
     var primary = hasNext
       ? '<button class="button button-primary" data-act="start-ep" data-ep="' + nextIndex + '">' + esc(t(S.UI.continueStory)) + "</button>"
@@ -366,6 +368,7 @@
       + '<div class="demand-unlock"><span class="gem" aria-hidden="true"></span>'
       + "<p><strong>" + esc(t(S.UI.demandUnlocked)) + "</strong>" + esc(t(e.demand)) + "</p></div>"
       + urgentPanelHtml("game-urgent ledger-urgent")
+      + whatNow
       + '<p class="kicker next-step-kicker">' + esc(t(S.UI.nextStepsTitle)) + "</p>"
       + '<div class="action-row next-step-menu">'
       + '<a class="button button-jade" href="' + esc(factHref) + '">' + esc(t(S.UI.readFacts)) + "</a>"

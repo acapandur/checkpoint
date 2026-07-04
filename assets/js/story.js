@@ -307,6 +307,11 @@
     demandUnlocked: { en: "Campaign demand unlocked", hr: "Otključan zahtjev kampanje" },
     civicTakeaway: { en: "Civic access takeaway", hr: "Pouka o dostupnosti" },
     nextStepsTitle: { en: "Next steps", hr: "Sljedeći koraci" },
+    whatNowTitle: { en: "What now?", hr: "Što sada?" },
+    whatNowDefault: {
+      en: "If this episode feels close to your situation, use the factual pages or service directory for concrete routes. The story does not assess medical risk.",
+      hr: "Ako ti je ova epizoda bliska, koristi informativne stranice ili imenik službi za konkretne rute. Priča ne procjenjuje medicinski rizik."
+    },
     readFacts: { en: "Read factual info", hr: "Pročitaj činjenice" },
     replayEpisode: { en: "Replay episode", hr: "Ponovi epizodu" },
     instantText: { en: "Instant text", hr: "Trenutačni tekst" },
@@ -330,10 +335,10 @@
       en: "Emotional support and route clarity indicator only. Not medical risk or health outcome.",
       hr: "Samo pokazatelj emocionalne podrške i jasnoće puta. Nije medicinski rizik ni zdravstveni ishod."
     },
-    choiceFeedbackPrefix: { en: "Choice feedback:", hr: "Povratna informacija odabira:" },
+    choiceFeedbackPrefix: { en: "This choice shows:", hr: "Ovaj izbor pokazuje:" },
     choiceFeedbackSuffix: {
-      en: "These indicators do not measure medical risk or health outcome.",
-      hr: "Ovi pokazatelji ne mjere medicinski rizik ni zdravstveni ishod."
+      en: "In real life, the next step is official information or qualified care, not guessing from the meter.",
+      hr: "U stvarnom životu sljedeći korak su službene informacije ili kvalificirana skrb, ne zaključivanje iz metra."
     },
     meterUp: { en: "rose", hr: "se povećava" },
     meterDown: { en: "fell", hr: "se smanjuje" },
@@ -373,8 +378,8 @@
     },
     urgentHelpTitle: { en: "Need help now?", hr: "Trebaš pomoć odmah?" },
     urgentHelp: {
-      en: "If there may have been HIV exposure, assault, coercion, needle or blood exposure, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This story cannot assess your personal risk.",
-      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, izlaganje iglom ili krvlju, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova priča ne može procijeniti tvoj osobni rizik."
+      en: "In Croatia, call 112 or 194 if there is immediate danger, injury, coercion, or an urgent medical situation. If you think you may need PEP, seek medical help as soon as possible. PEP is time-sensitive. This story cannot assess your personal risk.",
+      hr: "Ako postoji neposredna opasnost, ozljeda, prisila ili hitna medicinska situacija, nazovi 112 ili 194. Ako misliš da ti možda treba PEP, potraži medicinsku pomoć što prije. PEP je vremenski osjetljiv. Ova priča ne može procijeniti tvoj osobni rizik."
     },
     gateStart: { en: "Start the story", hr: "Započni priču" },
     gateStartPoetic: { en: "Raise the curtain", hr: "Podigni zastor" }
@@ -418,6 +423,10 @@
       takeaway: {
         en: "Time-sensitive help should be easy to find at night, not hidden across confusing pages.",
         hr: "Vremenski osjetljiva pomoć treba biti lako dostupna noću, ne skrivena po zbunjujućim stranicama."
+      },
+      whatNow: {
+        en: "If you think PEP might be relevant, seek medical help as soon as possible. For immediate danger, injury, coercion or an urgent medical situation, call 112 or 194.",
+        hr: "Ako misliš da bi PEP mogao biti relevantan, potraži medicinsku pomoć što prije. Ako postoji neposredna opasnost, ozljeda, prisila ili hitna medicinska situacija, nazovi 112 ili 194."
       },
       nodes: {
         t1: { type: "title", bg: "title",
@@ -579,6 +588,10 @@
         en: "People should be able to ask about PrEP without shame or judgment.",
         hr: "Ljudi bi trebali moći pitati o PrEP-u bez srama ili osude."
       },
+      whatNow: {
+        en: "If this is about planned prevention, read the PrEP/PEP page and speak with a qualified service. PrEP requires testing, prescription and follow-up; it is not a same-night emergency shortcut.",
+        hr: "Ako se radi o planiranoj prevenciji, pročitaj stranicu o PrEP-u/PEP-u i razgovaraj s kvalificiranom službom. PrEP zahtijeva testiranje, recept i praćenje; nije hitni prečac za istu noć."
+      },
       nodes: {
         t1: { type: "title", bg: "title",
           text: { en: "NIGHT TWO — THE PREVENTION CHECKPOINT\nZagreb · 21:10", hr: "DRUGA NOĆ – TOČKA PROVJERE ZA PREVENCIJU\nZagreb · 21:10" },
@@ -697,6 +710,10 @@
       takeaway: {
         en: "Testing access should not depend on living near Zagreb or being able to travel easily.",
         hr: "Pristup testiranju ne bi trebao ovisiti o životu blizu Zagreba ili mogućnosti lakog putovanja."
+      },
+      whatNow: {
+        en: "If this is about testing or privacy, use the service directory and official sources, then confirm hours, appointments, anonymity and costs directly with the service before traveling.",
+        hr: "Ako se radi o testiranju ili privatnosti, koristi imenik službi i službene izvore, zatim prije puta izravno provjeri radno vrijeme, naručivanje, anonimnost i troškove."
       },
       nodes: {
         t1: { type: "title", bg: "title",

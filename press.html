@@ -14,8 +14,8 @@
         document.documentElement.setAttribute("lang", lang);
       }());
     </script>
-    <title>Za medije – Karta bez stigme, prototip i TODO prije outreacha</title>
-    <meta name="description" content="Sažetak kampanje, status prototipa, kontakt TODO, medicinski pregled TODO i jasna napomena da nema službenog partnerstva bez potvrde.">
+    <title>Za medije – Karta bez stigme, prototip i status prije outreacha</title>
+    <meta name="description" content="Sažetak kampanje, status prototipa, kontakt nije imenovan, medicinski pregled nije dovršen i nema službenog partnerstva bez potvrde.">
     <link rel="canonical" href="https://acapandur.github.io/checkpoint/press.html">
     <link rel="alternate" hreflang="hr" href="https://acapandur.github.io/checkpoint/press.html">
     <link rel="alternate" hreflang="en" href="https://acapandur.github.io/checkpoint/press.html">
@@ -44,13 +44,13 @@
         <img class="brand-mark" src="assets/img/brand-mark.svg" alt="" width="42" height="42">
         <span class="brand-name"><span class="lang-en" lang="en">Map Without Stigma</span><span class="lang-hr" lang="hr">Karta bez stigme</span></span>
       </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="play.html"><span class="lang-en" lang="en">Story</span><span class="lang-hr" lang="hr">Priča</span></a>
-        <a href="what-is-checkpoint.html"><span class="lang-en" lang="en">Checkpoint</span><span class="lang-hr" lang="hr">Točka provjere</span></a>
+      <nav class="site-nav" aria-label="Glavna navigacija" data-aria-hr="Glavna navigacija" data-aria-en="Main navigation">
+        <a href="services.html"><span class="lang-en" lang="en">Services</span><span class="lang-hr" lang="hr">Službe</span></a>
         <a href="prep-pep.html"><span class="lang-en" lang="en">PrEP &amp; PEP</span><span class="lang-hr" lang="hr">PrEP i PEP</span></a>
-        <a href="map-network.html"><span class="lang-en" lang="en">Network</span><span class="lang-hr" lang="hr">Mreža</span></a>
-        <a href="petition.html"><span class="lang-en" lang="en">Petition</span><span class="lang-hr" lang="hr">Peticija</span></a>
-        <span class="lang-switch" role="group" aria-label="Language / Jezik">
+        <a href="testing-sti.html"><span class="lang-en" lang="en">Testing</span><span class="lang-hr" lang="hr">Testiranje</span></a>
+        <a href="play.html"><span class="lang-en" lang="en">Story</span><span class="lang-hr" lang="hr">Priča</span></a>
+        <a href="status.html"><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></a>
+        <span class="lang-switch" role="group" aria-label="Jezik" data-aria-hr="Jezik" data-aria-en="Language">
           <button type="button" data-setlang="en" aria-pressed="false">EN</button>
           <button type="button" data-setlang="hr" aria-pressed="true">HR</button>
         </span>
@@ -106,32 +106,39 @@
           </p>
         </section>
 
-        <section class="info-table reveal" role="table" aria-label="Fact sheet">
-          <div class="info-row" role="row">
-            <p role="columnheader"><span class="lang-en" lang="en">Fact</span><span class="lang-hr" lang="hr">Činjenica</span></p>
-            <p role="columnheader"><span class="lang-en" lang="en">English</span><span class="lang-hr" lang="hr">Engleski</span></p>
-            <p role="columnheader"><span class="lang-en" lang="en">Croatian</span><span class="lang-hr" lang="hr">Hrvatski</span></p>
-          </div>
-          <div class="info-row" role="row">
-            <p role="cell"><strong><span class="lang-en" lang="en">Name</span><span class="lang-hr" lang="hr">Naziv</span></strong></p>
-            <p role="cell">Map Without Stigma</p>
-            <p role="cell">Karta bez stigme</p>
-          </div>
-          <div class="info-row" role="row">
-            <p role="cell"><strong><span class="lang-en" lang="en">Story title</span><span class="lang-hr" lang="hr">Naslov priče</span></strong></p>
-            <p role="cell">Three Nights</p>
-            <p role="cell">Tri noći</p>
-          </div>
-          <div class="info-row" role="row">
-            <p role="cell"><strong><span class="lang-en" lang="en">Format</span><span class="lang-hr" lang="hr">Format</span></strong></p>
-            <p role="cell"><span class="lang-en" lang="en">Free browser story, three episodes, ~20 minutes total, no download, no forms and no analytics.</span><span class="lang-hr" lang="hr">Besplatna priča u pregledniku, tri epizode, ukupno oko 20 minuta, bez preuzimanja, obrazaca i analitike.</span></p>
-            <p role="cell"><span class="lang-en" lang="en">Playable in both languages, switchable mid-story.</span><span class="lang-hr" lang="hr">Igriva na oba jezika, s promjenom jezika i usred priče.</span></p>
-          </div>
-          <div class="info-row" role="row">
-            <p role="cell"><strong><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></strong></p>
-            <p role="cell"><span class="lang-en" lang="en">Educational prototype awaiting medical review, responsible organizer and public contact.</span><span class="lang-hr" lang="hr">Edukativni prototip koji čeka medicinsku provjeru, odgovornog organizatora i javni kontakt.</span></p>
-            <p role="cell"><span class="lang-en" lang="en">Not medical advice; no active petition link yet.</span><span class="lang-hr" lang="hr">Nije medicinski savjet; još nema aktivne poveznice za peticiju.</span></p>
-          </div>
+        <section class="info-table native-table reveal">
+          <table>
+            <caption><span class="lang-en" lang="en">Prototype facts for editorial context</span><span class="lang-hr" lang="hr">Činjenice o prototipu za urednički kontekst</span></caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="lang-en" lang="en">Fact</span><span class="lang-hr" lang="hr">Činjenica</span></th>
+                <th scope="col"><span class="lang-en" lang="en">English</span><span class="lang-hr" lang="hr">Engleski</span></th>
+                <th scope="col"><span class="lang-en" lang="en">Croatian</span><span class="lang-hr" lang="hr">Hrvatski</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="lang-en" lang="en">Name</span><span class="lang-hr" lang="hr">Naziv</span></th>
+                <td>Map Without Stigma</td>
+                <td>Karta bez stigme</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="lang-en" lang="en">Story title</span><span class="lang-hr" lang="hr">Naslov priče</span></th>
+                <td>Three Nights</td>
+                <td>Tri noći</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="lang-en" lang="en">Format</span><span class="lang-hr" lang="hr">Format</span></th>
+                <td><span class="lang-en" lang="en">Free browser story, three episodes, about 20 minutes total, no download, no forms and no analytics.</span><span class="lang-hr" lang="hr">Besplatna priča u pregledniku, tri epizode, ukupno oko 20 minuta, bez preuzimanja, obrazaca i analitike.</span></td>
+                <td><span class="lang-en" lang="en">Playable in both languages, switchable mid-story.</span><span class="lang-hr" lang="hr">Igriva na oba jezika, s promjenom jezika i usred priče.</span></td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></th>
+                <td><span class="lang-en" lang="en">Educational prototype awaiting medical review, responsible organizer and public contact.</span><span class="lang-hr" lang="hr">Edukativni prototip koji čeka medicinsku provjeru, odgovornog organizatora i javni kontakt.</span></td>
+                <td><span class="lang-en" lang="en">Not medical advice; no active petition link yet.</span><span class="lang-hr" lang="hr">Nije medicinski savjet; još nema aktivne poveznice za peticiju.</span></td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="reveal">
@@ -160,8 +167,8 @@
         <section class="notice reveal">
           <h3><span class="lang-en" lang="en">Contact</span><span class="lang-hr" lang="hr">Kontakt</span></h3>
           <p>
-            <span class="lang-en" lang="en">TODO before outreach: publish a responsible organizer, press contact, medical reviewer status and confirmed partner list if any. Until then, this page should be treated as prototype documentation, not a press release.</span>
-            <span class="lang-hr" lang="hr">TODO prije outreacha: objaviti odgovornog organizatora, kontakt za medije, status medicinskog pregleda i potvrđeni popis partnera ako ih ima. Do tada ovu stranicu treba tretirati kao dokumentaciju prototipa, a ne kao priopćenje za medije.</span>
+            <span class="lang-en" lang="en">Before outreach, publish a responsible organizer, press contact, medical reviewer status and confirmed partner list if any. Until then, this page should be treated as prototype documentation, not a press release.</span>
+            <span class="lang-hr" lang="hr">Prije outreacha treba objaviti odgovornog organizatora, kontakt za medije, status medicinskog pregleda i potvrđeni popis partnera ako ih ima. Do tada ovu stranicu treba tretirati kao dokumentaciju prototipa, a ne kao priopćenje za medije.</span>
           </p>
         </section>
       </div>
@@ -171,7 +178,9 @@
       <img class="footer-sun" src="assets/img/footer-sun.svg" alt="" width="74" height="37">
       <div class="footer-row">
         <p><span class="lang-en" lang="en">Independent educational prototype. Not medical advice. Not an official health-service website. Not affiliated with HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution unless formally stated.</span><span class="lang-hr" lang="hr">Neovisni edukativni prototip. Nije medicinski savjet. Nije službena zdravstvena stranica. Nije povezan s HUHIV-om, HZJZ-om, CheckPointom Zagreb, bilo kojom klinikom ili državnom institucijom osim ako je to formalno navedeno.</span></p>
-        <nav aria-label="Footer">
+        <nav aria-label="Podnožje" data-aria-hr="Podnožje" data-aria-en="Footer">
+          <a href="services.html"><span class="lang-en" lang="en">Services</span><span class="lang-hr" lang="hr">Službe</span></a>
+          <a href="status.html"><span class="lang-en" lang="en">Status</span><span class="lang-hr" lang="hr">Status</span></a>
           <a href="privacy.html"><span class="lang-en" lang="en">Privacy</span><span class="lang-hr" lang="hr">Privatnost</span></a>
           <a href="sources.html"><span class="lang-en" lang="en">Sources</span><span class="lang-hr" lang="hr">Izvori</span></a>
           <a href="about.html"><span class="lang-en" lang="en">About</span><span class="lang-hr" lang="hr">O inicijativi</span></a>

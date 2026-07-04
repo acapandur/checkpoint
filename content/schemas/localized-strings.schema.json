@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Localized static strings",
+  "type": "object",
+  "description": "Reference schema for future externalized bilingual strings. Current site still uses inline HTML spans and JS story objects during staged migration.",
+  "patternProperties": {
+    "^[a-z0-9][a-z0-9.-]+$": {
+      "type": "object",
+      "required": ["hr", "en"],
+      "properties": {
+        "hr": { "type": "string" },
+        "en": { "type": "string" },
+        "context": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}
