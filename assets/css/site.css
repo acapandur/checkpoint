@@ -647,6 +647,24 @@ html[data-lang="hr"] .lang-en { display: none !important; }
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 .urgent-help p { color: var(--champagne); }
+.game-urgent { margin: 0; }
+.game-urgent-compact {
+  padding: 11px 14px 11px 18px;
+  box-shadow: inset 4px 0 0 var(--garnet), inset 0 0 0 1px var(--brass-line-soft);
+}
+.game-urgent-compact .urgent-help-title {
+  margin-bottom: 4px !important;
+  font-size: 0.74rem;
+}
+.game-urgent-compact .urgent-help-title::before {
+  width: 12px;
+  height: 11px;
+}
+.game-urgent-compact p:not(.urgent-help-title) {
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.ledger-urgent { margin: 18px 0 20px; }
 .external-note { padding: 12px 14px; margin-top: 14px; color: var(--parlor); font-size: 0.92rem; }
 .safety-stack p,
 .urgent-help p,
@@ -1264,6 +1282,12 @@ html.js .reveal-late { transition-delay: 120ms; }
   letter-spacing: 0;
   text-transform: uppercase;
 }
+.next-step-kicker { margin-top: 4px !important; }
+.next-step-menu {
+  gap: 10px;
+  margin-top: 12px;
+}
+.next-step-menu .button { flex: 1 1 185px; }
 
 .game-foot {
   margin-top: 16px;

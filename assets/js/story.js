@@ -292,11 +292,11 @@
     selectKicker: { en: "Three routes · Three nights", hr: "Tri rute · Tri noći" },
     selectTitle: { en: "Choose your situation", hr: "Odaberi situaciju" },
     selectHint: {
-      en: "Three nights, three routes. Pick the one closest to you — there are no locked levels here, only different doors.",
-      hr: "Tri noći, tri rute. Odaberi onu koja ti je najbliža – ovdje nema zaključanih razina, samo različita vrata."
+      en: "Three nights, three routes. Pick the one closest to you — all routes are open from the start.",
+      hr: "Tri noći, tri rute. Odaberi onu koja ti je najbliža – sve su rute otvorene od početka."
     },
     episode: { en: "Episode", hr: "Epizoda" },
-    locked: { en: "Play the previous night first", hr: "Prvo odigraj prethodnu noć" },
+    locked: { en: "Choose this situation", hr: "Odaberi ovu situaciju" },
     ready: { en: "Play", hr: "Igraj" },
     replay: { en: "Play again", hr: "Igraj ponovno" },
     done: { en: "Completed", hr: "Završeno" },
@@ -306,6 +306,9 @@
     whatTheNightShowed: { en: "What this night showed", hr: "Što je ova noć pokazala" },
     demandUnlocked: { en: "Campaign demand unlocked", hr: "Otključan zahtjev kampanje" },
     civicTakeaway: { en: "Civic access takeaway", hr: "Pouka o dostupnosti" },
+    nextStepsTitle: { en: "Next steps", hr: "Sljedeći koraci" },
+    readFacts: { en: "Read factual info", hr: "Pročitaj činjenice" },
+    replayEpisode: { en: "Replay episode", hr: "Ponovi epizodu" },
     instantText: { en: "Instant text", hr: "Trenutačni tekst" },
     reflectTitle: { en: "How the night feels", hr: "Kako protječe noć" },
     meters: {
@@ -318,10 +321,22 @@
       mid: { en: "Steady", hr: "Stabilno" },
       high: { en: "Strong", hr: "Snažno" }
     },
+    outOf100: { en: "out of 100", hr: "od 100" },
     meterDisclaimer: {
-      en: "Reflection indicators, not scores. They show emotional support and how clear the route felt — never medical risk or health outcome.",
-      hr: "Pokazatelji za promišljanje, ne bodovi. Prikazuju emocionalnu podršku i koliko je ruta bila jasna – nikad medicinski rizik ni zdravstveni ishod."
+      en: "These meters show emotional support and route clarity. They do not measure medical risk or health outcome. Reflection indicators, not scores.",
+      hr: "Ovi pokazatelji prikazuju emocionalnu podršku i jasnoću puta. Ne mjere medicinski rizik ni zdravstveni ishod. Pokazatelji su za promišljanje, ne bodovi."
     },
+    meterAriaSuffix: {
+      en: "Emotional support and route clarity indicator only. Not medical risk or health outcome.",
+      hr: "Samo pokazatelj emocionalne podrške i jasnoće puta. Nije medicinski rizik ni zdravstveni ishod."
+    },
+    choiceFeedbackPrefix: { en: "Choice feedback:", hr: "Povratna informacija odabira:" },
+    choiceFeedbackSuffix: {
+      en: "These indicators do not measure medical risk or health outcome.",
+      hr: "Ovi pokazatelji ne mjere medicinski rizik ni zdravstveni ishod."
+    },
+    meterUp: { en: "rose", hr: "se povećava" },
+    meterDown: { en: "fell", hr: "se smanjuje" },
     meterHigh: {
       calm: { en: "Steady hands by sunrise.", hr: "Mirne ruke do zore." },
       clarity: { en: "The route was clear when it mattered.", hr: "Ruta je bila jasna kad je trebalo." },
@@ -358,8 +373,8 @@
     },
     urgentHelpTitle: { en: "Need help now?", hr: "Trebaš pomoć odmah?" },
     urgentHelp: {
-      en: "If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This story cannot assess your personal risk.",
-      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova priča ne može procijeniti tvoj osobni rizik."
+      en: "If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This game cannot assess your personal risk.",
+      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova igra ne može procijeniti tvoj osobni rizik."
     },
     gateStart: { en: "Start the story", hr: "Započni priču" },
     gateStartPoetic: { en: "Raise the curtain", hr: "Podigni zastor" }
@@ -388,6 +403,7 @@
       },
       mood: "ep1",
       poster: "bedroom",
+      factHref: "prep-pep.html",
       start: "t1",
       insights: [
         { en: "PEP can reduce the chance of HIV infection when started in time after professional assessment and taken as prescribed. It is not guaranteed.", hr: "PEP može smanjiti mogućnost infekcije HIV-om ako se započne na vrijeme nakon stručne procjene i uzima prema uputama. Nije jamstvo." },
@@ -547,11 +563,12 @@
       },
       mood: "ep2",
       poster: "cafe",
+      factHref: "prep-pep.html",
       start: "t1",
       insights: [
-        { en: "PrEP (pre-exposure prophylaxis) is prevention: medicine HIV-negative people can take so an exposure is far less likely to become an infection.", hr: "PrEP (predekspozicijska profilaksa) jest prevencija: lijek koji HIV-negativne osobe mogu uzimati kako izloženost mnogo teže postane infekcija." },
-        { en: "It runs through a prescription, an HIV test first and regular check-ups — a plan made with a professional, around your real life.", hr: "Ide uz recept, prethodni HIV test i redovite kontrole – plan koji sa stručnjakom slažeš prema svom stvarnom životu." },
-        { en: "PrEP targets HIV specifically; condoms still matter for other infections. Asking about prevention is responsibility, not confession.", hr: "PrEP cilja specifično HIV; kondomi su i dalje važni za druge infekcije. Pitati o prevenciji odgovornost je, a ne priznanje." }
+        { en: "PrEP is a prevention option for people without HIV who may be exposed to HIV. It requires HIV testing, professional assessment, and ongoing follow-up.", hr: "PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Zahtijeva testiranje na HIV, stručnu procjenu i redovito praćenje." },
+        { en: "A PrEP plan is made with a qualified professional around a person's real life; it is not self-started, casual, or automatic.", hr: "Plan za PrEP dogovara se s kvalificiranom stručnom osobom prema stvarnom životu osobe; nije nešto što se započinje samostalno, usputno ili automatski." },
+        { en: "Condoms still matter for other infections. Asking about prevention is responsibility, not confession.", hr: "Kondomi su i dalje važni za druge infekcije. Pitati o prevenciji odgovornost je, a ne priznanje." }
       ],
       demand: {
         en: "Clearer, more equitable and less stigmatized PrEP access and counseling.",
@@ -578,8 +595,8 @@
                   hr: "Luka. Ono što si jednom spomenuo – PrEP. Što je to… zapravo?" },
           next: "n4" },
         n4: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "Prevention. Medicine that HIV-negative people can take so that, if an exposure happens, it's far less likely to become an infection. Prescription, a test first, regular check-ups. Boring, in the best way — like a seatbelt.",
-                  hr: "Prevencija. Lijek koji HIV-negativne osobe mogu uzimati kako, ako dođe do izloženosti, mnogo teže dođe do infekcije. Recept, prvo test, redovite kontrole. Dosadno, na najbolji način – kao pojas u autu." },
+          text: { en: "PrEP is a prevention option for people without HIV who may be exposed to HIV. It starts with HIV testing, professional assessment, and ongoing follow-up, so a clinician helps decide whether it fits your life.",
+                  hr: "PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Počinje testiranjem na HIV, stručnom procjenom i redovitim praćenjem, pa stručna osoba pomaže procijeniti odgovara li tvom životu." },
           choice: [
             { t: { en: "\"Isn't that for... other people?\"", hr: "\"Nije li to za… neke druge ljude?\"" }, fx: { clarity: +6 }, go: "n5a" },
             { t: { en: "\"Would a doctor judge me for asking?\"", hr: "\"Bi li me liječnik osuđivao što pitam?\"" }, fx: { trust: +6 }, go: "n5b" },
@@ -613,8 +630,8 @@
                   hr: "Sljedeće večeri. Recepcija pod mjedenim suncem, biljka koja sumnjivo dobro uspijeva i nijedan pogled iz čekaonice – jer ovdje nitko ne misli da je pitanje skandal." },
           next: "n9" },
         n9: { bg: "checkpoint", cast: [{ c: "ivan", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "Welcome. You're asking about PrEP — good. Short version: it's for people who are HIV-negative, it works when taken as prescribed, and it starts with an HIV test plus regular check-ups after. It protects specifically against HIV; condoms still matter for other infections.",
-                  hr: "Dobro došao. Pitaš o PrEP-u – odlično. Kratka verzija: namijenjen je HIV-negativnim osobama, djeluje kad se uzima prema uputi, a počinje HIV testom i redovitim kontrolama poslije. Štiti specifično od HIV-a; kondomi su i dalje važni za druge infekcije." },
+          text: { en: "Welcome. You're asking about PrEP — good. Short version: PrEP is a prevention option for people without HIV who may be exposed to HIV. It requires HIV testing, professional assessment, and ongoing follow-up. Condoms still matter for other infections.",
+                  hr: "Dobro došao. Pitaš o PrEP-u – odlično. Kratka verzija: PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Zahtijeva testiranje na HIV, stručnu procjenu i redovito praćenje. Kondomi su i dalje važni za druge infekcije." },
           next: "n10" },
         n10: { bg: "checkpoint", cast: [{ c: "ivan", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
           text: { en: "Now — for the plan to fit, I need the real picture of your life, not the brochure version. How honest do you want to be today?",
@@ -665,6 +682,7 @@
       },
       mood: "ep3",
       poster: "coast",
+      factHref: "testing-sti.html",
       start: "t1",
       insights: [
         { en: "Getting tested together is routine care for a new couple — a fresh start, not an accusation.", hr: "Zajedničko testiranje rutinska je skrb za novi par – novi početak, a ne optužba." },

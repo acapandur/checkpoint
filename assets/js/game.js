@@ -3,6 +3,7 @@
    A small visual-novel runtime for the Map Without Stigma campaign.
    Screens: gate → episode select → story → night ledger → finale.
    Progress is stored only in this browser (localStorage "mws-save").
+   The instant-text preference is also stored locally (localStorage "mws-instant").
    ========================================================================== */
 
 (function () {
@@ -58,7 +59,8 @@
     meters: { calm: 50, clarity: 50, trust: 50 },
     typing: null,            // { full, i, timer, done }
     instant: loadInstant(),
-    reflectOpen: true
+    reflectOpen: true,
+    lastChoiceStatus: ""
   };
 
   var METER_ORDER = ["calm", "clarity", "trust"];
@@ -70,7 +72,7 @@
 
   function ep() { return S.EPISODES[state.epIndex]; }
   function node() { return ep().nodes[state.nodeId]; }
-  function unlocked(i) { return i === 0 || !!save.done[S.EPISODES[i - 1].id]; }
+  function unlocked(i) { return i >= 0 && i < S.EPISODES.length; }
   function allDone() {
     return S.EPISODES.every(function (e) { return !!save.done[e.id]; });
   }
@@ -80,6 +82,18 @@
     METER_ORDER.forEach(function (k) {
       if (typeof fx[k] === "number") state.meters[k] = clamp(state.meters[k] + fx[k]);
     });
+  }
+
+  function choiceStatus(fx) {
+    if (!fx) return "";
+    var parts = [];
+    METER_ORDER.forEach(function (k) {
+      if (typeof fx[k] === "number" && fx[k] !== 0) {
+        parts.push(t(S.UI.meters[k]) + " " + t(fx[k] > 0 ? S.UI.meterUp : S.UI.meterDown));
+      }
+    });
+    if (!parts.length) return "";
+    return t(S.UI.choiceFeedbackPrefix) + " " + parts.join("; ") + ". " + t(S.UI.choiceFeedbackSuffix);
   }
 
   /* ---------------- Typewriter ---------------- */
@@ -163,7 +177,8 @@
       var lvlKey = meterLevelKey(state.meters[k]);
       var label = t(S.UI.meters[k]);
       var level = t(S.UI.meterLevels[lvlKey]);
-      return '<div class="meter ' + METER_CLASS[k] + " lvl-" + lvlKey + '" role="img" aria-label="' + esc(label + ": " + level) + '">'
+      var valueText = label + ": " + state.meters[k] + " " + t(S.UI.outOf100) + ". " + level + ". " + t(S.UI.meterAriaSuffix);
+      return '<div class="meter ' + METER_CLASS[k] + " lvl-" + lvlKey + '" role="progressbar" aria-label="' + esc(label) + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + state.meters[k] + '" aria-valuetext="' + esc(valueText) + '">'
         + '<small><span>' + esc(label) + '</span><span class="lvl">' + esc(level) + "</span></small>"
         + '<div class="track" aria-hidden="true"><div class="fill" style="width:' + state.meters[k] + '%"></div></div>'
         + "</div>";
@@ -185,7 +200,9 @@
     return '<div class="stage-top">'
       + '<div class="stage-top-row"><span class="ep-label">' + labelInner + "</span>"
       + instantToggleHtml() + "</div>"
-      + metersHtml() + "</div>";
+      + metersHtml()
+      + urgentPanelHtml("game-urgent game-urgent-compact")
+      + "</div>";
   }
 
   function applyMood() {
@@ -205,8 +222,9 @@
     }).join("") + "</div>";
   }
 
-  function urgentPanelHtml() {
-    return '<aside class="urgent-help" role="note" aria-label="' + esc(t(S.UI.urgentHelpTitle)) + '">'
+  function urgentPanelHtml(extraClass) {
+    var cls = "urgent-help" + (extraClass ? " " + extraClass : "");
+    return '<aside class="' + cls + '" role="note" aria-label="' + esc(t(S.UI.urgentHelpTitle)) + '">'
       + '<p class="urgent-help-title">' + esc(t(S.UI.urgentHelpTitle)) + "</p>"
       + "<p>" + esc(t(S.UI.urgentHelp)) + "</p></aside>";
   }
@@ -218,7 +236,7 @@
       + "<h2>" + esc(t({ en: "Three Nights", hr: "Tri noći" })) + "</h2>"
       + '<p class="gate-format">' + esc(t(S.UI.gateFormat)) + "</p>"
       + "<p>" + esc(t(S.UI.gateBody)) + "</p>"
-      + urgentPanelHtml()
+      + urgentPanelHtml("game-urgent")
       + '<div class="trust-notes">'
       + '<p class="gate-note independence-note">' + esc(t(S.UI.gateIndependence)) + "</p>"
       + '<p class="gate-note">' + esc(t(S.UI.fiction)) + "</p>"
@@ -237,7 +255,7 @@
     var bills = S.EPISODES.map(function (e, i) {
       var isDone = !!save.done[e.id];
       var isOpen = unlocked(i);
-      var stateLabel = !isOpen ? t(S.UI.locked) : (isDone ? t(S.UI.done) + " · " + t(S.UI.replay) : t(S.UI.ready));
+      var stateLabel = isDone ? t(S.UI.done) + " · " + t(S.UI.replay) : t(S.UI.ready);
       var situation = e.situation ? t(e.situation) : t(e.title);
       return '<button class="playbill mood-' + (e.mood || "ep1") + (isDone ? " done" : "") + '" data-act="start-ep" data-ep="' + i + '"'
         + (isOpen ? "" : " disabled")
@@ -275,7 +293,8 @@
         + '<button type="button" class="title-card" data-act="advance">'
         + "<h2>" + esc(t(n.text)).replace(/\n/g, "<br>") + "</h2>"
         + '<span class="tap">' + esc(t(S.UI.tapToContinue)) + "</span></button></div>"
-        + '<p class="sr-line sr-only" aria-live="polite">' + esc(t(n.text)) + "</p>";
+      + '<p class="choice-status sr-only" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
+      + '<p class="sr-line sr-only" aria-live="polite">' + esc(t(n.text)) + "</p>";
       state.typing = { full: t(n.text), done: true };
       return;
     }
@@ -304,6 +323,7 @@
       + '<button class="dialogue-hint" data-act="advance" hidden>' + esc(t(S.UI.tapToContinue)) + "</button>"
       + "</div>"
       + choicesHtml
+      + '<p class="choice-status sr-only" aria-live="polite">' + esc(state.lastChoiceStatus) + "</p>"
       + '<p class="sr-line sr-only" aria-live="polite"></p>';
 
     typeInto(root.querySelector(".line"), t(n.text));
@@ -323,6 +343,7 @@
     var e = ep();
     var nextIndex = state.epIndex + 1;
     var hasNext = nextIndex < S.EPISODES.length;
+    var factHref = e.factHref || "sources.html";
     var insights = e.insights.map(function (ins, i) {
       return "<div><strong>" + (i + 1) + ".</strong><p>" + esc(t(ins)) + "</p></div>";
     }).join("");
@@ -344,7 +365,14 @@
       + takeaway
       + '<div class="demand-unlock"><span class="gem" aria-hidden="true"></span>'
       + "<p><strong>" + esc(t(S.UI.demandUnlocked)) + "</strong>" + esc(t(e.demand)) + "</p></div>"
-      + '<div class="action-row">' + primary
+      + urgentPanelHtml("game-urgent ledger-urgent")
+      + '<p class="kicker next-step-kicker">' + esc(t(S.UI.nextStepsTitle)) + "</p>"
+      + '<div class="action-row next-step-menu">'
+      + '<a class="button button-jade" href="' + esc(factHref) + '">' + esc(t(S.UI.readFacts)) + "</a>"
+      + '<button class="button button-secondary" data-act="start-ep" data-ep="' + state.epIndex + '">' + esc(t(S.UI.replayEpisode)) + "</button>"
+      + primary
+      + '<a class="button button-secondary" href="petition.html">' + esc(t(S.UI.toPetition)) + "</a>"
+      + '<button class="button button-ghost" data-act="reset">' + esc(t(S.UI.resetSave)) + "</button>"
       + '<button class="button button-ghost" data-act="open-select">' + esc(t(S.UI.backToEpisodes)) + "</button>"
       + "</div></div>";
   }
@@ -383,8 +411,10 @@
 
   /* ---------------- Flow ---------------- */
   function startEpisode(i) {
+    if (isNaN(i) || !unlocked(i)) return;
     state.epIndex = i;
     state.meters = { calm: 50, clarity: 50, trust: 50 };
+    state.lastChoiceStatus = "";
     state.nodeId = S.EPISODES[i].start;
     state.screen = "story";
     render({ focus: true });
@@ -426,6 +456,7 @@
     }
     var c = n.choice[idx];
     if (!c) return;
+    state.lastChoiceStatus = choiceStatus(c.fx);
     applyFx(c.fx);
     goNode(c.go);
   }
