@@ -289,11 +289,11 @@
     tapToContinue: { en: "Tap / space to continue", hr: "Dodirni / razmaknica za dalje" },
     chooseHint: { en: "Choose", hr: "Odaberi" },
     episodes: { en: "Choose an episode", hr: "Odaberi epizodu" },
-    selectKicker: { en: "Three routes · Three nights", hr: "Tri rute · Tri noći" },
+    selectKicker: { en: "Find your checkpoint", hr: "Pronađi svoj sljedeći korak" },
     selectTitle: { en: "Choose your situation", hr: "Odaberi situaciju" },
     selectHint: {
-      en: "Three nights, three routes. Pick the one closest to you — all routes are open from the start.",
-      hr: "Tri noći, tri rute. Odaberi onu koja ti je najbliža – sve su rute otvorene od početka."
+      en: "Stop, breathe, and choose the checkpoint closest to what you need tonight: urgent help, planned prevention, testing, privacy, or official information.",
+      hr: "Stani, udahni i odaberi točku provjere najbližu onome što ti večeras treba: hitna pomoć, planirana prevencija, testiranje, privatnost ili službena informacija."
     },
     episode: { en: "Episode", hr: "Epizoda" },
     locked: { en: "Choose this situation", hr: "Odaberi ovu situaciju" },
@@ -347,34 +347,34 @@
       clarity: { en: "Too much of the night went to guessing.", hr: "Previše noći otišlo je na nagađanje." },
       trust: { en: "Silence made every corridor longer.", hr: "Šutnja je produljila svaki hodnik." }
     },
-    finaleTitle: { en: "Three nights. One map.", hr: "Tri noći. Jedna karta." },
+    finaleTitle: { en: "Three nights. Find your checkpoint.", hr: "Tri noći. Pronađi svoj sljedeći korak." },
     finaleBody: {
-      en: "Ema needed a clock that someone had already thought about. Ivan needed a question that wasn't treated as a confession. Petra and Sara needed a door closer than three hours away. None of them needed a miracle — they needed clearer Croatian routes and CheckPoint-style community access within real reach. That is what the campaign demands describe.",
-      hr: "Emi je trebao sat o kojem je netko već razmišljao. Ivanu je trebalo pitanje koje se ne tretira kao priznanje. Petri i Sari trebala su vrata bliža od tri sata vožnje. Nikome od njih nije trebalo čudo – trebale su im jasnije hrvatske rute i CheckPoint-style pristup u zajednici stvarno nadohvat. Upravo to opisuju zahtjevi kampanje."
+      en: "Ema needed an urgent checkpoint, not a maze. Ivan needed a prevention checkpoint, not a confession. Petra and Sara needed a testing and privacy checkpoint that did not depend on living near Zagreb. HIV can be part of the checkpoint, but the map is broader: testing, prevention, privacy, coercion, official information and a clear next step without shame.",
+      hr: "Emi je trebala hitna točka provjere, ne labirint. Ivanu je trebala točka provjere za prevenciju, ne priznanje. Petri i Sari trebala je točka provjere za testiranje i privatnost koja ne ovisi o životu blizu Zagreba. HIV može biti dio provjere, ali karta je šira: testiranje, prevencija, privatnost, prisila, službene informacije i jasan sljedeći korak bez srama."
     },
-    toPetition: { en: "Read the campaign demands", hr: "Pročitaj zahtjeve kampanje" },
+    toPetition: { en: "Read the access demands", hr: "Pročitaj zahtjeve za pristup" },
     resetSave: { en: "Reset progress", hr: "Poništi napredak" },
     fiction: {
-      en: "A fictional story for education. Not medical advice — see the PrEP & PEP page and talk to professionals.",
-      hr: "Izmišljena priča u edukativne svrhe. Nije medicinski savjet – pogledaj stranicu PrEP i PEP i razgovaraj sa stručnjacima."
+      en: "A fictional interactive story for education. Not medical advice — use official information and talk to qualified professionals.",
+      hr: "Izmišljena interaktivna priča u edukativne svrhe. Nije medicinski savjet – koristi službene informacije i razgovaraj s kvalificiranim stručnjacima."
     },
-    gateTitle: { en: "Before the curtain", hr: "Prije zastora" },
+    gateTitle: { en: "Map Without Stigma: Find Your Checkpoint", hr: "Karta bez stigme: Pronađi svoj sljedeći korak" },
     gateFormat: {
-      en: "Interactive story · Educational prototype · Free in your browser",
-      hr: "Interaktivna priča · Edukativni prototip · Besplatno u pregledniku"
+      en: "Interactive story about testing, prevention, privacy, urgent questions and care without shame",
+      hr: "Interaktivna priča o testiranju, prevenciji, privatnosti, hitnim pitanjima i traženju skrbi bez srama"
     },
     gateBody: {
-      en: "Three Nights is a fictional, choice-driven story about finding sexual-health care without shame. It mentions a broken condom, HIV prevention (PEP and PrEP) and testing — calmly, without graphic content. Nothing you choose is recorded beyond this browser, and the game never asks for personal details. If you need real help right now, contact a health professional or emergency services.",
-      hr: "Tri noći izmišljena je priča s odlukama o traženju skrbi za spolno zdravlje bez srama. Spominje puknuti kondom, prevenciju HIV-a (PEP i PrEP) i testiranje – smireno, bez eksplicitnog sadržaja. Tvoji se odabiri ne bilježe izvan ovog preglednika i igra nikad ne traži osobne podatke. Ako ti sada treba stvarna pomoć, obrati se zdravstvenom stručnjaku ili hitnoj službi."
+      en: "Three Nights is an interactive story about the moment before care: when you are scared, unsure, ashamed, or simply need to know where to check next. HIV is part of the story, but the real focus is finding a clear checkpoint without shame. A checkpoint may involve HIV, other STIs, hepatitis, HPV-related screening, privacy, coercion, or simply not knowing where to ask. You are not dirty. You are not stupid. You deserve a clear next step. Nothing you choose is recorded beyond this browser, and the story never asks for personal details.",
+      hr: "Tri noći su interaktivna priča o trenutku prije skrbi: kada se bojiš, nisi siguran/sigurna, osjećaš sram ili jednostavno trebaš znati gdje provjeriti sljedeći korak. HIV je dio priče, ali fokus je pronaći jasan put do provjere bez srama. Točka provjere može uključivati HIV, druge spolno prenosive infekcije, hepatitise, probir povezan s HPV-om, privatnost, prisilu ili jednostavno neznanje gdje pitati. Nisi prljav/a. Nisi glup/a. Zaslužuješ jasan sljedeći korak. Tvoji se odabiri ne bilježe izvan ovog preglednika i priča nikad ne traži osobne podatke."
     },
     gateIndependence: {
-      en: "This is an independent educational prototype. It is not an official website of HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution.",
-      hr: "Ovo je neovisni edukativni prototip. Ovo nije službena stranica HUHIV-a, HZJZ-a, CheckPointa Zagreb, bilo koje klinike ili državne institucije."
+      en: "Independent educational prototype. Not medical advice. Not an official health-service website. Not affiliated with HUHIV, HZJZ, CheckPoint Zagreb, any clinic, or any government institution unless formally stated.",
+      hr: "Neovisni edukativni prototip. Nije medicinski savjet. Nije službena zdravstvena stranica. Nije povezan s HUHIV-om, HZJZ-om, CheckPointom Zagreb, bilo kojom klinikom ili državnom institucijom osim ako je to formalno navedeno."
     },
     urgentHelpTitle: { en: "Need help now?", hr: "Trebaš pomoć odmah?" },
     urgentHelp: {
-      en: "If there may have been HIV exposure, assault, coercion, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This game cannot assess your personal risk.",
-      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova igra ne može procijeniti tvoj osobni rizik."
+      en: "If there may have been HIV exposure, assault, coercion, needle or blood exposure, injury, severe symptoms, or immediate danger, contact emergency services or qualified healthcare professionals right away. This story cannot assess your personal risk.",
+      hr: "Ako je moguće izlaganje HIV-u, nasilje, prisila, izlaganje iglom ili krvlju, ozljeda, ozbiljni simptomi ili neposredna opasnost, odmah se obrati hitnim službama ili kvalificiranim zdravstvenim djelatnicima. Ova priča ne može procijeniti tvoj osobni rizik."
     },
     gateStart: { en: "Start the story", hr: "Započni priču" },
     gateStartPoetic: { en: "Raise the curtain", hr: "Podigni zastor" }
@@ -387,32 +387,33 @@
   var EPISODES = [
 
     /* ---------------------------------------------------------
-       EPISODE 1 — 72 HOURS / 72 SATA  (Ema · PEP)
+       EPISODE 1 — THE URGENT CHECKPOINT / HITNA TOČKA PROVJERE  (Ema · PEP)
        --------------------------------------------------------- */
     {
       id: "ep1",
       no: "I",
-      title: { en: "72 Hours", hr: "72 sata" },
+      title: { en: "Night One: The Urgent Checkpoint", hr: "Prva noć: Hitna točka provjere" },
       tagline: {
-        en: "2:47 a.m. The condom broke. The clock is honest — the city should be too.",
-        hr: "2:47 ujutro. Kondom je pukao. Sat je iskren – grad bi trebao biti isto."
+        en: "2:47 a.m. Something happened tonight. Ema needs to stop guessing and find the urgent checkpoint.",
+        hr: "2:47 ujutro. Nešto se dogodilo večeras. Ema treba prestati nagađati i pronaći hitnu točku provjere."
       },
       situation: {
-        en: "I'm worried about something that happened after sex",
-        hr: "Brine me nešto što se dogodilo nakon seksa"
+        en: "I need an urgent checkpoint after something happened",
+        hr: "Trebam hitnu točku provjere nakon nečega što se dogodilo"
       },
       mood: "ep1",
       poster: "bedroom",
       factHref: "prep-pep.html",
       start: "t1",
       insights: [
+        { en: "PEP is urgent HIV post-exposure prevention. It is not a pharmacy self-service product. If there may have been HIV exposure, seek medical help immediately so a doctor can assess risk and decide whether PEP is indicated.", hr: "PEP je hitna postekspozicijska prevencija HIV-a. Nije proizvod koji se samostalno uzima u ljekarni. Ako je moguće izlaganje HIV-u, odmah potražite liječničku pomoć kako bi liječnik procijenio rizik i odlučio je li PEP indiciran." },
         { en: "PEP can reduce the chance of HIV infection when started in time after professional assessment and taken as prescribed. It is not guaranteed.", hr: "PEP može smanjiti mogućnost infekcije HIV-om ako se započne na vrijeme nakon stručne procjene i uzima prema uputama. Nije jamstvo." },
         { en: "PEP is time-sensitive. Seek professional help as soon as possible, ideally within 24 hours and no later than 72 hours after possible exposure.", hr: "PEP je vremenski osjetljiv. Potražite stručnu pomoć što prije, idealno unutar 24 sata, a najkasnije unutar 72 sata nakon mogućeg izlaganja." },
-        { en: "The route runs through professionals: emergency care and infectious-disease clinics, then follow-up testing.", hr: "Ruta ide preko stručnjaka: hitne službe i klinike za infektivne bolesti, a zatim kontrolna testiranja." }
+        { en: "The urgent checkpoint is not a self-diagnosis. It is where a qualified professional helps decide the next route.", hr: "Hitna točka provjere nije samodijagnoza. To je mjesto gdje kvalificirana stručna osoba pomaže odlučiti sljedeću rutu." }
       ],
       demand: {
-        en: "A clear urgent PEP assessment route in every Croatian region.",
-        hr: "Jasna urgentna ruta za procjenu PEP-a u svakoj hrvatskoj regiji."
+        en: "A clear urgent checkpoint for time-sensitive questions in every Croatian region, including PEP assessment when relevant.",
+        hr: "Jasna hitna točka provjere za vremenski osjetljiva pitanja u svakoj hrvatskoj regiji, uključujući procjenu za PEP kada je relevantno."
       },
       takeaway: {
         en: "Time-sensitive help should be easy to find at night, not hidden across confusing pages.",
@@ -420,7 +421,7 @@
       },
       nodes: {
         t1: { type: "title", bg: "title",
-          text: { en: "EPISODE I — 72 HOURS\nZagreb · 02:47", hr: "EPIZODA I. – 72 SATA\nZagreb · 2:47" },
+          text: { en: "NIGHT ONE — THE URGENT CHECKPOINT\nZagreb · 02:47", hr: "PRVA NOĆ – HITNA TOČKA PROVJERE\nZagreb · 2:47" },
           next: "n1" },
         n1: { bg: "bedroom", speaker: "narr",
           text: { en: "A ceiling. A streetlight drawing gold bars through the blinds. Ema, 24, sits up in the dark and stares at her phone like it owes her an answer.",
@@ -459,8 +460,8 @@
                   hr: "Kondom je pukao. Večeras. Ne znam njegov status. Iskreno, ne znam ni svoj. I ne znam što sad." },
           next: "n7" },
         n7: { bg: "bedroom", cast: [{ c: "ema", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "First: you're not the first person this has happened to, and you won't be the last. It's a health question, not a character question. Second: PEP can reduce the chance of HIV infection when started in time after professional assessment and taken as prescribed. It is not guaranteed, and it is time-sensitive.",
-                  hr: "Prvo: nisi prva osoba kojoj se ovo dogodilo i nećeš biti zadnja. To je zdravstveno pitanje, ne pitanje karaktera. Drugo: PEP može smanjiti mogućnost infekcije HIV-om ako se započne na vrijeme nakon stručne procjene i uzima prema uputama. Nije jamstvo i vremenski je osjetljiv." },
+          text: { en: "First: you're not dirty and you're not stupid. This is a health question, not a character question. Second: if HIV exposure may be part of it, PEP is an urgent HIV-specific route that a doctor assesses. It is not a pharmacy self-service product, and it is time-sensitive.",
+                  hr: "Prvo: nisi prljava i nisi glupa. Ovo je zdravstveno pitanje, ne pitanje karaktera. Drugo: ako moguće izlaganje HIV-u može biti dio situacije, PEP je hitna ruta specifična za HIV koju procjenjuje liječnik. Nije proizvod koji se samostalno uzima u ljekarni i vremenski je osjetljiv." },
           choice: [
             { t: { en: "\"How much time do I have?\"", hr: "\"Koliko vremena imam?\"" }, fx: { clarity: +8 }, go: "n8a" },
             { t: { en: "\"I'm so embarrassed I could sink.\"", hr: "\"Toliko me sram da bih propala u pod.\"" }, fx: { trust: +6 }, go: "n8b" },
@@ -495,8 +496,8 @@
                   hr: "Ema objašnjava. Tiho, u tri rečenice. Maja cijelo vrijeme kima, kao da je ovo običan utorak. Vjerojatno i jest." },
           next: "n13" },
         n13: { bg: "pharmacy", cast: [{ c: "ema", side: "L" }, { c: "maja", side: "R" }], speaker: "maja",
-          text: { en: "You did well coming in. PEP is prescription medicine, so I can't hand it over this counter — the right door tonight is the emergency service and the infectious-disease clinic. You're well inside the window, and sooner is genuinely better.",
-                  hr: "Dobro si napravila što si došla. PEP je lijek na recept, pa ti ga ne mogu izdati preko ovog pulta – prava vrata večeras su hitna služba i klinika za infektivne bolesti. Unutar si vremenskog okvira, a ranije je zaista bolje." },
+          text: { en: "You did well coming in. This counter is not the checkpoint that decides PEP. If HIV exposure may be part of it, the right door tonight is medical help: emergency care and the infectious-disease clinic, where a doctor can assess whether PEP is indicated.",
+                  hr: "Dobro si napravila što si došla. Ovaj pult nije točka provjere koja odlučuje o PEP-u. Ako moguće izlaganje HIV-u može biti dio situacije, prava vrata večeras su liječnička pomoć: hitna služba i klinika za infektivne bolesti, gdje liječnik može procijeniti je li PEP indiciran." },
           next: "n14" },
         n14: { bg: "pharmacy", cast: [{ c: "ema", side: "L" }, { c: "maja", side: "R" }], speaker: "maja",
           text: { en: "One more thing, and only if it applies: if pregnancy is a concern, emergency contraception is a separate question — raise both at the clinic. One clear thing at a time.",
@@ -535,8 +536,8 @@
                   hr: "Što god ti odlučiš. \"Imala sam zdravstvenu stvar, riješeno je\" potpuna je rečenica. Nikome ne duguješ cijeli film ove noći." },
           next: "n19" },
         n19: { bg: "clinic", cast: [{ c: "ema", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "One more thing for later, when tonight is behind you: there are community-based services, including CheckPoint Zagreb, for testing and honest conversations — including prevention like PrEP, if it ever fits your life. The point is to make nights like this shorter.",
-                  hr: "Još nešto za poslije, kad ova noć bude iza tebe: postoje usluge u zajednici, uključujući CheckPoint Zagreb, za testiranje i iskrene razgovore – uključujući prevenciju poput PrEP-a, ako ti ikad bude odgovarala. Poanta je da noći poput ove postanu kraće." },
+          text: { en: "One more thing for later, when tonight is behind you: there are other checkpoints too — testing, privacy, planned prevention such as PrEP, and official information. The point is to make nights like this shorter.",
+                  hr: "Još nešto za poslije, kad ova noć bude iza tebe: postoje i druge točke provjere – testiranje, privatnost, planirana prevencija poput PrEP-a i službene informacije. Poanta je da noći poput ove postanu kraće." },
           next: "n20" },
         n20: { bg: "coast", cast: [{ c: "ema", side: "L" }], speaker: "think",
           text: { en: "First light over the rooftops. The clock mattered tonight — but the map mattered more. If I hadn't found the route... how many people don't?",
@@ -547,32 +548,32 @@
     },
 
     /* ---------------------------------------------------------
-       EPISODE 2 — THE QUESTION / PITANJE  (Ivan · PrEP)
+       EPISODE 2 — THE PREVENTION CHECKPOINT / TOČKA PROVJERE ZA PREVENCIJU  (Ivan · PrEP)
        --------------------------------------------------------- */
     {
       id: "ep2",
       no: "II",
-      title: { en: "The Question", hr: "Pitanje" },
+      title: { en: "Night Two: The Prevention Checkpoint", hr: "Druga noć: Točka provjere za prevenciju" },
       tagline: {
-        en: "Ivan has rehearsed one sentence for months. Asking it should not feel like a confession.",
-        hr: "Ivan mjesecima uvježbava jednu rečenicu. Postaviti je ne bi smjelo biti kao priznanje."
+        en: "Ivan has rehearsed one sentence for months. Planned prevention should feel like a checkpoint, not a confession.",
+        hr: "Ivan mjesecima uvježbava jednu rečenicu. Planirana prevencija trebala bi biti točka provjere, ne priznanje."
       },
       situation: {
-        en: "I want to ask about PrEP",
-        hr: "Želim pitati za PrEP"
+        en: "I want a prevention checkpoint",
+        hr: "Želim točku provjere za prevenciju"
       },
       mood: "ep2",
       poster: "cafe",
       factHref: "prep-pep.html",
       start: "t1",
       insights: [
-        { en: "PrEP is a prevention option for people without HIV who may be exposed to HIV. It requires HIV testing, professional assessment, and ongoing follow-up.", hr: "PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Zahtijeva testiranje na HIV, stručnu procjenu i redovito praćenje." },
-        { en: "A PrEP plan is made with a qualified professional around a person's real life; it is not self-started, casual, or automatic.", hr: "Plan za PrEP dogovara se s kvalificiranom stručnom osobom prema stvarnom životu osobe; nije nešto što se započinje samostalno, usputno ili automatski." },
-        { en: "Condoms still matter for other infections. Asking about prevention is responsibility, not confession.", hr: "Kondomi su i dalje važni za druge infekcije. Pitati o prevenciji odgovornost je, a ne priznanje." }
+        { en: "PrEP is planned HIV prevention before possible exposure. It requires HIV testing, medical assessment, prescription, and follow-up. PrEP protects against HIV, not against other STIs.", hr: "PrEP je planirana prevencija HIV-a prije mogućeg izlaganja. Zahtijeva testiranje na HIV, liječničku procjenu, recept i praćenje. PrEP štiti od HIV-a, ne od drugih spolno prenosivih infekcija." },
+        { en: "The prevention checkpoint can include HIV, other STI questions, hepatitis vaccination/testing questions, condoms, privacy and follow-up planning.", hr: "Točka provjere za prevenciju može uključivati HIV, pitanja o drugim spolno prenosivim infekcijama, pitanja o cijepljenju/testiranju na hepatitise, kondome, privatnost i plan praćenja." },
+        { en: "Asking about prevention is responsibility, not confession.", hr: "Pitati o prevenciji odgovornost je, a ne priznanje." }
       ],
       demand: {
-        en: "Clearer, more equitable and less stigmatized PrEP access and counseling.",
-        hr: "Jasniji, ravnopravniji i manje stigmatiziran PrEP pristup i savjetovanje."
+        en: "Clearer, more equitable prevention checkpoints, including PrEP counseling when it fits someone's life.",
+        hr: "Jasnije i ravnopravnije točke provjere za prevenciju, uključujući savjetovanje o PrEP-u kada odgovara nečijem životu."
       },
       takeaway: {
         en: "People should be able to ask about PrEP without shame or judgment.",
@@ -580,7 +581,7 @@
       },
       nodes: {
         t1: { type: "title", bg: "title",
-          text: { en: "EPISODE II — THE QUESTION\nZagreb · 21:10", hr: "EPIZODA II. – PITANJE\nZagreb · 21:10" },
+          text: { en: "NIGHT TWO — THE PREVENTION CHECKPOINT\nZagreb · 21:10", hr: "DRUGA NOĆ – TOČKA PROVJERE ZA PREVENCIJU\nZagreb · 21:10" },
           next: "n1" },
         n1: { bg: "cafe", speaker: "narr",
           text: { en: "A café with string lights and one loud espresso machine. Ivan, 29, has been stirring the same coffee for ten minutes. Across the table: Luka, who notices everything and rushes nothing.",
@@ -595,8 +596,8 @@
                   hr: "Luka. Ono što si jednom spomenuo – PrEP. Što je to… zapravo?" },
           next: "n4" },
         n4: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "PrEP is a prevention option for people without HIV who may be exposed to HIV. It starts with HIV testing, professional assessment, and ongoing follow-up, so a clinician helps decide whether it fits your life.",
-                  hr: "PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Počinje testiranjem na HIV, stručnom procjenom i redovitim praćenjem, pa stručna osoba pomaže procijeniti odgovara li tvom životu." },
+          text: { en: "PrEP is one planned HIV-prevention checkpoint. It requires HIV testing, medical assessment, prescription, and follow-up. It protects against HIV, not every STI, so the conversation is broader than one pill.",
+                  hr: "PrEP je jedna planirana točka prevencije HIV-a. Zahtijeva testiranje na HIV, liječničku procjenu, recept i praćenje. Štiti od HIV-a, ne od svih spolno prenosivih infekcija, pa je razgovor širi od jedne tablete." },
           choice: [
             { t: { en: "\"Isn't that for... other people?\"", hr: "\"Nije li to za… neke druge ljude?\"" }, fx: { clarity: +6 }, go: "n5a" },
             { t: { en: "\"Would a doctor judge me for asking?\"", hr: "\"Bi li me liječnik osuđivao što pitam?\"" }, fx: { trust: +6 }, go: "n5b" },
@@ -611,8 +612,8 @@
                   hr: "Dobar kliničar to pitanje čuje kao što zubar čuje \"kako se pravilno koristi konac\" – s olakšanjem. Ljudi koji pitaju laki su pacijenti. A ako te netko ipak osudi, to govori o njemu, ne o tebi." },
           next: "n6" },
         n5c: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "luka",
-          text: { en: "A family doctor can be a route. So can a community service like CheckPoint Zagreb: testing, counseling, fewer raised eyebrows. Ema went for follow-up after her own long night. She said the hardest part was the door handle.",
-                  hr: "Obiteljski liječnik može biti ruta. Može i usluga u zajednici poput CheckPointa Zagreb: testiranje, savjetovanje, manje podignutih obrva. Ema je otišla na kontrolu nakon svoje duge noći. Kaže da je najteži dio bila kvaka." },
+          text: { en: "A family doctor can be a route. Official sexual-health counseling can be a route. Community testing services can be a route too. Ema went for follow-up after her own long night. She said the hardest part was the door handle.",
+                  hr: "Obiteljski liječnik može biti ruta. Službeno savjetovalište za spolno zdravlje može biti ruta. Usluge testiranja u zajednici također mogu biti ruta. Ema je otišla na kontrolu nakon svoje duge noći. Kaže da je najteži dio bila kvaka." },
           next: "n6" },
         n6: { bg: "cafe", cast: [{ c: "ivan", side: "L" }, { c: "luka", side: "R" }], speaker: "think",
           text: { en: "The strange thing about self-stigma: nobody in this café said a word, and I still heard a whole jury.",
@@ -630,8 +631,8 @@
                   hr: "Sljedeće večeri. Recepcija pod mjedenim suncem, biljka koja sumnjivo dobro uspijeva i nijedan pogled iz čekaonice – jer ovdje nitko ne misli da je pitanje skandal." },
           next: "n9" },
         n9: { bg: "checkpoint", cast: [{ c: "ivan", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
-          text: { en: "Welcome. You're asking about PrEP — good. Short version: PrEP is a prevention option for people without HIV who may be exposed to HIV. It requires HIV testing, professional assessment, and ongoing follow-up. Condoms still matter for other infections.",
-                  hr: "Dobro došao. Pitaš o PrEP-u – odlično. Kratka verzija: PrEP je mogućnost prevencije za osobe koje nemaju HIV, a mogu biti izložene HIV-u. Zahtijeva testiranje na HIV, stručnu procjenu i redovito praćenje. Kondomi su i dalje važni za druge infekcije." },
+          text: { en: "Welcome. You're asking about a prevention checkpoint — good. Short version: PrEP is planned HIV prevention before possible exposure. It requires HIV testing, medical assessment, prescription, and follow-up. PrEP protects against HIV, not against other STIs.",
+                  hr: "Dobro došao. Pitaš za točku provjere za prevenciju – odlično. Kratka verzija: PrEP je planirana prevencija HIV-a prije mogućeg izlaganja. Zahtijeva testiranje na HIV, liječničku procjenu, recept i praćenje. PrEP štiti od HIV-a, ne od drugih spolno prenosivih infekcija." },
           next: "n10" },
         n10: { bg: "checkpoint", cast: [{ c: "ivan", side: "L" }, { c: "novak", side: "R" }], speaker: "novak",
           text: { en: "Now — for the plan to fit, I need the real picture of your life, not the brochure version. How honest do you want to be today?",
@@ -666,15 +667,15 @@
     },
 
     /* ---------------------------------------------------------
-       EPISODE 3 — THE TEST / TEST  (Petra & Sara · testing, the gap)
+       EPISODE 3 — THE TESTING CHECKPOINT / TOČKA PROVJERE ZA TESTIRANJE  (Petra & Sara · testing, privacy, distance)
        --------------------------------------------------------- */
     {
       id: "ep3",
       no: "III",
-      title: { en: "The Test", hr: "Test" },
+      title: { en: "Night Three: The Testing Checkpoint", hr: "Treća noć: Točka provjere za testiranje" },
       tagline: {
-        en: "A new couple, one small town, and a door that turns out to be three hours away.",
-        hr: "Novi par, jedan mali grad i vrata koja su, ispostavi se, tri sata vožnje daleko."
+        en: "A new couple, one small town, and a privacy checkpoint that turns out to be three hours away.",
+        hr: "Novi par, jedan mali grad i točka provjere privatnosti koja je, ispostavi se, tri sata vožnje daleko."
       },
       situation: {
         en: "I want testing without shame",
@@ -685,13 +686,13 @@
       factHref: "testing-sti.html",
       start: "t1",
       insights: [
-        { en: "Getting tested together is routine care for a new couple — a fresh start, not an accusation.", hr: "Zajedničko testiranje rutinska je skrb za novi par – novi početak, a ne optužba." },
+        { en: "Testing may include HIV and other infections, depending on professional advice and the service. This story does not decide which tests anyone needs.", hr: "Testiranje može uključivati HIV i druge infekcije, ovisno o stručnom savjetu i usluzi. Ova priča ne odlučuje koje testove netko treba." },
         { en: "Some infections take time to show on tests, so a counselor helps time and, if needed, repeat them. That's normal, not a verdict.", hr: "Neke se infekcije na testovima pokažu tek nakon nekog vremena, pa savjetnik pomaže odrediti trenutak i po potrebi ponoviti test. To je normalno, a ne presuda." },
         { en: "Confidential care exists, and anonymous options may exist depending on the service — but distance is still where stigma hides.", hr: "Povjerljiva skrb postoji, a anonimne opcije mogu postojati ovisno o službi – ali udaljenost je i dalje mjesto gdje se stigma skriva." }
       ],
       demand: {
-        en: "CheckPoint-style community access within real reach of every region — not only one city.",
-        hr: "CheckPoint-style pristup u zajednici stvarno nadohvat svakoj regiji – ne samo jednom gradu."
+        en: "Testing and privacy checkpoints within real reach of every region — not only one city.",
+        hr: "Točke provjere za testiranje i privatnost stvarno nadohvat svakoj regiji – ne samo jednom gradu."
       },
       takeaway: {
         en: "Testing access should not depend on living near Zagreb or being able to travel easily.",
@@ -699,7 +700,7 @@
       },
       nodes: {
         t1: { type: "title", bg: "title",
-          text: { en: "EPISODE III — THE TEST\nA small coastal town · 19:40", hr: "EPIZODA III. – TEST\nMali grad na obali · 19:40" },
+          text: { en: "NIGHT THREE — THE TESTING CHECKPOINT\nA small coastal town · 19:40", hr: "TREĆA NOĆ – TOČKA PROVJERE ZA TESTIRANJE\nMali grad na obali · 19:40" },
           next: "n1" },
         n1: { bg: "coast", speaker: "narr",
           text: { en: "A stone pier, a low gold sun, two women sharing one scarf. Petra, 31, grew up three streets from here. Sara moved for her — and brought a habit of saying things out loud.",
@@ -742,16 +743,16 @@
                   hr: "Na pola puta kući zastanem pod svjetiljkom. Eto što stigma zapravo radi – ne viče. Samo tiho dodaje kilometre." },
           next: "n6b2" },
         n6b2: { bg: "street", cast: [{ c: "petra", side: "L" }, { c: "sara", side: "R" }], speaker: "sara",
-          text: { en: "Hey. New plan, no corridors with familiar faces: HUHIV has CheckPoint Zagreb. It is built for confidential community testing; we check the current terms before we go. One catch — it's in Zagreb.",
-                  hr: "Hej. Novi plan, bez hodnika s poznatim licima: HUHIV ima CheckPoint Zagreb. Osmišljen je za povjerljivo testiranje u zajednici; provjerimo aktualne uvjete prije odlaska. Jedna kvaka – u Zagrebu je." },
+          text: { en: "Hey. New plan, no corridors with familiar faces: we look up official and community testing options and check the current terms before we go. One catch — the option that seems to fit is in Zagreb.",
+                  hr: "Hej. Novi plan, bez hodnika s poznatim licima: provjerimo službene i zajedničke opcije testiranja i aktualne uvjete prije odlaska. Jedna kvaka – opcija koja nam izgleda prikladno je u Zagrebu." },
           next: "n8" },
         n6c: { bg: "clinic", cast: [{ c: "petra", side: "L" }], speaker: "narr",
           text: { en: "The receptionist has heard \"for a friend\" approximately four thousand times and treats it with perfect grace. The real answer is the same either way: the tests aren't done here. A referral. A road.",
                   hr: "Recepcionarka je \"za prijateljicu\" čula otprilike četiri tisuće puta i prima to savršeno dostojanstveno. Pravi odgovor u oba je slučaja isti: testovi se ovdje ne rade. Uputnica. Cesta." },
           next: "n7" },
         n7: { bg: "coast", cast: [{ c: "petra", side: "L" }, { c: "sara", side: "R" }], speaker: "sara",
-          text: { en: "So the nearest door that fits us is in Zagreb. CheckPoint Zagreb — community-based, confidential, with current terms to verify before we go. Three hours there, three hours back. For a twenty-minute appointment.",
-                  hr: "Dakle, najbliža vrata koja nam odgovaraju su u Zagrebu. CheckPoint Zagreb – u zajednici, povjerljivo, s aktualnim uvjetima koje treba provjeriti prije odlaska. Tri sata tamo, tri sata natrag. Za termin od dvadeset minuta." },
+          text: { en: "So the nearest door that fits us is in Zagreb: community-based, confidential, with current terms to verify before we go. Three hours there, three hours back. For a twenty-minute appointment.",
+                  hr: "Dakle, najbliža vrata koja nam odgovaraju su u Zagrebu: u zajednici, povjerljivo, s aktualnim uvjetima koje treba provjeriti prije odlaska. Tri sata tamo, tri sata natrag. Za termin od dvadeset minuta." },
           next: "n8" },
         n8: { bg: "tram", speaker: "narr",
           text: { en: "Zagreb. The tram sighs them into the city. Six hours of road buys them a room where nobody knows their grandmother.",

@@ -387,6 +387,7 @@
       + "<h2>" + esc(t(S.UI.finaleTitle)) + "</h2>"
       + '<p class="sub">' + esc(t(S.UI.finaleBody)) + "</p>"
       + '<div class="ledger-list">' + demands + "</div>"
+      + '<p class="gate-note independence-note">' + esc(t(S.UI.gateIndependence)) + "</p>"
       + '<div class="action-row">'
       + '<a class="button button-primary" href="petition.html">' + esc(t(S.UI.toPetition)) + "</a>"
       + '<button class="button button-ghost" data-act="open-select">' + esc(t(S.UI.replay)) + "</button>"
